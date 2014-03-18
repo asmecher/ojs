@@ -40,8 +40,8 @@
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
-			{if $staticPageId}{plugin_url|assign:"staticPageEditPath" path="edit"|to_array:$staticPageId}
-			{else}{plugin_url|assign:"staticPageEditPath" path="edit"|to_array:$staticPageId}{/if}
+			{if $staticPageId}{plugin_url assign="staticPageEditPath" path="edit"|to_array:$staticPageId}
+			{else}{plugin_url assign="staticPageEditPath" path="edit"|to_array:$staticPageId}{/if}
 			{form_language_chooser form="editStaticPageForm" path=$staticPageEditPath}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
 		</td>

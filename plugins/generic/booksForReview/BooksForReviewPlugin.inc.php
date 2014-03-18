@@ -338,7 +338,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 				return false;
 			}
 
-			$article =& $smarty->get_template_vars('article');
+			$article =& $smarty->getTemplateVars('article');
 			if ($article) {
 				$articleId = $article->getId();
 			} else {
@@ -375,7 +375,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 				return false;
 			}
 
-			$article =& $smarty->get_template_vars('article');
+			$article =& $smarty->getTemplateVars('article');
 			if ($article) {
 				$articleId = $article->getId();
 			} else {
@@ -418,7 +418,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 				return false;
 			}
 
-			$article =& $smarty->get_template_vars('article');
+			$article =& $smarty->getTemplateVars('article');
 			if ($article) {
 				$articleId = $article->getId();
 			} else {
@@ -475,7 +475,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 		if ($this->getEnabled()) {
 			$smarty =& $params[1];
 			$output =& $params[2];
-			$submission =& $smarty->get_template_vars("submission");
+			$submission =& $smarty->getTemplateVars("submission");
 
 			if ($submission) {
 				$articleId = $submission->getId();

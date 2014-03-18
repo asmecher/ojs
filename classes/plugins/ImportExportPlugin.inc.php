@@ -54,7 +54,7 @@ class ImportExportPlugin extends Plugin {
 	 */
 	function display(&$args, $request) {
 		$templateManager = TemplateManager::getManager($request);
-		$templateManager->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateManager->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 	}
 
 	/**
@@ -95,7 +95,7 @@ class ImportExportPlugin extends Plugin {
 			$request->redirect(null, 'manager', 'importexport', array('plugin', $this->getName()));
 		}
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 		return false;
 	}
 

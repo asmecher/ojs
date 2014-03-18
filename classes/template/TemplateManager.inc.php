@@ -163,7 +163,7 @@ class TemplateManager extends PKPTemplateManager {
 		unset($params['iterator']);
 		unset($params['name']);
 
-		$numPageLinks = $smarty->get_template_vars('numPageLinks');
+		$numPageLinks = $smarty->getTemplateVars('numPageLinks');
 		if (!is_numeric($numPageLinks)) $numPageLinks=10;
 
 		$page = $iterator->getPage();

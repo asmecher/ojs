@@ -56,7 +56,7 @@ function updateAbstractRequired() {
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
-			{plugin_url|assign:"quickSubmitUrl" escape=false}
+			{plugin_url assign="quickSubmitUrl" escape=false}
 			{* Maintain localized author info across requests *}
 			{foreach from=$authors key=authorIndex item=author}
 				{if $currentJournal->getSetting('requireAuthorCompetingInterests')}
@@ -111,12 +111,12 @@ function updateAbstractRequired() {
 				{assign var=currentYear value=$smarty.now|date_format:"%Y"}
 				{if $datePublished}
 					{assign var=publishedYear value=$datePublished|date_format:"%Y"}
-					{math|assign:"minYear" equation="min(x,y)-10" x=$publishedYear y=$currentYear}
-					{math|assign:"maxYear" equation="max(x,y)+2" x=$publishedYear y=$currentYear}
+					{math assign="minYear" equation="min(x,y)-10" x=$publishedYear y=$currentYear}
+					{math assign="maxYear" equation="max(x,y)+2" x=$publishedYear y=$currentYear}
 				{else}
 					{* No issue publication date info *}
-					{math|assign:"minYear" equation="x-10" x=$currentYear}
-					{math|assign:"maxYear" equation="x+2" x=$currentYear}
+					{math assign="minYear" equation="x-10" x=$currentYear}
+					{math assign="maxYear" equation="x+2" x=$currentYear}
 				{/if}
 				{html_select_date prefix="datePublished" time=$datePublished|default:"---" all_extra="class=\"selectMenu\"" start_year=$minYear end_year=$maxYear year_empty="common.year"|translate month_empty="common.month"|translate day_empty="common.day"|translate}
 			</td>
@@ -152,7 +152,7 @@ function updateAbstractRequired() {
 		{else}{* if count($sectionOptions) == 2 *}
 		<h4>{translate key="author.submit.journalSection"}</h4>
 
-		{url|assign:"url" page="about"}
+		{url assign="url" page="about"}
 		<p>{translate key="author.submit.journalSectionDescription" aboutUrl=$url}</p>
 
 		<table class="data">

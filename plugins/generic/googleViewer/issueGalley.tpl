@@ -8,7 +8,7 @@
  * Issue galley view for PDF files.
  *}
 {include file="issue/header.tpl"}
-{url|assign:"pdfUrl" op="viewFile" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
+{url assign="pdfUrl" op="viewFile" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
 
 <div id="pdfDownloadLinkContainer">
 	<a class="action pdf" id="pdfDownloadLink" target="_parent" href="{url op="download" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}">{translate key="article.pdf.download"}</a>

@@ -145,9 +145,9 @@ class UsageEventPlugin extends GenericPlugin {
 
 				if (!in_array($page, $wantedPages) || !in_array($op, $wantedOps)) return false;
 
-				$issue = $templateMgr->get_template_vars('issue');
-				$galley = $templateMgr->get_template_vars('galley'); /* @var $galley ArticleGalley */
-				$article = $templateMgr->get_template_vars('article');
+				$issue = $templateMgr->getTemplateVars('issue');
+				$galley = $templateMgr->getTemplateVars('galley'); /* @var $galley ArticleGalley */
+				$article = $templateMgr->getTemplateVars('article');
 				if ($galley) {
 					if ($galley->isHTMLGalley() || $galley->getRemoteURL()) {
 						$pubObject = $galley;

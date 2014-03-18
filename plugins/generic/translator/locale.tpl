@@ -9,7 +9,7 @@
  *
  *}
 {strip}
-{translate|assign:"pageTitleTranslated" key="plugins.generic.translator.locale" locale=$locale}
+{translate assign="pageTitleTranslated" key="plugins.generic.translator.locale" locale=$locale}
 {include file="common/header.tpl"}
 {/strip}
 
@@ -51,7 +51,7 @@
 			{if $fileExists}
 				<a href="{url op="editLocaleFile" path=$locale|to_array:$filenameEscaped}" class="action">{translate key="common.edit"}</a>
 			{else}
-				{url|assign:"redirectUrl" op="editLocaleFile" path=$locale|to_array:$filenameEscaped}
+				{url assign="redirectUrl" op="editLocaleFile" path=$locale|to_array:$filenameEscaped}
 				<a href="{url op="createFile" path=$locale|to_array:$filenameEscaped redirectUrl=$redirectUrl}" class="action" onclick='return confirm("{translate|escape:"javascript" key="plugins.generic.translator.file.confirmCreate" filename=$filename}")'>{translate key="common.create"}</a>
 			{/if}
 		</td>
@@ -113,7 +113,7 @@
 			{if $fileExists}
 				<a href="{url op="editMiscFile" path=$locale|to_array:$filenameEscaped}" class="action">{translate key="common.edit"}</a>
 			{else}
-				{url|assign:"redirectUrl" op="editMiscFile" path=$locale|to_array:$filenameEscaped}
+				{url assign="redirectUrl" op="editMiscFile" path=$locale|to_array:$filenameEscaped}
 				<a href="{url op="createFile" path=$locale|to_array:$filenameEscaped redirectUrl=$redirectUrl}" class="action" onclick='return confirm("{translate|escape:"javascript" key="plugins.generic.translator.file.confirmCreate" filename=$filename}")'>{translate key="common.create"}</a>
 			{/if}
 		</td>

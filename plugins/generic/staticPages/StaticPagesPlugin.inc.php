@@ -95,7 +95,7 @@ class StaticPagesPlugin extends GenericPlugin {
 		$request = $this->getRequest();
 
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 		$templateMgr->assign('pagesPath', $request->url(null, 'pages', 'view', 'REPLACEME'));
 
 		switch ($verb) {

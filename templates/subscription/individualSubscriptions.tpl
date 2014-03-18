@@ -91,8 +91,8 @@
 	<tr>
 		<td>
 			{assign var=emailString value=$subscription->getUserFullName()|concat:" <":$subscription->getUserEmail():">"}
-			{url|assign:"redirectUrl" op="subscriptions" path="individual" escape=false}
-			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$redirectUrl}
+			{url assign="redirectUrl" op="subscriptions" path="individual" escape=false}
+			{url assign="url" page="user" op="email" to=$emailString|to_array redirectUrl=$redirectUrl}
 			{$subscription->getUserFullName()|escape}&nbsp;{icon name="mail" url=$url}
 		</td>
 		<td>{$subscription->getSubscriptionTypeName()|escape}</td>

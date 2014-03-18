@@ -12,7 +12,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-{url|assign:editUrl page="management" op="settings" path="journal" anchor="masthead"}
+{url assign=editUrl page="management" op="settings" path="journal" anchor="masthead"}
 {include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 {if $currentJournal->getLocalizedSetting('masthead') != ''}

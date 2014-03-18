@@ -59,7 +59,7 @@ class ReferralPlugin extends GenericPlugin {
 		switch ($verb) {
 			case 'settings':
 				$templateMgr = TemplateManager::getManager();
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 				$journal = $request->getJournal();
 
 				$this->import('ReferralPluginSettingsForm');
@@ -154,7 +154,7 @@ class ReferralPlugin extends GenericPlugin {
 		switch ($params['smarty_include_tpl_file']) {
 			case 'article/comments.tpl':
 				$referralDao = DAORegistry::getDAO('ReferralDAO');
-				$article = $templateMgr->get_template_vars('article');
+				$article = $templateMgr->getTemplateVars('article');
 				$referrals =& $referralDao->getPublishedReferralsForArticle($article->getId());
 
 				$templateMgr->assign('referrals', $referrals);
@@ -195,7 +195,7 @@ class ReferralPlugin extends GenericPlugin {
 	 * incoming referrals.
 	 */
 	function logArticleRequest(&$templateMgr) {
-		$article = $templateMgr->get_template_vars('article');
+		$article = $templateMgr->getTemplateVars('article');
 		if (!$article) return false;
 		$articleId = $article->getId();
 
@@ -211,7 +211,7 @@ class ReferralPlugin extends GenericPlugin {
 			$referralDao->incrementReferralCount($article->getId(), $referrer);
 		} else {
 			// It's a new referral. Log it unless it's excluded.
-			$journal = $templateMgr->get_template_vars('currentJournal');
+			$journal = $templateMgr->getTemplateVars('currentJournal');
 			$exclusions = $this->getSetting($journal->getId(), 'exclusions');
 			foreach (array_map('trim', explode("\n", "$exclusions")) as $exclusion) {
 				if (empty($exclusion)) continue;

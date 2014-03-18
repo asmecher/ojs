@@ -95,7 +95,7 @@ class PhpMyVisitesPlugin extends GenericPlugin {
 			$output =& $params[2];
 			$request = $this->getRequest();
 			$templateMgr = TemplateManager::getManager($request);
-			$currentJournal = $templateMgr->get_template_vars('currentJournal');
+			$currentJournal = $templateMgr->getTemplateVars('currentJournal');
 
 			if (!empty($currentJournal)) {
 				$journal = $request->getJournal();
@@ -122,7 +122,7 @@ class PhpMyVisitesPlugin extends GenericPlugin {
 		switch ($verb) {
 			case 'settings':
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 				$journal = $request->getJournal();
 
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON,  LOCALE_COMPONENT_PKP_MANAGER);

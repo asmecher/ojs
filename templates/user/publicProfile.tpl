@@ -10,7 +10,7 @@
  *}
 {strip}
 {assign var="pageTitle" value="user.profile.publicProfile"}
-{url|assign:"url" op="profile"}{include file="common/header.tpl"}
+{url assign="url" op="profile"}{include file="common/header.tpl"}
 {/strip}
 
 <div id="profilePicContent" style="float: right;">
@@ -25,7 +25,7 @@
 <h4>
 	{$user->getFullName()|escape}
 	{if $isUserLoggedIn}
-		{url|assign:"mailUrl" page="user" op="email" to=$user->getEmail()|to_array}
+		{url assign="mailUrl" page="user" op="email" to=$user->getEmail()|to_array}
 		{icon name="mail" url=$mailUrl}
 	{/if}
 </h4>

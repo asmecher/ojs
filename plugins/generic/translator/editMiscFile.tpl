@@ -9,7 +9,7 @@
  *
  *}
 {strip}
-{translate|escape|assign:"pageTitleTranslated" key="plugins.generic.translator.file.edit" filename=$filename}
+{translate|escape assign="pageTitleTranslated" key="plugins.generic.translator.file.edit" filename=$filename}
 {include file="common/header.tpl"}
 {/strip}
 

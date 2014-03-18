@@ -61,8 +61,8 @@ function moveAuthor(dir, authorIndex) {
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value" colspan="2">
-			{if $bookId}{url|assign:"bookForReviewFormUrl" op="editBookForReview" path=$bookId returnPage=$returnPage escape=false}
-			{else}{url|assign:"bookForReviewFormUrl" op="createBookForReview" path=$bookId returnPage=$returnPage escape=false}
+			{if $bookId}{url assign="bookForReviewFormUrl" op="editBookForReview" path=$bookId returnPage=$returnPage escape=false}
+			{else}{url assign="bookForReviewFormUrl" op="createBookForReview" path=$bookId returnPage=$returnPage escape=false}
 			{/if}
 			{form_language_chooser form="bookForReviewForm" url=$bookForReviewFormUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
@@ -277,7 +277,7 @@ function moveAuthor(dir, authorIndex) {
 			{assign var=userFullName value=$bookReviewer->getFullName()}
 			{assign var=userEmail value=$bookReviewer->getEmail()}
 			{assign var=emailString value="$userFullName <$userEmail>"}
-			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
+			{url assign="url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
 			{$userFullName|escape}&nbsp;{icon name="mail" url=$url}
 		{/if}
 		{if $status == $smarty.const.BFR_STATUS_AVAILABLE}

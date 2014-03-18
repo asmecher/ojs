@@ -19,8 +19,8 @@
 {/if}
 
 {if !$isAuthor}
-	{url|assign:"registerUrl" page="user" op="register"}
-	{url|assign:"loginAuthorUrl" page="author"}
+	{url assign="registerUrl" page="user" op="register"}
+	{url assign="loginAuthorUrl" page="author"}
 	{translate key="plugins.generic.booksForReview.public.booksForReviewInstructions" registerUrl=$registerUrl loginAuthorUrl=$loginAuthorUrl}
 	<br />
 {/if}

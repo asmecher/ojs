@@ -33,7 +33,7 @@
 			{assign var=editorFullName value=$bookForReview->getEditorFullName()}
 			{assign var=editorEmail value=$bookForReview->getEditorEmail()}
 			{assign var=emailString value="$editorFullName <$editorEmail>"}
-			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
+			{url assign="url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
 			<td>{$editorFullName|escape}&nbsp;{icon name="mail" url=$url}</td>
 		{else}
 			<td>&nbsp;</td>

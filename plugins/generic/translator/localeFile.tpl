@@ -9,7 +9,7 @@
  *
  *}
 {strip}
-{translate|assign:"pageTitleTranslated" key="plugins.generic.translator.locale" locale=$locale}
+{translate assign="pageTitleTranslated" key="plugins.generic.translator.locale" locale=$locale}
 {include file="common/header.tpl"}
 {/strip}
 

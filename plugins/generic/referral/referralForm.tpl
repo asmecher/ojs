@@ -39,8 +39,8 @@
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
-			{if $referralId}{url|assign:"referralUrl" op="editReferral" path=$referralId escape=false}
-			{else}{url|assign:"referralUrl" op="createReferral"}
+			{if $referralId}{url assign="referralUrl" op="editReferral" path=$referralId escape=false}
+			{else}{url assign="referralUrl" op="createReferral"}
 			{/if}
 			{form_language_chooser form="referral" url=$referralUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>

@@ -172,7 +172,7 @@ class PiwikPlugin extends GenericPlugin {
 	function manage($verb, $args, &$message, &$messageParams, &$pluginModalContent = null) {
 		$request = $this->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 
 		$journal = $request->getJournal();
 		$returner = true;

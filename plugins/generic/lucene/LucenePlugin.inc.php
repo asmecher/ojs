@@ -242,7 +242,7 @@ class LucenePlugin extends GenericPlugin {
 			case 'settings':
 				// Prepare the template manager.
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 
 				// Instantiate an embedded server instance.
 				$this->import('classes.EmbeddedServer');

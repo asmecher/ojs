@@ -65,8 +65,8 @@ class HtmlArticleGalleyPlugin extends ViewableFilePlugin {
 
 		if ($template == 'article/article.tpl') {
 
-			$galley = $templateMgr->get_template_vars('galley'); // set in ArticleHandler
-			$fileId = $templateMgr->get_template_vars('fileId');
+			$galley = $templateMgr->getTemplateVars('galley'); // set in ArticleHandler
+			$fileId = $templateMgr->getTemplateVars('fileId');
 
 			if ($galley && $galley->getGalleyType() == $this->getName()) {
 				if (!$fileId) {
@@ -107,7 +107,7 @@ class HtmlArticleGalleyPlugin extends ViewableFilePlugin {
 		if (!$journal) return '';
 		$fileId = (isset($params['fileId']) && is_numeric($params['fileId'])) ? (int) $fileId : null;
 
-		$galley = $templateMgr->get_template_vars('galley'); // set in ArticleHandler
+		$galley = $templateMgr->getTemplateVars('galley'); // set in ArticleHandler
 		$templateMgr->assign('htmlGalleyContents', $this->_getHTMLContents($request, $galley, $fileId));
 		return parent::displayArticleGalley($templateMgr, $request, $params);
 	}

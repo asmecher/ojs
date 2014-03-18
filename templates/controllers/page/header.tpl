@@ -9,8 +9,8 @@
  *}
 {assign var="logoImage" value="templates/images/structure/ojs_logo.png"}
 {if $currentJournal && $multipleContexts}
-	{url|assign:"homeUrl" journal="index" router=$smarty.const.ROUTE_PAGE}
+	{url assign="homeUrl" journal="index" router=$smarty.const.ROUTE_PAGE}
 {else}
-	{url|assign:"homeUrl" page="index" router=$smarty.const.ROUTE_PAGE}
+	{url assign="homeUrl" page="index" router=$smarty.const.ROUTE_PAGE}
 {/if}
 {include file="core:controllers/page/header.tpl"}

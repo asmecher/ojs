@@ -30,7 +30,7 @@
 	<div id="authorGuidelines">
 		<h3>{translate key="about.authorGuidelines"}</h3>
 
-		{url|assign:editUrl page="management" op="settings" path="journal" anchor="guides"}
+		{url assign=editUrl page="management" op="settings" path="journal" anchor="guides"}
 		{include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 		<p>{$currentJournal->getLocalizedSetting('authorGuidelines')|nl2br}</p>
@@ -42,7 +42,7 @@
 	<div id="submissionPreparationChecklist">
 		<h3>{translate key="about.submissionPreparationChecklist"}</h3>
 
-		{url|assign:editUrl page="management" op="settings" path="publication" anchor="submissionStage"}
+		{url assign=editUrl page="management" op="settings" path="publication" anchor="submissionStage"}
 		{include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 		<p>{translate key="about.submissionPreparationChecklist.description"}</p>
@@ -59,7 +59,7 @@
 	<div id="copyrightNotice">
 		<h3>{translate key="about.copyrightNotice"}</h3>
 
-		{url|assign:editUrl page="management" op="settings" path="journal" anchor="policies"}
+		{url assign=editUrl page="management" op="settings" path="journal" anchor="policies"}
 		{include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 		<p>{$currentJournal->getLocalizedSetting('copyrightNotice')|nl2br}</p>
@@ -71,7 +71,7 @@
 	<div id="privacyStatement">
 		<h3>{translate key="about.privacyStatement"}</h3>
 
-		{url|assign:editUrl page="management" op="settings" path="journal" anchor="policies"}
+		{url assign=editUrl page="management" op="settings" path="journal" anchor="policies"}
 		{include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 		<p>{$currentJournal->getLocalizedSetting('privacyStatement')|nl2br}</p>

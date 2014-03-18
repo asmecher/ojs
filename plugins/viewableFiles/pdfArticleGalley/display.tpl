@@ -11,9 +11,9 @@
 	<script src="{$pluginJSPath}/inlinePdf.js"></script>
 	<script src="{$baseUrl}/lib/pkp/lib/pdfobject/pdfobject.js"></script>
 
-	{url|assign:"pdfUrl" op="viewFile" path=$articleId|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
+	{url assign="pdfUrl" op="viewFile" path=$articleId|to_array:$galley->getBestGalleyId($currentJournal) escape=false}
 
-	{translate|assign:"noPluginText" key='article.pdf.pluginMissing'}
+	{translate assign="noPluginText" key='article.pdf.pluginMissing'}
 	<script type="text/javascript"><!--{literal}
 		$(document).ready(function(){
 			if ($.browser.msie || $.browser.webkit || $.browser.mozilla) { // PDFObject does not correctly work with safari's built-in PDF viewer

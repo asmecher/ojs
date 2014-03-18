@@ -100,7 +100,7 @@ class CustomBlockManagerPlugin extends GenericPlugin {
 				$journal = $request->getJournal();
 
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 
 				$this->import('SettingsForm');
 				$form = new SettingsForm($this, $journal->getId());

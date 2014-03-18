@@ -72,8 +72,8 @@ class TinyMCEPlugin extends GenericPlugin {
 		$page = $request->getRequestedPage();
 		$op = $request->getRequestedOp();
 
-		$baseUrl = $templateManager->get_template_vars('baseUrl');
-		$additionalHeadData = $templateManager->get_template_vars('additionalHeadData');
+		$baseUrl = $templateManager->getTemplateVars('baseUrl');
+		$additionalHeadData = $templateManager->getTemplateVars('additionalHeadData');
 		$allLocales = AppLocale::getAllLocales();
 		$localeList = array();
 		foreach ($allLocales as $key => $locale) {

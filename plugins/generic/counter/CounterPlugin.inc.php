@@ -110,8 +110,8 @@ class CounterPlugin extends GenericPlugin {
 			case 'article/interstitial.tpl':
 			case 'article/pdfInterstitial.tpl':
 				// Log the request as an article view.
-				$article = $templateManager->get_template_vars('article');
-				$galley = $templateManager->get_template_vars('galley');
+				$article = $templateManager->getTemplateVars('article');
+				$galley = $templateManager->getTemplateVars('galley');
 
 				// If no galley exists, this is an abstract
 				// view -- don't include it. (FIXME?)

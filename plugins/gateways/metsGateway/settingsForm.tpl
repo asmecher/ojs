@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-{url|assign:"directoryUrl" page="gateway" op="plugin" path="METSGatewayPlugin"}
+{url assign="directoryUrl" page="gateway" op="plugin" path="METSGatewayPlugin"}
 <div id="metsGatewaySettings">
 <h3>{translate key="plugins.gateways.metsGateway.settings"}</h3>
 

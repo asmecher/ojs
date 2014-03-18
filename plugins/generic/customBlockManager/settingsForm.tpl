@@ -11,8 +11,8 @@
 {assign var="pageTitle" value="plugins.generic.customBlockManager.displayName"}
 {include file="common/header.tpl"}
 
-{url|assign:"sysPluginsUrl" page="manager" op="plugins"}
-{url|assign:"setup56" page="manager" op="setup" path="5"}
+{url assign="sysPluginsUrl" page="manager" op="plugins"}
+{url assign="setup56" page="manager" op="setup" path="5"}
 {translate key="plugin.generic.customBlockManager.introduction" systemPluginsUrl=$sysPluginsUrl setupStep56=$setup56}
 
 <br />

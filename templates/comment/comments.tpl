@@ -38,14 +38,14 @@
 
 	{if $parent}
 		{assign var=parentId value=$parent->getId()}
-		{url|assign:"url" page="comment" op="view" path=$articleId|to_array:$parentId}
+		{url assign="url" page="comment" op="view" path=$articleId|to_array:$parentId}
 		<em>{translate key="comments.inResponseTo" url=$url title=$parent->getTitle()|escape|default:"&nbsp;"}</em><br />
 	{/if}
 
 	{assign var="hasPriorAction" value=0}{* Track whether to add "|" between actions *}
 
 	{if $comment->getPosterEmail()}
-		{translate|assign:"emailReply" key="comments.emailReply"}
+		{translate assign="emailReply" key="comments.emailReply"}
 		{mailto text=$emailReply encode="javascript" address=$comment->getPosterEmail() subject=$comment->getTitle()|default:"&nbsp;" extra='class="action"'}
 		{assign var="hasPriorAction" value=1}
 	{/if}
@@ -94,7 +94,7 @@
 {assign var="hasPriorAction" value=0}
 
 {if $child->getPosterEmail()}
-	{translate|assign:"emailReply" key="comments.emailReply"}
+	{translate assign="emailReply" key="comments.emailReply"}
 	{mailto text=$emailReply encode="javascript" address=$child->getPosterEmail()|escape subject=$child->getTitle()|escape|default:"&nbsp;" extra='class="action"'}
 	{assign var="hasPriorAction" value=1}
 {/if}
@@ -111,8 +111,8 @@
 {/if}
 <br />
 
-{translate|assign:"readMore" key="comments.readMore"}
-{url|assign:"moreUrl" op="view" path=$articleId|to_array:$galleyId:$childId}
+{translate assign="readMore" key="comments.readMore"}
+{url assign="moreUrl" op="view" path=$articleId|to_array:$galleyId:$childId}
 {assign var=moreLink value="<a href=\"$moreUrl\">$readMore</a>"}
 <p>{$child->getBody()|strip_tags|nl2br|truncate:300:"... $moreLink"}</p>
 

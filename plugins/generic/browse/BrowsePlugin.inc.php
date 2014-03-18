@@ -74,7 +74,7 @@ class BrowsePlugin extends GenericPlugin {
 		$smarty = $params[1];
 		$output =& $params[2];
 
-		$journal = $smarty->get_template_vars('currentJournal');
+		$journal = $smarty->getTemplateVars('currentJournal');
 
 		$templateMgr = TemplateManager::getManager($this->getRequest());
 		if ($this->getSetting($journal->getId(), 'enableBrowseBySections')) {
@@ -133,7 +133,7 @@ class BrowsePlugin extends GenericPlugin {
 		switch ($verb) {
 			case 'settings':
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerFunction('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 				$journal = $request->getJournal();
 
 				$this->import('classes.form.BrowseSettingsForm');

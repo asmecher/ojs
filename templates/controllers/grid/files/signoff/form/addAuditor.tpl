@@ -36,10 +36,10 @@
 
 		<!-- Available files listbuilder -->
 		{if $fileStage == $smarty.const.SUBMISSION_FILE_COPYEDIT}
-			{url|assign:filesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.files.CopyeditingFilesListbuilderHandler" op="fetch" submissionId=$submissionId escape=false}
+			{url assign=filesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.files.CopyeditingFilesListbuilderHandler" op="fetch" submissionId=$submissionId escape=false}
 			{assign var="filesListbuilderId" value="copyeditingFilesListbuilder"}
 		{else $fileStage == $smarty.const.SUBMISSION_FILE_GALLEY}
-			{url|assign:filesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.files.GalleyFilesListbuilderHandler" op="fetch" submissionId=$submissionId articleGalleyId=$galleyId escape=false}
+			{url assign=filesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.files.GalleyFilesListbuilderHandler" op="fetch" submissionId=$submissionId articleGalleyId=$galleyId escape=false}
 			{assign var="filesListbuilderId" value="galleyFilesListbuilder"}
 		{/if}
 

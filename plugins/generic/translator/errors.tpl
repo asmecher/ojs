@@ -66,9 +66,9 @@
 			{elseif $type == 'LOCALE_ERROR_MISSING_FILE'}
 				{assign var=filenameEscaped value=$error.filename|escape:"url"|escape:"url"}
 				{if in_array($error.filename, $localeFiles)}
-					{url|assign:"redirectUrl" op="editLocaleFile" path=$locale|to_array:$filenameEscaped}
+					{url assign="redirectUrl" op="editLocaleFile" path=$locale|to_array:$filenameEscaped}
 				{else}
-					{url|assign:"redirectUrl" op="editMiscFile" path=$locale|to_array:$filenameEscaped}
+					{url assign="redirectUrl" op="editMiscFile" path=$locale|to_array:$filenameEscaped}
 				{/if}
 				<a href="{url op="createFile" path=$locale|to_array:$filenameEscaped redirectUrl=$redirectUrl}" onclick='return confirm("{translate|escape:"quotes" key="plugins.generic.translator.saveBeforeContinuing"}")' class="action">{translate key="common.create"}</a>
 			{else}{* $type == LOCALE_ERROR_MISSING_KEY *}

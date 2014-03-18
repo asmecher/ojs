@@ -61,7 +61,7 @@
 </script>
 {/literal}
 
-{if !$pageTitleTranslated}{translate|assign:"pageTitleTranslated" key=$pageTitle}{/if}
+{if !isset($pageTitleTranslated)}{translate assign="pageTitleTranslated" key=$pageTitle}{/if}
 
 <div id="container">
 

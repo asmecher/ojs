@@ -48,7 +48,7 @@
 	<td>{$user->getFullName(true)|escape}</td>
 	<td class="nowrap">
 		{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
-		{url|assign:"url" page="user" op="email" to=$emailString|to_array}
+		{url assign="url" page="user" op="email" to=$emailString|to_array}
 		{$user->getEmail()|truncate:20:"..."|escape}&nbsp;{icon name="mail" url=$url}
 	</td>
 	<td align="right" class="nowrap">
@@ -71,7 +71,7 @@
 </table>
 
 {if $isJournalManager}
-	{url|assign:"selectBookForReviewAuthorUrl" op="selectBookForReviewAuthor"}
+	{url assign="selectBookForReviewAuthorUrl" op="selectBookForReviewAuthor"}
 	<a href="{url page="manager" op="createUser" source=$selectBookForReviewAuthorUrl}" class="action">{translate key="plugins.generic.booksForReview.editor.createNewUser"}</a>
 {/if}
 

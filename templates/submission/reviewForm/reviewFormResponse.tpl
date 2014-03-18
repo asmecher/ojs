@@ -12,7 +12,7 @@
 {if $editorPreview}
 	{include file="submission/comment/header.tpl"}
 {else}
-	{translate|assign:"pageTitleTranslated" key="submission.reviewFormResponse"}
+	{translate assign="pageTitleTranslated" key="submission.reviewFormResponse"}
 	{assign var="pageCrumbTitle" value="submission.reviewFormResponse"}
 	{include file="common/header.tpl"}
 	{include file="common/formErrors.tpl"}

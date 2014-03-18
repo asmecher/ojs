@@ -51,7 +51,7 @@ class PdfArticleGalleyPlugin extends ViewableFilePlugin {
 			// unfortunate, but occasionally browsers upload PDF files as application/octet-stream.
 			// Even setting the file type in the display template will not cause a correct render in this case.
 			// So, update the file type if this is the case.
-			$galley = $templateMgr->get_template_vars('galley'); // set in ArticleHandler
+			$galley = $templateMgr->getTemplateVars('galley'); // set in ArticleHandler
 			$file = $galley->getFirstGalleyFile('pdf');
 			if (!preg_match('/\.pdf$/', $file->getFileType())) {
 				$file->setFileType('application/pdf');

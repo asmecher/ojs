@@ -72,7 +72,7 @@ class ViewableFilePlugin extends GenericPlugin {
 		$templateMgr =& $args[1];
 		$output =& $args[2];
 
-		$galley = $templateMgr->get_template_vars('galley'); // set in ArticleHandler
+		$galley = $templateMgr->getTemplateVars('galley'); // set in ArticleHandler
 		if ($galley && $galley->getGalleyType() == $this->getName()) {
 			$output .= $this->displayArticleGalley($templateMgr, $this->getRequest(), $params);
 		}

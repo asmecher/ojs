@@ -76,7 +76,7 @@
 				{assign var=userFullName value=$bookForReview->getUserFullName()}
 				{assign var=userEmail value=$bookForReview->getUserEmail()}
 				{assign var=emailString value="$userFullName <$userEmail>"}
-				{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
+				{url assign="url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
 				<td>{$userFullName|escape}&nbsp;{icon name="mail" url=$url}
 			{else}
 				<td>

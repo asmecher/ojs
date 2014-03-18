@@ -93,7 +93,7 @@
 <option value="">{translate key="rt.admin.settings.disableRelatedItems"}</option>
 {html_options options=$versionOptions selected=$version}
 </select><br/>
-{url|assign:"relatedItemsLink" op="versions"}
+{url assign="relatedItemsLink" op="versions"}
 {translate key="rt.admin.settings.relatedItemsLink" relatedItemsLink=$relatedItemsLink}<br/>
 </div>
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="rtadmin" escape=false}'" /></p>

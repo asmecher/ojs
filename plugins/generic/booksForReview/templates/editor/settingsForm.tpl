@@ -123,7 +123,7 @@
 {if count($formLocales) > 1}
 	<tr>
 		<td width="100%" class="value">
-			{url|assign:"settingsUrl" op="booksForReviewSettings"}
+			{url assign="settingsUrl" op="booksForReviewSettings"}
 			{form_language_chooser form="booksForReviewSettingsForm" url=$settingsUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
 		</td>

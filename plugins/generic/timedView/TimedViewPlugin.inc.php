@@ -112,8 +112,8 @@ class TimedViewPlugin extends GenericPlugin {
 
 		switch ($template) {
 			case 'article/article.tpl':
-				$article = $templateManager->get_template_vars('article');
-				$galley = $templateManager->get_template_vars('galley');
+				$article = $templateManager->getTemplateVars('article');
+				$galley = $templateManager->getTemplateVars('galley');
 
 				// If no galley exists, this is an abstract view
 				if (!$galley) {

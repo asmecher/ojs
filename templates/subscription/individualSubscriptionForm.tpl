@@ -12,10 +12,10 @@
 {assign var="pageCrumbTitle" value="$subscriptionTitle"}
 {if $subscriptionId}
 	{assign var="pageTitle" value="manager.subscriptions.edit"}
-	{url|assign:"currentUrl" op="editSubscription" path="individual"|to_array:$subscriptionId userId=$userId}
+	{url assign="currentUrl" op="editSubscription" path="individual"|to_array:$subscriptionId userId=$userId}
 {else}
 	{assign var="pageTitle" value="manager.subscriptions.create"}
-	{url|assign:"currentUrl" op="createSubscription" path="individual" userId=$userId}
+	{url assign="currentUrl" op="createSubscription" path="individual" userId=$userId}
 {/if}
 {assign var="pageId" value="manager.subscriptions.individualSubscriptionForm"}
 {include file="common/header.tpl"}
@@ -41,9 +41,9 @@
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
 			{if $subscriptionId}
-				{url|assign:"formUrl" op="editSubscription" path="individual"|to_array:$subscriptionId userId=$userId escape=false}
+				{url assign="formUrl" op="editSubscription" path="individual"|to_array:$subscriptionId userId=$userId escape=false}
 			{else}
-				{url|assign:"formUrl" op="createSubscription" path="individual" escape=false}
+				{url assign="formUrl" op="createSubscription" path="individual" escape=false}
 			{/if}
 			{form_language_chooser form="subscriptionForm" url=$formUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
@@ -71,7 +71,7 @@
 	<td class="label">{fieldLabel name="userId" required="true" key="manager.subscriptions.form.userId"}</td>
 	<td class="value">
 		{assign var=emailString value="$userFullName <$userEmail>"}
-		{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
+		{url assign="url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
 		{$username|escape}&nbsp;&nbsp;{icon name="mail" url=$url}&nbsp;&nbsp;<a href="{if $subscriptionId}{url op="selectSubscriber" path="individual" subscriptionId=$subscriptionId}{else}{url op="selectSubscriber" path="individual"}{/if}" class="action">{translate key="common.select"}</a>
 		<input type="hidden" name="userId" id="userId" value="{$userId|escape}"/>
 	</td>

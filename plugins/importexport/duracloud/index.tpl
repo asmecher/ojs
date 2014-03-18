@@ -17,7 +17,7 @@
 <h3>{translate key="plugins.importexport.duracloud.configuration"}</h3>
 
 {if $isConfigured}{* The plugin is configured; allow choice of space. *}
-	{plugin_url|assign:duracloudLogoutUrl path="signOut"}
+	{plugin_url assign=duracloudLogoutUrl path="signOut"}
 	<p>{translate key="plugins.importexport.duracloud.configuration.configured.description" url=$duracloudUrl escapedUrl=$duracloudUrl|escape username=$duracloudUsername logoutUrl=$duracloudLogoutUrl}</p>
 
 	<script>

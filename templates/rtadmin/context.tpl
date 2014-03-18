@@ -57,12 +57,12 @@
 				</tr>
 				<tr>
 					<td><input type="checkbox" name="defineTerms" id="defineTerms" {if $defineTerms}checked="checked"{/if} /></td>
-					{url|assign:"url" page="rtadmin" op="settings"}
+					{url assign="url" page="rtadmin" op="settings"}
 					<td><label for="defineTerms">{translate key="rt.admin.contexts.options.defineTerms" settingsUrl=$url}</label></td>
 				</tr>
 				<tr>
 					<td><input type="checkbox" name="citedBy" id="citedBy" {if $citedBy}checked="checked"{/if} /></td>
-					{url|assign:"url" page="rtadmin" op="settings"}
+					{url assign="url" page="rtadmin" op="settings"}
 					<td><label for="citedBy">{translate key="rt.admin.contexts.options.citedBy" settingsUrl=$url}</label></td>
 				</tr>
 			</table>

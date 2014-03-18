@@ -31,20 +31,20 @@
 <div class="pkp_structure_head_localNav">
 	{if $isUserLoggedIn}
 		<ul class="sf-menu">
-			{if array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_EDITOR, ROLE_ID_ASSISTANT, ROLE_ID_REVIEWER, ROLE_ID_AUTHOR), $userRoles)}
+			{if array_intersect(array($smarty.const.ROLE_ID_MANAGER, $smarty.const.ROLE_ID_EDITOR, $smarty.const.ROLE_ID_ASSISTANT, $smarty.const.ROLE_ID_REVIEWER, $smarty.const.ROLE_ID_AUTHOR), $userRoles)}
 				<li><a href="{url router=$smarty.const.ROUTE_PAGE page="dashboard"}">{translate key="navigation.dashboard"}</a></li>
 			{/if}
 			{if $currentJournal}
 				<li><a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">{translate key="navigation.current"}</a></li>
 				<li><a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">{translate key="navigation.archives"}</a>
-				{if array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_EDITOR), $userRoles)}
+				{if array_intersect(array($smarty.const.ROLE_ID_MANAGER, $smarty.const.ROLE_ID_EDITOR), $userRoles)}
 					<li>
 						<a href="#">{translate key="navigation.management"}</a>
 						<ul>
 							<li>
 								<a href="{url router=$smarty.const.ROUTE_PAGE page="manageIssues"}">{translate key="editor.navigation.issues"}</a>
 							</li>
-							{if array_intersect(array(ROLE_ID_MANAGER), $userRoles)}
+							{if array_intersect(array($smarty.const.ROLE_ID_MANAGER), $userRoles)}
 							<li>
 								<a href="{url router=$smarty.const.ROUTE_PAGE page="management" op="settings" path="index"}">{translate key="navigation.settings"}</a>
 								<ul>

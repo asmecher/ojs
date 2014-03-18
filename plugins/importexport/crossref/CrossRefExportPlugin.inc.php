@@ -128,7 +128,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
 				$rangeInfo = Handler::getRangeInfo('articles');
 				import('lib.pkp.classes.core.VirtualArrayIterator');
 				$iterator = VirtualArrayIterator::factory(ArticleSearch::formatResults($articleIds), $rangeInfo);
-				$templateMgr->assign_by_ref('articles', $iterator);
+				$templateMgr->assignByRef('articles', $iterator);
 				$templateMgr->display($this->getTemplatePath() . 'articles.tpl');
 				break;
 			default:

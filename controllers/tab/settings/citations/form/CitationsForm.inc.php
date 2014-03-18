@@ -59,7 +59,7 @@ class CitationsForm extends ContextSettingsForm {
 		foreach($metaCitationOutputFilterObjects as $metaCitationOutputFilterObject) {
 			$metaCitationOutputFilters[$metaCitationOutputFilterObject->getId()] = $metaCitationOutputFilterObject->getDisplayName();
 		}
-		$templateMgr->assign_by_ref('metaCitationOutputFilters', $metaCitationOutputFilters);
+		$templateMgr->assignByRef('metaCitationOutputFilters', $metaCitationOutputFilters);
 
 		return parent::fetch($request);
 	}

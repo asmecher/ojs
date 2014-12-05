@@ -2,16 +2,16 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * @file plugins/generic/objectsForReview/locale/en_US/locale.xml
+  * @file plugins/generic/objectsForReview/locale/da_DK/locale.xml
   *
   * Copyright (c) 2013-2014 Simon Fraser University Library
   * Copyright (c) 2003-2014 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Objects for review plugin localization strings for the en_US (U.S. English) locale.
+  * Objects for review plugin localization strings
   -->
  
-<locale name="en_US" full_name="U.S. English">
+<locale name="da_DK" full_name="Danish">
 
 	<!-- Objects For Review Plug-In -->
 	<message key="plugins.generic.objectsForReview.displayName">Objects For Review</message>
@@ -229,7 +229,6 @@
 	<message key="plugins.generic.objectsForReview.notification.ofrRequested">Object for review requested. Awaiting confirmation from the Editor.</message>
 	<message key="plugins.generic.objectsForReview.notification.ofrUpdated">Object for review updated.</message>
 	<message key="plugins.generic.objectsForReview.notification.ofrDeleted">Object for review and their assignments deleted.</message>
-	<message key="plugins.generic.objectsForReview.notification.ofrAauthorAssigned">Author assigned to object for review.</message>
 	<message key="plugins.generic.objectsForReview.notification.ofrAuthorDenied">Author request denied. Object for review reset to initial state.</message>
 	<message key="plugins.generic.objectsForReview.notification.ofrAuthorMailed">Object for review recorded as mailed to author.</message>
 	<message key="plugins.generic.objectsForReview.notification.ofrAuthorRemoved">Author removed. Object for review reset to initial state.</message>
@@ -281,7 +280,6 @@
 	<message key="plugins.generic.objectsForReview.object.audioRecording.person.performer">Performer</message>
 	<message key="plugins.generic.objectsForReview.object.audioRecording.person.composer">Composer</message>
 	<message key="plugins.generic.objectsForReview.object.audioRecording.person.contributor">Contributor</message>
-	<message key="plugins.generic.objectsForReview.object.audioRecording.person.wordsByr">Words By</message>
 	<message key="plugins.generic.objectsForReview.object.audioRecording.format">Format</message>
 	<message key="plugins.generic.objectsForReview.object.audioRecording.seriesTitle">Series Title</message>
 	<message key="plugins.generic.objectsForReview.object.audioRecording.volume">Volume</message>
@@ -490,7 +488,6 @@
 	<message key="plugins.generic.objectsForReview.object.letter">Letter</message>
 	<message key="plugins.generic.objectsForReview.object.letter.person.author">Author</message>
 	<message key="plugins.generic.objectsForReview.object.letter.person.contributor">Contributor</message>
-	<message key="plugins.generic.objectsForReview.object.letter.person.recepient">Recepient</message>
 	<message key="plugins.generic.objectsForReview.object.letter.type">Letter Type</message>
 	<!-- Magazine Article -->
 	<message key="plugins.generic.objectsForReview.object.magazineArticle">Magazine Article</message>
@@ -651,4 +648,7 @@
 	<message key="plugins.generic.objectsForReview.object.webPage.websiteType">Website Type</message>
 
 
+	<message key="plugins.generic.objectsForReview.notification.ofrAuthorAssigned">Author assigned to object for review.</message>
+	<message key="plugins.generic.objectsForReview.object.audioRecording.person.wordsBy">Words By</message>
+	<message key="plugins.generic.objectsForReview.object.letter.person.recipient">Modtager</message>
 </locale>

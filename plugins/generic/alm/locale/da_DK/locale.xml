@@ -2,7 +2,7 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * @file plugins/generic/alm/locale/en_US/locale.xml
+  * @file plugins/generic/alm/locale/da_DK/locale.xml
   *
   * Copyright (c) 2013-2014 Simon Fraser University Library
   * Copyright (c) 2003-2014 John Willinsky
@@ -11,7 +11,7 @@
   * ALM plugin localization strings
   -->
 
-<locale name="en_US" full_name="U.S. English">
+<locale name="da_DK" full_name="Danish">
 
 	<message key="plugins.generic.alm.displayName">ALM Plugin</message>
 	<message key="plugins.generic.alm.description">Plugin to display in Article Level Metrics. To use the ALM service, you need to have use DOIs. This requirement may be relaxed in the future.</message>
@@ -41,7 +41,6 @@
 
 	<message key="plugins.generic.alm.senderTask.warning.noDOIprefix">ALM plugin is enabled but a valid DOI prefix must be specified in the journal path {$path} Setup in order to send article information.</message>
 	<message key="plugins.generic.alm.senderTask.warning.noApiKey">ALM plugin is enabled but no API key defined for journal path {$path}.</message>
-	<message key="plugins.generics.alm.senderTask.warning.noJournal">ALM plugin is not enabled in any journal. No article information sent.</message>
 	<message key="plugins.generic.alm.senderTask.error.noServerResponse">Could not confirm that article information for journal path {$path} is sent. Server did not respond.</message>
 	<message key="plugins.generic.alm.senderTask.error.noDepositUrl">No deposit url defined.</message>
 	<message key="plugins.generic.alm.senderTask.error.returnError">The server returned a message: {$error}
@@ -50,4 +49,5 @@
 	</message>
 	<message key="plugins.generic.alm.senderTask.name">ALM article information sender</message>
 	
+	<message key="plugins.generic.alm.senderTask.warning.noJournal">ALM-plugin er ikke aktiveret. Der er ikke videresendt artikelinformation.</message>
 </locale>

@@ -8,8 +8,8 @@
  * Issue galley view for PDF files.
  *}
 {include file="issue/header.tpl"}
-{url|assign:"pdfUrl" op="viewFile" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
-{translate|assign:"noPluginText" key='article.pdf.pluginMissing'}
+{url assign="pdfUrl" op="viewFile" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
+{translate assign="noPluginText" key='article.pdf.pluginMissing'}
 <script><!--{literal}
 	$(document).ready(function(){
 		if ($.browser.webkit) { // PDFObject does not correctly work with safari's built-in PDF viewer

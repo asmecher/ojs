@@ -108,7 +108,7 @@ class AbntCitationPlugin extends CitationPlugin {
 		switch ($verb) {
 			case 'settings':
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 				$journal = $request->getJournal();
 
 				$this->import('AbntSettingsForm');

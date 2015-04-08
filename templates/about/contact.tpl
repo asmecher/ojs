@@ -12,7 +12,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-{url|assign:editUrl page="management" op="settings" path="journal" anchor="contact"}
+{url assign=editUrl page="management" op="settings" path="journal" anchor="contact"}
 {include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 {if !empty($contextSettings.mailingAddress)}

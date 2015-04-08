@@ -74,7 +74,7 @@ abstract class PubIdPlugin extends Plugin {
 	function manage($verb, $args, &$message, &$messageParams, &$pluginModalContent = null) {
 		$request = $this->getRequest();
 		$templateManager = TemplateManager::getManager($request);
-		$templateManager->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateManager->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 		if (!$this->getEnabled() && $verb != 'enable') return false;
 		switch ($verb) {
 			case 'enable':

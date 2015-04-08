@@ -31,7 +31,7 @@
 <div class="pkp_structure_head_localNav">
 	{if $isUserLoggedIn}
 		<ul class="sf-menu">
-			{if array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_ASSISTANT, ROLE_ID_REVIEWER, ROLE_ID_AUTHOR), $userRoles)}
+			{if array_intersect(array($smarty.const.ROLE_ID_MANAGER, $smarty.const.ROLE_ID_ASSISTANT, $smarty.const.ROLE_ID_REVIEWER, $smarty.const.ROLE_ID_AUTHOR), $userRoles)}
 				<li><a href="{url router=$smarty.const.ROUTE_PAGE page="dashboard"}">{translate key="navigation.dashboard"}</a></li>
 			{/if}
 			{if $currentJournal}
@@ -39,7 +39,7 @@
 					<li><a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">{translate key="navigation.current"}</a></li>
 					<li><a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">{translate key="navigation.archives"}</a>
 				{/if}
-				{if array_intersect(array(ROLE_ID_MANAGER), $userRoles)}
+				{if array_intersect(array($smarty.const.ROLE_ID_MANAGER), $userRoles)}
 					<li>
 						<a href="#">{translate key="navigation.management"}</a>
 						<ul>
@@ -66,7 +66,7 @@
 				{$publicMenu}
 			{/if}
 		</ul>
-	{elseif !$notInstalled}{* !$isUserLoggedIn *}
+	{elseif !isset($notInstalled)}{* !$isUserLoggedIn *}
 		<ul class="sf-menu">
 			{if $currentJournal}
 				{if $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}

@@ -66,7 +66,7 @@
 		</script>
 		<form id="exportSubmissionXmlForm" class="pkp_form" action="{plugin_url path="exportSubmissions"}" method="post">
 			{fbvFormArea id="submissionsXmlForm"}
-				{url|assign:submissionsListGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.submissions.exportableSubmissions.ExportableSubmissionsListGridHandler" op="fetchGrid"}
+				{url assign=submissionsListGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.submissions.exportableSubmissions.ExportableSubmissionsListGridHandler" op="fetchGrid"}
 				{load_url_in_div id="submissionsListGridContainer" url=$submissionsListGridUrl}
 				{fbvFormButtons hideCancel="true"}
 			{/fbvFormArea}
@@ -81,7 +81,7 @@
 		</script>
 		<form id="exportIssuesXmlForm" class="pkp_form" action="{plugin_url path="exportIssues"}" method="post">
 			{fbvFormArea id="issuesXmlForm"}
-				{url|assign:issuesListGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.issues.ExportableIssuesListGridHandler" op="fetchGrid"}
+				{url assign=issuesListGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.issues.ExportableIssuesListGridHandler" op="fetchGrid"}
 				{load_url_in_div id="issuesListGridContainer" url=$issuesListGridUrl}
 				{fbvFormButtons hideCancel="true"}
 			{/fbvFormArea}

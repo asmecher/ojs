@@ -147,14 +147,14 @@ class GoogleAnalyticsPlugin extends GenericPlugin {
 		$output =& $params[2];
 		$request = $this->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
-		$currentJournal = $templateMgr->get_template_vars('currentJournal');
+		$currentJournal = $templateMgr->getTemplateVars('currentJournal');
 
 		if (!empty($currentJournal)) {
 			$journal = $request->getJournal();
 			$journalId = $journal->getId();
 			$googleAnalyticsSiteId = $this->getSetting($journalId, 'googleAnalyticsSiteId');
 
-			$article = $templateMgr->get_template_vars('article');
+			$article = $templateMgr->getTemplateVars('article');
 			if ($request->getRequestedPage() == 'article' && $article) {
 				$authorAccounts = array();
 				foreach ($article->getAuthors() as $author) {
@@ -187,7 +187,7 @@ class GoogleAnalyticsPlugin extends GenericPlugin {
 			case 'settings':
 				$request = $this->getRequest();
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 				$journal = $request->getJournal();
 
 				$this->import('GoogleAnalyticsSettingsForm');

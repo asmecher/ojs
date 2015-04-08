@@ -9,7 +9,7 @@
  *}
 {strip}
 	{if $issue && !$issue->getPublished()}
-		{translate|assign:"previewText" key="editor.issues.preview"}
+		{translate assign="previewText" key="editor.issues.preview"}
 		{assign var="pageTitleTranslated" value="$issueHeadingTitle $previewText"}
 	{else}
 		{assign var="pageTitleTranslated" value=$issueHeadingTitle}

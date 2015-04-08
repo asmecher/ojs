@@ -26,14 +26,14 @@
 
 	<p class="pkp_help">{translate key="editor.submission.production.introduction"}</p>
 
-	{url|assign:productionReadyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.productionReady.ProductionReadyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$stageId escape=false}
+	{url assign=productionReadyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.productionReady.ProductionReadyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$stageId escape=false}
 	{load_url_in_div id="productionReadyFilesGridDiv" url=$productionReadyFilesGridUrl}
 
-	{if array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), $userRoles)}
+	{if array_intersect(array($smarty.const.ROLE_ID_MANAGER, $smarty.const.ROLE_ID_SUB_EDITOR), $userRoles)}
 		{fbvFormArea id="galleys"}
 			{fbvFormSection}
 				<!--  Galleys -->
-				{url|assign:galleyGridUrl router=$smarty.const.ROUTE_COMPONENT  component="grid.articleGalleys.ArticleGalleyGridHandler" op="fetchGrid" submissionId=$submission->getId()}
+				{url assign=galleyGridUrl router=$smarty.const.ROUTE_COMPONENT  component="grid.articleGalleys.ArticleGalleyGridHandler" op="fetchGrid" submissionId=$submission->getId()}
 				{load_url_in_div id="formatsGridContainer"|uniqid url=$galleyGridUrl}
 			{/fbvFormSection}
 		{/fbvFormArea}

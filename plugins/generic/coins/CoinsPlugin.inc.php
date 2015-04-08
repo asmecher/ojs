@@ -60,9 +60,9 @@ class CoinsPlugin extends GenericPlugin {
 			$request = $this->getRequest();
 			$templateMgr = TemplateManager::getManager($request);
 
-			$article = $templateMgr->get_template_vars('article');
-			$journal = $templateMgr->get_template_vars('currentJournal');
-			$issue = $templateMgr->get_template_vars('issue');
+			$article = $templateMgr->getTemplateVars('article');
+			$journal = $templateMgr->getTemplateVars('currentJournal');
+			$issue = $templateMgr->getTemplateVars('issue');
 
 			$authors = $article->getAuthors();
 			$firstAuthor = $authors[0];

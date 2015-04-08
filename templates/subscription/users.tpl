@@ -50,7 +50,7 @@
 	<td>{$user->getFullName(true)|escape}</td>
 	<td class="nowrap">
 		{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
-		{url|assign:"url" page="user" op="email" to=$emailString|to_array}
+		{url assign="url" page="user" op="email" to=$emailString|to_array}
 		{$user->getEmail()|truncate:20:"..."|escape}&nbsp;{icon name="mail" url=$url}
 	</td>
 	<td align="right" class="nowrap">
@@ -72,7 +72,7 @@
 {/if}
 </table>
 
-{url|assign:"selectSubscriberUrl" op="selectSubscriber" path=$redirect}
+{url assign="selectSubscriberUrl" op="selectSubscriber" path=$redirect}
 <a href="{url op="createUser" source=$selectSubscriberUrl}" class="action">{translate key="manager.people.createUser"}</a>
 	</div>
 {include file="common/footer.tpl"}

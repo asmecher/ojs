@@ -9,6 +9,6 @@
  *}
 {assign var="galleyId" value=$galley->getId()}
 
-{url|assign:galleyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.galley.GalleyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() articleGalleyId=$galleyId escape=false}
+{url assign=galleyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.galley.GalleyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() articleGalleyId=$galleyId escape=false}
 {assign var=galleyContainerId value='galleyFilesGrid-'|concat:$galleyId|concat:'-'|uniqid}
 {load_url_in_div id=$galleyContainerId url=$galleyFilesGridUrl}

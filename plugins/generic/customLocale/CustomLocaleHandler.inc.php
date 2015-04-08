@@ -207,7 +207,7 @@ class CustomLocaleHandler extends Handler {
 	function setupTemplate($request, $plugin) {
 		parent::setupTemplate($request);
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($plugin, 'smartyPluginUrl'));
+		$templateMgr->registerPlugin('function', 'plugin_url', array($plugin, 'smartyPluginUrl'));
 	}
 }
 

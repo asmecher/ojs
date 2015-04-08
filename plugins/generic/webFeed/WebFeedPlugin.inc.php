@@ -89,7 +89,7 @@ class WebFeedPlugin extends GenericPlugin {
 
 			$templateManager =& $args[0];
 
-			$currentJournal =& $templateManager->get_template_vars('currentJournal');
+			$currentJournal =& $templateManager->getTemplateVars('currentJournal');
 			$requestedPage = $request->getRequestedPage();
 			$journalTitle = '';
 			if ($currentJournal) {
@@ -102,7 +102,7 @@ class WebFeedPlugin extends GenericPlugin {
 			}
 
 			if (isset($currentIssue) && (($displayPage == 'all') || ($displayPage == 'homepage' && (empty($requestedPage) || $requestedPage == 'index' || $requestedPage == 'issue')) || ($displayPage == 'issue' && $displayPage == $requestedPage)) ) {
-				$additionalHeadData = $templateManager->get_template_vars('additionalHeadData');
+				$additionalHeadData = $templateManager->getTemplateVars('additionalHeadData');
 
 				$feedUrl1 = '<link rel="alternate" type="application/atom+xml" href="' . $request->url(null, 'gateway', 'plugin', array('WebFeedGatewayPlugin', 'atom')) . '" />';
 				$feedUrl2 = '<link rel="alternate" type="application/rdf+xml" href="'. $request->url(null, 'gateway', 'plugin', array('WebFeedGatewayPlugin', 'rss')) . '" />';
@@ -168,7 +168,7 @@ class WebFeedPlugin extends GenericPlugin {
 
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON,  LOCALE_COMPONENT_PKP_MANAGER);
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+				$templateMgr->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 
 				$this->import('SettingsForm');
 				$form = new SettingsForm($this, $journal->getId());

@@ -20,7 +20,7 @@
 
 <br />
 
-{url|assign:"setup56" page="manager" op="setup" path="5"}
+{url assign="setup56" page="manager" op="setup" path="5"}
 <p>{translate key="plugins.generic.externalFeed.manager.displayBlockInstructions" setupStep56=$setup56}</p>
 
 <br />

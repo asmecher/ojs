@@ -26,7 +26,7 @@
 		{/fbvFormSection}
 	{/fbvFormArea}
 
-	{url|assign:categoriesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.admin.categories.CategoryListbuilderHandler" op="fetchGrid" escape=false}
+	{url assign=categoriesListbuilderUrl router=$smarty.const.ROUTE_COMPONENT component="listbuilder.admin.categories.CategoryListbuilderHandler" op="fetchGrid" escape=false}
 	{load_url_in_div id="categoryListbuilderContainer" url=$categoriesListbuilderUrl}
 
 	{if !$wizardMode}

@@ -13,9 +13,10 @@
 {include file="common/header.tpl" pageTitle="archive.archives"}
 
 <div id="issues">
+	{assign var=lastYear value=null}
 	{iterate from=issues item=issue}
 		{if $issue->getYear() != $lastYear}
-			{if !$notFirstYear}
+			{if !isset($notFirstYear)}
 				{assign var=notFirstYear value=1}
 			{else}
 				</div>

@@ -67,7 +67,7 @@
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
-			{url|assign:"subscriptionPoliciesUrl" op="subscriptionPolicies" escape=false}
+			{url assign="subscriptionPoliciesUrl" op="subscriptionPolicies" escape=false}
 			{form_language_chooser form="subscriptionPolicies" url=$subscriptionPoliciesUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
 		</td>

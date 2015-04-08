@@ -39,7 +39,7 @@
 		<div id="main">
 			<div id="content">
 				<h3>{translate key="issue.nonpdf.title"}</h3>
-				{url|assign:"url" op="download" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
+				{url assign="url" op="download" path=$issueId|to_array:$galley->getBestGalleyId($currentJournal)}
 				<p>{translate key="article.nonpdf.note" url=$url}</p>
 
 				{if $pageFooter}

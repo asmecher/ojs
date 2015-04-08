@@ -212,7 +212,7 @@ class ExternalFeedPlugin extends GenericPlugin {
 				$output .= '</div>';
 
 				$templateManager =& $args[0];
-				$additionalHomeContent = $templateManager->get_template_vars('additionalHomeContent');
+				$additionalHomeContent = $templateManager->getTemplateVars('additionalHomeContent');
 				$templateManager->assign('additionalHomeContent', $additionalHomeContent . "\n\n" . $output);
 			}
 		}
@@ -245,7 +245,7 @@ class ExternalFeedPlugin extends GenericPlugin {
 			LOCALE_COMPONENT_PKP_USER
 		);
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateMgr->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 		$journal = $request->getJournal();
 		$journalId = $journal->getId();
 

@@ -63,7 +63,7 @@
 <h5 style="margin-left:10%">{translate key="notification.mailList.register"}</h5>
 <ul class="plain" style="margin-left:10%">
 	{if $settings.subscriptionsEnabled}
-		{url|assign:"url" page="user" op="register"}
+		{url assign="url" page="user" op="register"}
 		<li>&#187; {translate key="notification.mailList.protectedContent" subscribeUrl=$url}
 	{/if}
 <li>&#187; <a href="{url page="about" op="submissions" anchor="privacyStatement"}">{translate key="about.privacyStatement"}</a></li>

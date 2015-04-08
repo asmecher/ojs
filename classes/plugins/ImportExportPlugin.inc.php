@@ -32,7 +32,7 @@ abstract class ImportExportPlugin extends PKPImportExportPlugin {
 			$request->redirect(null, 'manager', 'importexport', array('plugin', $this->getName()));
 		}
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateMgr->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 		return false;
 	}
 

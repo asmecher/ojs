@@ -12,7 +12,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-{url|assign:editUrl page="management" op="settings" path="journal" anchor="affiliationAndSupport"}
+{url assign=editUrl page="management" op="settings" path="journal" anchor="affiliationAndSupport"}
 {include file="common/linkToEditPage.tpl" editUrl=$editUrl}
 
 {if not (empty($sponsorNote) && empty($sponsors))}

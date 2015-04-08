@@ -82,7 +82,7 @@ abstract class ReportPlugin extends Plugin {
 	 */
 	function display(&$args) {
 		$templateManager = TemplateManager::getManager($this->getRequest());
-		$templateManager->register_function('plugin_url', array($this, 'smartyPluginUrl'));
+		$templateManager->registerPlugin('function', 'plugin_url', array($this, 'smartyPluginUrl'));
 	}
 
 	/**

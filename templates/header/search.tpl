@@ -17,7 +17,7 @@
 	<div class="pkp_structure_search pkp_helpers_align_right">
 		<form id="topSearchForm" action="{url page="search" op="search"}" method="post">
 			<fieldset>
-				<input id="topSearchFormField" name="query" value="{$searchQuery|escape}" type="text" title="{translate key="common.search"}..." />
+				<input id="topSearchFormField" name="query" type="text" title="{translate key="common.search"}..." />
 				<button class="go">{translate key="common.go"}</button>
 			</fieldset>
 		</form>

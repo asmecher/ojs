@@ -21,7 +21,7 @@
 <h3>{translate key="admin.siteManagement"}</h3>
 
 <ul class="plain">
-	{if $multipleContexts}
+	{if isset($multipleContexts)}
 		<li>&#187; <a href="{url op="settings"}">{translate key="admin.siteSettings"}</a></li>
 	{/if}
 	<li>&#187; <a href="{url op="contexts"}">{translate key="admin.hostedJournals"}</a></li>

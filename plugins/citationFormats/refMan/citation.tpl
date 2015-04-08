@@ -9,9 +9,9 @@
  *
  *}
 {if $galleyId}
-	{url|assign:"articleUrl" page="article" op="view" path=$articleId|to_array:$galleyId}
+	{url assign="articleUrl" page="article" op="view" path=$articleId|to_array:$galleyId}
 {else}
-	{url|assign:"articleUrl" page="article" op="view" path=$articleId}
+	{url assign="articleUrl" page="article" op="view" path=$articleId}
 {/if}
 TY  - JOUR
 {foreach from=$article->getAuthors() item=author}

@@ -56,7 +56,13 @@ class ArticleSearchDAO extends DAO {
 	/**
 	 * Retrieve the top results for a phrases with the given
 	 * limit (default 500 results).
-	 * @param $keywordId int
+	 * @param $journal Journal
+	 * @param $phrase array
+	 * @param $publishedFrom int Earliest result timestamp (or null)
+	 * @param $publishedTo int Latest result timestamp (or null)
+	 * @param $type Field int type bitfield
+	 * @param $limit int Maximum number of results
+	 * @param $cacheHours int Number of hours to cache a result, maximum
 	 * @return array of results (associative arrays)
 	 */
 	function &getPhraseResults(&$journal, $phrase, $publishedFrom = null, $publishedTo = null, $type = null, $limit = 500, $cacheHours = 24) {
@@ -99,6 +105,9 @@ class ArticleSearchDAO extends DAO {
 		if (!empty($journal)) {
 			$sqlWhere .= ' AND i.journal_id = ?';
 			$params[] = $journal->getId();
+		} else {
+			// Ensure that the results come from enabled journals.
+			$sqlWhere .= ' AND j.enabled = 1';
 		}
 
 		$result =& $this->retrieveCached(
@@ -108,8 +117,10 @@ class ArticleSearchDAO extends DAO {
 			FROM
 				published_articles pa,
 				issues i,
+				journals j,
 				article_search_objects o NATURAL JOIN ' . $sqlFrom . '
 			WHERE
+				i.journal_id = j.journal_id AND
 				pa.article_id = o.article_id AND
 				i.issue_id = pa.issue_id AND
 				i.published = 1 AND ' . $sqlWhere . '

@@ -90,6 +90,11 @@ class MetadataForm extends Form {
 			import('lib.pkp.classes.validation.ValidatorORCID');
 			$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'user.profile.form.orcidInvalid', create_function('$orcid', '$validator = new ValidatorORCID(); return empty($orcid) ? true : $validator->isValid($orcid);'), array(), false, array('orcid')));
 
+			if ($this->isEditor) {
+				$supportedSubmissionLocales = $journal->getSetting('supportedSubmissionLocales');
+				if (!is_array($supportedSubmissionLocales) || count($supportedSubmissionLocales) < 1) $supportedSubmissionLocales = array($journal->getPrimaryLocale());
+				$this->addCheck(new FormValidatorInSet($this, 'submissionLocale', 'required', 'author.submit.form.localeRequired', $supportedSubmissionLocales));
+			}
 		} else {
 			parent::Form('submission/metadata/metadataView.tpl');
 		}
@@ -142,7 +147,8 @@ class MetadataForm extends Form {
 				'language' => $article->getLanguage(),
 				'sponsor' => $article->getSponsor(null), // Localized
 				'citations' => $article->getCitations(),
-				'hideAuthor' => $article->getHideAuthor()
+				'hideAuthor' => $article->getHideAuthor(),
+				'submissionLocale' => $article->getLocale()
 			);
 			// consider the additional field names from the public identifer plugins
 			import('classes.plugins.PubIdPluginHelper');
@@ -227,6 +233,16 @@ class MetadataForm extends Form {
 			);
 			$templateMgr->assign('hideAuthorOptions', $hideAuthorOptions);
 			$templateMgr->assign('isEditor', true);
+
+			$supportedSubmissionLocales = $journal->getSetting('supportedSubmissionLocales');
+			if (!is_array($supportedSubmissionLocales) || count($supportedSubmissionLocales) < 1) $supportedSubmissionLocales = array($journal->getPrimaryLocale());
+			$templateMgr->assign(
+				'supportedSubmissionLocaleNames',
+				array_flip(array_intersect(
+					array_flip(AppLocale::getAllLocales()),
+					$supportedSubmissionLocales
+				))
+			);
 		}
 		// consider public identifiers
 		$pubIdPlugins =& PluginRegistry::loadCategory('pubIds', true);
@@ -271,7 +287,7 @@ class MetadataForm extends Form {
 			)
 		);
 		if ($this->isEditor) {
-			$this->readUserVars(array('copyrightHolder', 'copyrightYear', 'licenseURL'));
+			$this->readUserVars(array('copyrightHolder', 'copyrightYear', 'licenseURL', 'submissionLocale'));
 		}
 		// consider the additional field names from the public identifer plugins
 		import('classes.plugins.PubIdPluginHelper');
@@ -451,6 +467,7 @@ class MetadataForm extends Form {
 			$article->setCopyrightHolder($this->getData('copyrightHolder'), null);
 			$article->setCopyrightYear($this->getData('copyrightYear'));
 			$article->setLicenseURL($this->getData('licenseURL'));
+			$article->setLocale($this->getData('submissionLocale'));
 		}
 
 		parent::execute();

@@ -443,6 +443,20 @@ function moveAuthor(dir, authorIndex) {
 {/if}
 
 {if $isEditor}
+<div id="language">
+<h3>{translate key="common.language"}</h3>
+<table width="100%" class="data">
+	<tr valign="top">
+		<td width="20%" class="label">{fieldLabel name="submissionLocale" key="locale.primary"}</td>
+		<td width="80%" class="value">
+			<select name="submissionLocale" id="submissionLocale" class="selectMenu">
+				{html_options options=$supportedSubmissionLocaleNames selected=$submissionLocale}
+			</select>
+		</td>
+	</tr>
+</table>
+</div>
+
 <div id="display">
 <h3>{translate key="editor.article.display"}</h3>
 

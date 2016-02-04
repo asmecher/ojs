@@ -351,7 +351,7 @@ class RegistrationForm extends Form {
 				$mail->setReplyTo(null);
 				$mail->assignParams(array(
 					'username' => $this->getData('username'),
-					'password' => String::substr($this->getData('password'), 0, 30), // Prevent mailer abuse via long passwords
+					'password' => PKPString::substr($this->getData('password'), 0, 30), // Prevent mailer abuse via long passwords
 					'userFullName' => $user->getFullName()
 				));
 				$mail->addRecipient($user->getEmail(), $user->getFullName());

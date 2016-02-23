@@ -4,8 +4,8 @@
 <!--
   * locale/id_ID/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -121,7 +121,6 @@
 	<message key="manager.sections.assigned"> Editor Bagian ini </message> 
 	<message key="manager.sections.confirmDelete"> Apakah Anda yakin ingin menghapus bagian ini secara permanen? Anda akan harus menerbitkan ulang artikel apapun di bagian ini.</message> 
 	<message key="manager.sections.create"> Buat Bagian</message>	
-	<message key="manager.sections.disableComments"> Komentar pembaca di bagian ini tidak aktif.</message> 
 	<message key="manager.section.sectionEditorInstructions"> Tambahkan Editor Bagian ke bagian ini agar naskah secara otomastis ditugaskan kepada Editor Bagian. (jika tidak, Editor Bagian akan ditugaskan secara manual, setelah naskah masuk). Jika ditambahkan, Editor Bagian secara otomatis dapat ditugaskan untuk mengawasi REVIEW (peer review) dan/ atau PENGEDITAN (copyediting, layout, dan proofreading) naskah ke bagian ini. Editor Bagian dibuat dengan mengklik Editor Bagian di bawah Peran di Manajemen Jurnal. </message> 
 	<message key="manager.sections.editorRestriction"> Item hanya bisa diserahkan oleh editor dan editor bagian.</message>
 	<message key="manager.sections.editors"> Editor Bagian </message> 
@@ -215,12 +214,6 @@
 <message key="manager.setup.doiReassign">Menugaskan Kembali DOIs</message>
 <message key="manager.setup.doiReassign.description"> Jika Anda mengubah konfigurasi DOI, DOI yang sebelumnya tidak akan berfungsi lagi. Saat konfigurasi DOI disimpan, gunakan tombol ini untuk menghapus semua DOI yang ada sehingga pengaturan baru akan berlaku pada artikel yang sudah ada.</message> 
 	<message key="manager.setup.editorDecision"> Keputusan Editor</message> 
-	<message key="manager.setup.editorialMembers"> Pergi ke Anggota Dewan dan tambahkan Dewan Editorial dan/ atau anggota dewan Reviewer. Ini dapat dilakukan kapanpun dalam mengoperasikan jurnal.</message>
-	<message key="manager.setup.editorialProcess1"> Satu editor atau lebih menangani langkah awal tanpa peran tertentu.</message> 
-	<message key="manager.setup.editorialProcess2"> Pengaturan Editor menangani Antrian Penyerahan, Daftar Isi sedankan Editor Bagian menangani Review Penyerahan dan Pengeditan Penyerahan.</message> 
-	<message key="manager.setup.editorialProcess3"> Pengaturan Editor menangani Antrian Penyerahan, pengeditan penyerahan, dan daftar isi, sedangkan editor bagian menangani review penyerahan.</message> 
-	<message key="manager.setup.editorialReviewBoard">Editorial/Dewan Reviewer </message> 
-	<message key="manager.setup.editorialReviewBoardDescription"> Jurnal memiliki Dewan Editorial untuk mengawasi arah editorial jurnal, berpartisipasi dalam penunjukan editor dan karena reputasi anggota dewan, memberikan jurnal reputasi di bidang itu. Anggota dewan Reviewer tidak akan memiliki akses ke sistem administrasi jurnal tapi akan ditambahkan ke daftar yang tersedia/ yang bisa untuk mengerjakan peer review.</message> 
 	<message key="manager.setup.emailBounceAddress">Bounce Address</message> 
 	<message key="manager.setup.emailBounceAddressDescription">Setiap email yang tidak terkirim akan menghasilkan pesan eror ke alamat ini.</message> 
 	<message  key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Catatan:</strong> Untuk mengaktifkan pilihan ini, administrator situs harus mengaktifkan pilihan <tt>allow_envelope_sender</tt> di file konfigurasi OJS. Konfigurasi server tambahan mungkin diperlukan untuk mensupport fungsi ini (yang tidak dapat dilakukan pada semua server), seperti yang tercantum di dokumentasi OJS.]]></message> 
@@ -296,8 +289,6 @@
 </message> 
 	<message key="manager.setup.journalPageFooter"> Footer Halaman Jurnal </message> 
 	<message key="manager.setup.journalPageFooterDescription"> Ini adalah footer jurnal Anda. Untuk mengganti atau meng-update footer, salin kode HTML pada kotak teks di bawah. Sebagai contoh dapat berisi navigasi lain, counter, dll. Footer ini akan tampil di tiap halaman.</message> 
-	<message key="manager.setup.journalPageHeader"> Header Halaman Jurnal </message> 
-	<message key="manager.setup.journalPageHeaderDescription"> Versi grafis judul dan logo jurnal (file .gif, .jpg. atau .png) dapat diunggah untuk ditampilkan sebagai header di halaman jurnal, yang akan menggantikan versi teks jika tidak ditampilkan.</message> 
 	<message key="manager.setup.journalPolicies"> Langkah 2. Kebijakan Jurnal </message> 
 	<message key="manager.setup.journalSetup">Setup Jurnal</message> 
 	<message key="manager.setup.journalSetupUpdated"> Setup jurnal Anda telah di-update.</message> 

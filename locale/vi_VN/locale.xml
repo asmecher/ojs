@@ -4,8 +4,8 @@
 <!--
   * locale/vi_VN/locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the vi_VN (Tiếng Việt) locale.
@@ -594,13 +594,6 @@ Mới nhất là ngày ngày bài phản biện gần nhất được chấp nh�
 <li>Dùng dấu <strong>*</strong> trong một thuật ngữ như là ký tự đại diện; thí dụ, <em>soci*</em> sẽ tìm các từ "sociological" hoặc "societal"</li>
 </ul>]]></message>
 
-	<!-- Interstitial page for PDFs -->
-	<message key="article.pdf.title">Định dạng file PDF (PDF)</message>
-	
-	<!-- Interstitial page for non-PDF non-HTML galleys -->
-	<message key="article.nonpdf.title">Tải bài viết</message>
-	<message key="article.nonpdf.note"><![CDATA[File quý vị đã chọn sẽ bắt đầu tự động tải xuống. Nếu không, nhấp chuột vào đường dẫn dưới đây. Lưu ý là file này có thể cần phải có một phần mềm xem đặc biệt.<br /><br />Nếu fil không tự động tải xuống, <a href="{$url}">nhấp chuột vào đây</a>.]]></message>
-	
 	<!-- Site index -->
 	<message key="site.journalsHosted">Các tạp chí có trên Web site</message>
 	<message key="site.journalView">Xem tạp chí</message>
@@ -961,7 +954,6 @@ Authors who publish with this journal agree to the following terms:
 </ol>]]></message>
 	<message key="reviewer.article.enterReviewForm">Nhập chuột vào biểu tượng để điền vào mẫu phiếu phản biện.</message>
 	<message key="reviewer.article.reviewFormResponse.form.responseRequired">Vui lòng điền vào các trường bắt buộc.</message>
-	<message key="common.pageHeader.altText">Măng-séc trang</message>
 	<message key="common.homePageHeader.altText">Măng-séc trang chủ</message>
 	<message key="common.journalHomepageImage.altText">Ảnh trang chủ tạp chí</message>
 	<message key="article.coverPage.altText">Ảnh bìa</message>

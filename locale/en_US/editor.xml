@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/editor.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -95,7 +95,7 @@
 	<message key="editor.issues.publishIssue">Publish Issue</message>
 	<message key="editor.issues.unpublishIssue">Unpublish Issue</message>
 	<message key="editor.issues.previewIssue">Preview Issue</message>
-	<message key="editor.issues.preview">(Preview)</message>
+	<message key="editor.issues.preview">Preview</message>
 	<message key="editor.issues.confirmPublish">Are you sure you want to publish the new issue?</message>
 	<message key="editor.issues.confirmUnpublish">Are you sure you want to unpublish this published issue?</message>
 	<message key="editor.issues.publicArticleIdExists">Unable to save public id for article:</message>
@@ -232,4 +232,5 @@
 	<message key="editor.submission.selectGalleyFiles">Select Galley Files</message>
 	<message key="editor.submission.production.introduction"><![CDATA[In Production, the editor selects publication formats (e.g., PDF, HTML, etc.) in <span class="pkp_help_title">Galleys</span>, for which the layout editor prepares publication-quality files based on the production ready files. The publication-quality files are uploaded for each format in <span class="pkp_help_title">Galley Files</span>, where they are proof read. The article is <em>Approved</em> (i.e., marked ready for publication) for each galley in <span class="pkp_help_title">Galley Files</span>, and is published once its associated Issue is published via <span class="pkp_help_title">Issue Management</span>.]]></message>
 	<message key="editor.submission.editorial.finalDraftDescription"><![CDATA[Final draft files in this list are transformed by a Copyeditor into copyedited versions, uploaded below under <span class="pkp_help_title">Copyediting</span>.]]></message>
+	<message key="editor.submission.proof.manageProofFilesDescription">Any files that have already been uploaded to any submission stage can be added to the Proofreading listing by checking the Include checkbox below and clicking Search: all available files will be listed and can be chosen for inclusion.</message>
 </locale>

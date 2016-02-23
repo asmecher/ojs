@@ -6,8 +6,8 @@
   *
   * Aquesta versió catalana de l’OJS (versió 2.2.2), que inclou tots els mòduls del programa llevat de les eines de lectura i l’ajuda, ha estat possible gràcies a la col·laboració entre la Universitat Oberta de Catalunya, que l'ha traduït, i l’Institut d’Estudis Catalans, que n'ha supervisat la part pública (la visible pels usuaris no registrats).
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -55,7 +55,6 @@
 	<message key="common.confirmComplete">Esteu segur/a que voleu marcar aquesta tasca com a completa? Si ho feu, no hi podreu fer canvis més endavant.</message>
 	<message key="common.payment">Pagament</message>
 	<message key="common.payments">Pagaments</message>
-	<message key="common.pageHeader.altText">Capçalera de pàgina</message>
 	<message key="common.homePageHeader.altText">Capçalera de la pàgina inicial</message>
 	<message key="common.journalHomepageImage.altText">Imatge per a la pàgina inicial de la revista</message>
 
@@ -700,13 +699,6 @@ El camp Actives llista les revisions en curs.]]></message>
 <li>Utilitzeu l’asterisc (<strong>*</strong>) en un terme com a comodí per cercar qualsevol seqüència de caràcters; p. ex. si introduïu <em>moralitat soci*</em> se cercaran tant els documents que contenen tant la paraula &#171;social&#187; com els que contenen la paraula &#171;sociològica&#187;.</li>
 </ul>]]></message>
 
-	<!-- Interstitial page for PDFs -->
-	<message key="article.pdf.title">Portable Document Format (PDF)</message>
-	
-	<!-- Interstitial page for non-PDF non-HTML galleys -->
-	<message key="article.nonpdf.title">Baixada de l’article</message>
-	<message key="article.nonpdf.note"><![CDATA[El fitxer que heu seleccionat començarà a baixar automàticament. Si no ho fa, feu clic a l’enllaç següent. Noteu que pot ser que necessiteu un visualitzador o un connector especial per a aquest fitxer.<br /><br />Si el fitxer no baixa automàticament, <a href="{$url}">feu clic aquí</a>.]]></message>
-	
 	<!-- Site index -->
 	<message key="site.journalsHosted">Revistes allotjades en aquest lloc web</message>
 	<message key="site.journalView">Accés a la revista</message>

@@ -3,8 +3,8 @@
 /**
  * @file pages/article/ArticleHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ArticleHandler
@@ -14,11 +14,7 @@
  *
  */
 
-
-import('classes.rt.ojs.RTDAO');
-import('classes.rt.ojs.JournalRT');
 import('classes.handler.Handler');
-import('classes.rt.ojs.SharingRT');
 
 class ArticleHandler extends Handler {
 	/** journal associated with the request **/
@@ -82,7 +78,7 @@ class ArticleHandler extends Handler {
 
 		$galleyDao = DAORegistry::getDAO('ArticleGalleyDAO');
 		if ($this->journal->getSetting('enablePublicGalleyId')) {
-			$this->galley = $galleyDao->getGalleyByBestGalleyId($galleyId, $this->article->getId());
+			$this->galley = $galleyDao->getByBestGalleyId($galleyId, $this->article->getId());
 		}
 
 		if (!$this->galley) {
@@ -106,34 +102,12 @@ class ArticleHandler extends Handler {
 			$article = $this->article;
 			$this->setupTemplate($request);
 
-			$rtDao = DAORegistry::getDAO('RTDAO');
-			$journalRt = $rtDao->getJournalRTByJournal($journal);
-
 			$sectionDao = DAORegistry::getDAO('SectionDAO');
 			$section = $sectionDao->getById($article->getSectionId(), $journal->getId(), true);
 
-			$version = null;
-			if ($journalRt->getVersion()!=null && $journalRt->getDefineTerms()) {
-				// Determine the "Define Terms" context ID.
-				$version = $rtDao->getVersion($journalRt->getVersion(), $journalRt->getJournalId(), true);
-				if ($version) foreach ($version->getContexts() as $context) {
-					if ($context->getDefineTerms()) {
-						$defineTermsContextId = $context->getContextId();
-						break;
-					}
-				}
-			}
-
-			$commentDao = DAORegistry::getDAO('CommentDAO');
-			$enableComments = $journal->getSetting('enableComments');
-
-			if (($article->getEnableComments()) && ($enableComments == COMMENTS_AUTHENTICATED || $enableComments == COMMENTS_UNAUTHENTICATED || $enableComments == COMMENTS_ANONYMOUS)) {
-				$comments = $commentDao->getRootCommentsBySubmissionId($article->getId());
-			}
-
 			$galleyDao = DAORegistry::getDAO('ArticleGalleyDAO');
 			if ($journal->getSetting('enablePublicGalleyId')) {
-				$galley = $galleyDao->getGalleyByBestGalleyId($galleyId, $article->getId());
+				$galley = $galleyDao->getByBestGalleyId($galleyId, $article->getId());
 			}
 
 			if (!isset($galley)) {
@@ -157,14 +131,16 @@ class ArticleHandler extends Handler {
 				// The issue may not exist, if this is an editorial user
 				// and scheduling hasn't been completed yet for the article.
 				$issueAction = new IssueAction();
+				$subscriptionRequired = false;
 				if ($issue) {
-					$templateMgr->assign('subscriptionRequired', $issueAction->subscriptionRequired($issue));
+					$subscriptionRequired = $issueAction->subscriptionRequired($issue);
 				}
 
-				$templateMgr->assign('subscribedUser', $issueAction->subscribedUser($journal, isset($issue) ? $issue->getId() : null, isset($article) ? $article->getId() : null));
-				$templateMgr->assign('subscribedDomain', $issueAction->subscribedDomain($journal, isset($issue) ? $issue->getId() : null, isset($article) ? $article->getId() : null));
+				$subscribedUser = $issueAction->subscribedUser($journal, isset($issue) ? $issue->getId() : null, isset($article) ? $article->getId() : null);
+				$subscribedDomain = $issueAction->subscribedDomain($journal, isset($issue) ? $issue->getId() : null, isset($article) ? $article->getId() : null);
 
-				$templateMgr->assign('showGalleyLinks', $journal->getSetting('showGalleyLinks'));
+				$templateMgr->assign('showGalleyLinks', !$subscriptionRequired || $journal->getSetting('showGalleyLinks'));
+				$templateMgr->assign('hasAccess', !$subscriptionRequired || (isset($article) && $article->getAccessStatus() == ARTICLE_ACCESS_OPEN) || $subscribedUser || $subscribedDomain);
 
 				import('classes.payment.ojs.OJSPaymentManager');
 				$paymentManager = new OJSPaymentManager($request);
@@ -195,50 +171,21 @@ class ArticleHandler extends Handler {
 				$citationDao = DAORegistry::getDAO('CitationDAO'); /* @var $citationDao CitationDAO */
 				$citationFactory = $citationDao->getObjectsByAssocId(ASSOC_TYPE_ARTICLE, $article->getId());
 				$templateMgr->assign('citationFactory', $citationFactory);
+
+				// Keywords
+				$submissionKeywordDao = DAORegistry::getDAO('SubmissionKeywordDAO');
+				$templateMgr->assign('keywords', $submissionKeywordDao->getKeywords($article->getId(), array(AppLocale::getLocale())));
 			}
 
 			$templateMgr->assign('issue', $issue);
 			$templateMgr->assign('article', $article);
 			$templateMgr->assign('galley', $galley);
 			$templateMgr->assign('section', $section);
-			$templateMgr->assign('journalRt', $journalRt);
-			$templateMgr->assign('version', $version);
 			$templateMgr->assign('journal', $journal);
-			$templateMgr->assign('articleId', $articleId);
-			$templateMgr->assign('postingAllowed', (
-				($article->getEnableComments()) && (
-				$enableComments == COMMENTS_UNAUTHENTICATED ||
-				(($enableComments == COMMENTS_AUTHENTICATED ||
-				$enableComments == COMMENTS_ANONYMOUS) &&
-				Validation::isLoggedIn()))
-			));
-			$templateMgr->assign('enableComments', $enableComments);
-			$templateMgr->assign('postingLoginRequired', ($enableComments != COMMENTS_UNAUTHENTICATED && !Validation::isLoggedIn()));
-			$templateMgr->assign('galleyId', $galleyId);
 			$templateMgr->assign('fileId', $fileId);
 			$templateMgr->assign('defineTermsContextId', isset($defineTermsContextId)?$defineTermsContextId:null);
-			$templateMgr->assign('comments', isset($comments)?$comments:null);
 
-			$templateMgr->assign('sharingEnabled', $journalRt->getSharingEnabled());
 			$templateMgr->assign('ccLicenseBadge', Application::getCCLicenseBadge($article->getLicenseURL()));
-
-			if($journalRt->getSharingEnabled()) {
-				$templateMgr->assign('sharingRequestURL', $request->getRequestURL());
-				$templateMgr->assign('sharingArticleTitle', $article->getLocalizedTitle());
-				$templateMgr->assign('sharingUserName', $journalRt->getSharingUserName());
-				$templateMgr->assign('sharingButtonStyle', $journalRt->getSharingButtonStyle());
-				$templateMgr->assign('sharingDropDownMenu', $journalRt->getSharingDropDownMenu());
-				$templateMgr->assign('sharingBrand', $journalRt->getSharingBrand());
-				$templateMgr->assign('sharingDropDown', $journalRt->getSharingDropDown());
-				$templateMgr->assign('sharingLanguage', $journalRt->getSharingLanguage());
-				$templateMgr->assign('sharingLogo', $journalRt->getSharingLogo());
-				$templateMgr->assign('sharingLogoBackground', $journalRt->getSharingLogoBackground());
-				$templateMgr->assign('sharingLogoColor', $journalRt->getSharingLogoColor());
-				list($btnUrl, $btnWidth, $btnHeight) = SharingRT::sharingButtonImage($journalRt);
-				$templateMgr->assign('sharingButtonUrl', $btnUrl);
-				$templateMgr->assign('sharingButtonWidth', $btnWidth);
-				$templateMgr->assign('sharingButtonHeight', $btnHeight);
-			}
 
 			$templateMgr->assign('articleSearchByOptions', array(
 				'query' => 'search.allFields',
@@ -255,16 +202,18 @@ class ArticleHandler extends Handler {
 			// load Article galley plugins
 			PluginRegistry::loadCategory('viewableFiles', true);
 
-			$templateMgr->display('article/article.tpl');
+			if (!HookRegistry::call('ArticleHandler::view::galley', array(&$request, &$issue, &$galley, &$article))) {
+				return $templateMgr->display('frontend/pages/article.tpl');
+			}
 		}
 	}
 
 	/**
-	 * View a file in a browser (inline)
+	 * Download an article file
 	 * @param array $args
 	 * @param PKPRequest $request
 	 */
-	function viewFile($args, $request, $hookName = 'ArticleHandler::viewFile', $inline = true) {
+	function download($args, $request) {
 		$articleId = isset($args[0]) ? $args[0] : 0;
 		$galleyId = isset($args[1]) ? $args[1] : 0;
 		$fileId = isset($args[2]) ? (int) $args[2] : 0;
@@ -282,21 +231,12 @@ class ArticleHandler extends Handler {
 				}
 			}
 
-			if (!HookRegistry::call($hookName, array($this->article, &$this->galley, &$fileId))) {
+			if (!HookRegistry::call('ArticleHandler::download', array($this->article, &$this->galley, &$fileId))) {
 				import('lib.pkp.classes.file.SubmissionFileManager');
 				$submissionFileManager = new SubmissionFileManager($this->article->getContextId(), $articleId);
-				$submissionFileManager->downloadFile($fileId, null, $inline);
+				$submissionFileManager->downloadFile($fileId, null, $request->getUserVar('inline')?true:false);
 			}
 		}
-	}
-
-	/**
-	 * download a file in a browser
-	 * @param array $args
-	 * @param PKPRequest $request
-	 */
-	function download($args, $request) {
-		return $this->viewFile($args, $request, 'ArticleHandler::download', false);
 	}
 
 	/**

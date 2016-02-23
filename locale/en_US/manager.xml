@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -91,7 +91,6 @@
 	<message key="manager.sections.confirmDelete">Are you sure you want to permanently delete this section?</message>
 	<message key="manager.sections.alertDelete">Before this section can be deleted, you must move articles published within it into other sections.</message>
 	<message key="manager.sections.create">Create Section</message>
-	<message key="manager.sections.disableComments">Disable reader comments for this section.</message>
 	<message key="manager.section.sectionEditorInstructions">Add a Section Editor to this section to have submissions automatically assigned to the Section Editor. (Otherwise, Section Editors can be assigned manually, after a submission comes in.) If added, a Section Editor can be automatically assigned to oversee the REVIEW (peer review) and/or the EDITING (copyediting, layout and proofreading) of submissions to this section. Section Editors are created by clicking Section Editors under Roles in Journal Management.</message>
 	<message key="manager.sections.editorRestriction">Items can only be submitted by Editors and Section Editors.</message>
 	<message key="manager.sections.editors">Section editors</message>
@@ -120,15 +119,13 @@
 	<message key="manager.setup.masthead">Masthead</message>
 	<message key="manager.setup.masthead.description">The Masthead should contain a list of editors, managing directors, and other individuals associated with the journal. Information entered here will appear in About the Journal.</message>
 	<message key="manager.setup.sponsors.description">The name of the organizations (e.g., scholarly associations, university departments, cooperatives, etc.) sponsoring the journal will appear in About the Journal and may be accompanied by a note of acknowledgement.</message>
-	<message key="manager.setup.appearanceDescription">Various components of the journal appearance can be configured from this page, including header and footer elements, the journal style and theme, and how lists of information are presented to users.</message>
 	<message key="manager.setup.homepageContent">Journal Homepage Content</message>
 	<message key="manager.setup.homepageContentDescription">The journal homepage consists of navigation links by default. Additional homepage content can be appended by using one or all of the following options, which will appear in the order shown.</message>
-	<message key="manager.setup.pageHeaderDescription">A graphic version of the journal title and logo (.gif, .jpg, or .png file), possibly a smaller version of the one used on the homepage, can be uploaded to appear as a header on journal pages, which will replace the text version that otherwise appears.</message>
 	<message key="manager.setup.logo">Journal Logo</message>
 	<message key="manager.setup.logo.altText">Journal Logo</message>
-	<message key="manager.setup.useImageLogoDescription">An optional journal logo may be uploaded and used in conjunction with the image or text title configured above.</message>
+	<message key="manager.setup.useImageLogoDescription">Upload a logo for the journal. To comply with WCAG standards, be sure to enter Alternative Text that describes the image (usually the name of the journal) when requested during upload. Note that most themes will display the journal's name in the header if no logo has been uploaded. </message>
 	<message key="manager.setup.pageFooter">Journal Page Footer</message>
-	<message key="manager.setup.pageFooterDescription">This is the footer of your journal. To change or update the footer, paste the HTML code in the textbox below. Examples could be another navigation bar, a counter, etc. This footer will appear on every page.</message>
+	<message key="manager.setup.pageFooterDescription">Enter any images, text or HTML code that you'd like to appear at the bottom of your journal's website.</message>
 	<message key="manager.setup.layout">Journal Layout</message>
 	<message key="manager.setup.useStyleSheet">Journal style sheet</message>
 	<message key="manager.setup.contextName">Journal Name</message>
@@ -140,7 +137,7 @@
 	<message key="manager.setup.addItem">Add Item</message>
 	<message key="manager.setup.addItemtoAboutJournal">Add Item to Appear in "About the Journal"</message>
 	<message key="manager.setup.additionalContent">Additional Content</message>
-	<message key="manager.setup.additionalContentDescription">Add the following content, using text/HTML, which will appear below the homepage image, if one is uploaded.</message>
+	<message key="manager.setup.additionalContentDescription">Add any additional content you'd like to appear on the homepage.</message>
 	<message key="manager.setup.addNavItem">Add Item</message>
 	<message key="manager.setup.addReviewerDatabaseLink">Add New Database Link</message>
 	<message key="manager.setup.addSponsor">Add Sponsoring Organization</message>
@@ -187,12 +184,6 @@
 	<message key="manager.setup.disciplineProvideExamples">Provide examples of relevant academic disciplines for this journal</message>
 	<message key="manager.setup.displayCurrentIssue">Add the table of contents for the current issue (if available).</message>
 	<message key="manager.setup.editorDecision">Editor Decision</message>
-	<message key="manager.setup.editorialMembers">Go to Board Members and add Editorial Board and/or Review Board members. This can be done at any point in operating the journal.</message>
-	<message key="manager.setup.editorialProcess1">One or more editors handle the basic steps without designated roles.</message>
-	<message key="manager.setup.editorialProcess2">Managing Editor handles Submission Queue, and Table of Contents, while Section Editors handle Submission Review and Submission Editing.</message>
-	<message key="manager.setup.editorialProcess3">Managing Editor handles Submission Queue, Submission Editing, and Table of Contents, while the Section Editors handle Submission Review.</message>
-	<message key="manager.setup.editorialReviewBoard">Editorial / Review Board</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Journals have Editorial Boards to oversee the editorial direction of the journal, participate in the appointment of editors, and, by virtue of board members' reputations, give the journal some standing in the field. Review Boards play a similar role but in addition, they lead the peer review process. Review Board members will not have access to the journal's administrative system but will be added to the list of those available to do peer reviews.</message>
 	<message key="manager.setup.emailBounceAddress">Bounce Address</message>
 	<message key="manager.setup.emailBounceAddressDescription">Any undeliverable emails will result in an error message to this address.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Note:</strong> To activate this option, the site administrator must enable the <tt>allow_envelope_sender</tt> option in the OJS configuration file. Additional server configuration may be required to support this functionality (which may not be possible on all servers), as indicated in the OJS documentation.]]></message>
@@ -234,7 +225,7 @@
 	<message key="manager.setup.guidelines">Guidelines</message>
 	<message key="manager.setup.guidingSubmissions">Step 3. Guiding Submissions</message>
 	<message key="manager.setup.homepageImage">Homepage image</message>
-	<message key="manager.setup.homepageImageDescription">Add an image or graphic file to the middle of the page.</message>
+	<message key="manager.setup.homepageImageDescription">Upload an image to display prominently on the homepage.</message>
 	<message key="manager.setup.includeCreativeCommons">For journals that offer immediate or delayed open access, include a Creative Commons license with all published work at the appropriate time.</message>
 	<message key="manager.setup.information">Information</message>
 	<message key="manager.setup.information.description">Brief descriptions of the journal for librarians and prospective authors and readers are available in the "Information" section of the sidebar.</message>
@@ -266,15 +257,13 @@
 	<message key="manager.setup.journalLogo.altText">Journal Logo</message>
 	<message key="manager.setup.journalPageFooter">Journal Page Footer</message>
 	<message key="manager.setup.journalPageFooterDescription">This is the footer of your journal. To change or update the footer, paste the HTML code in the textbox below. Examples could be another navigation bar, a counter, etc. This footer will appear on every page.</message>
-	<message key="manager.setup.journalPageHeader">Journal Page Header</message>
-	<message key="manager.setup.journalPageHeaderDescription">A graphic version of the journal's title and logo (.gif, .jpg, or .png file), possibly a smaller version of the one used on the homepage, can be uploaded to appear as a header on journal pages, which will replace the text version that otherwise appears.</message>
 	<message key="manager.setup.journalPolicies">Step 2. Journal Policies</message>
 	<message key="manager.setup.journalSetup">Journal Setup</message>
 	<message key="manager.setup.journalSetupUpdated">Your journal setup has been updated.</message>
 	<message key="manager.setup.journalStyleSheetInvalid">Invalid journal stylesheet format. Accepted format is .css.</message>
 	<message key="manager.setup.journalTheme">Journal Theme</message>
 	<message key="manager.setup.journalThumbnail">Journal thumbnail</message>
-	<message key="manager.setup.journalThumbnail.description">A small logo or representation of the journal that can optionally be used e.g. in lists of journals.</message>
+	<message key="manager.setup.journalThumbnail.description">A small logo or representation of the journal that can be used in lists of journals.</message>
 	<message key="manager.setup.journalThumbnail.altText">Alternate text for thumbnail</message>
 	<message key="manager.setup.journalTitle">Journal title</message>
 	<message key="manager.setup.labelName">Label name</message>
@@ -285,13 +274,18 @@
 	<message key="manager.setup.layoutTemplates.file">Template File</message>
 	<message key="manager.setup.layoutTemplates.title">Title</message>
 	<message key="manager.setup.lists">Lists</message>
-	<message key="manager.setup.listsDescription">Enter the maximum number of items (for example, submissions, users, or editing assignments) that appear on each page of a list, and the number of pages links to display on each page.</message>
-	<message key="manager.setup.lockssEnable"><![CDATA[Enable LOCKSS to store and distribute journal content at participating libraries via a LOCKSS <a href="{$lockssUrl}" target="_blank">Publisher Manifest</a> page. A LOCKSS license will appear in About the Journal under Archiving:]]></message>
-	<message key="manager.setup.lockssLicenses"><![CDATA[<a href="http://www.lockss.org/community/publishers-titles-gln/" target="_blank">LOCKSS License</a>]]></message>
+	<message key="manager.setup.listsDescription">Limit the number of items (for example, submissions, users, or editing assignments) to show in a list before showing subsequent items in another page. Also, limit the number of links to display to subsequent pages of the list.</message>
+	<message key="manager.setup.lockssEnable"><![CDATA[Enable LOCKSS to store and distribute journal content at participating libraries via a LOCKSS <a href="{$lockssUrl}" target="_blank">Publisher Manifest</a> page.]]></message>
+	<message key="manager.setup.lockssLicenseDescription"><![CDATA[A LOCKSS license will appear in About the Journal under Archiving: <a href="http://www.lockss.org/community/publishers-titles-gln/" target="_blank">LOCKSS License</a>]]></message>
+	<message key="manager.setup.lockssLicenseLabel">LOCKSS License Description</message>
 	<message key="manager.setup.lockssRegister"><![CDATA[Identify 6-10 libraries that will register and cache the journal. For example, turn to institutions where editors or Board members work and/or institutions already participating in LOCKSS. See <a href="http://www.lockss.org/community/" target="_blank">the LOCKSS community</a>. Use the prepared invitations for (i) <a href="{$lockssExistingArchiveUrl}" target="_blank">libraries participating in LOCKSS</a> or (ii) <a href="{$lockssNewArchiveUrl}" target="_blank">libraries not yet participating in LOCKSS</a>.]]></message>
-	<message key="manager.setup.clockssEnable"><![CDATA[Enable CLOCKSS to store and distribute journal content at participating libraries via a CLOCKSS <a href="{$clockssUrl}" target="_blank">Publisher Manifest</a> page. A CLOCKSS license will appear in About the Journal under Archiving:]]></message>
-	<message key="manager.setup.clockssLicenses"><![CDATA[<a href="http://clockss.org/" target="_blank">CLOCKSS License</a>]]></message>
+	<message key="manager.setup.lockssTitle">LOCKSS</message>
+	<message key="manager.setup.clockssEnable"><![CDATA[Enable CLOCKSS to store and distribute journal content at participating libraries via a CLOCKSS <a href="{$clockssUrl}" target="_blank">Publisher Manifest</a> page. :]]></message>
+	<message key="manager.setup.clockssLicenseDescription"><![CDATA[A CLOCKSS license will appear in About the Journal under Archiving: <a href="http://clockss.org/" target="_blank">CLOCKSS License</a>]]></message>
+	<message key="manager.setup.clockssLicenseLabel">CLOCKSS License Description</message>
 	<message key="manager.setup.clockssRegister"><![CDATA[Sign up for the CLOCKSS service by visiting <a href="http://clockss.org/" target="_blank">the CLOCKSS website</a>.]]></message>
+	<message key="manager.setup.clockssTitle">CLOCKSS</message>
+	<message key="manager.setup.Issn">ISSN</message>
 	<message key="manager.setup.look">The Look</message>
 	<message key="manager.setup.look.description">Homepage header, content, journal header, footer, navigation bar, and style sheet.</message>
 	<message key="manager.setup.mailingAddressDescription">The journal's physical location and mailing address.</message>
@@ -435,6 +429,14 @@
 	<message key="manager.statistics.statistics.reviewsPerReviewer">No. of reviews</message>
 	<message key="manager.statistics.statistics.selectSections">Select the sections for calculating this journal's peer-reviewed statistics.</message>
 	<message key="manager.statistics.statistics.subscriptions">Subscriptions</message>
+	<message key="manager.statistics.reports.defaultReport.articleDownloads">Article file downloads</message>
+        <message key="manager.statistics.reports.defaultReport.articleAbstract">Article abstract page views</message>
+        <message key="manager.statistics.reports.defaultReport.articleAbstractAndDownloads">Article abstract and downloads</message>
+        <message key="manager.statistics.reports.defaultReport.journalIndexPageViews">Journal main page views</message>
+        <message key="manager.statistics.reports.defaultReport.issuePageViews">Issue table of contents page views</message>
+        <message key="manager.statistics.reports.filters.byContext.description">Narrow results by context (issues and/or article).</message>
+        <message key="manager.statistics.reports.filters.byObject.description">Narrow results by object type (journal, issue, article, file types) and/or by one or more object id(s).</message>
+
 	<message key="manager.subscriptionPolicies">Subscription Policies</message>
 	<message key="manager.subscriptionPolicies.authorSelfArchive">Author Self-Archiving Policy</message>
 	<message key="manager.subscriptionPolicies.authorSelfArchiveDescription">The following Author Self-Archiving Policy will be included in About the Journal under Policies.</message>

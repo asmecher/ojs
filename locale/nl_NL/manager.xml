@@ -4,8 +4,8 @@
 <!--
   * locale/nl_NL/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the nl_NL (Nederlands) locale.
@@ -90,7 +90,6 @@
 	<message key="manager.sections.abstractsNotRequired">Samenvattingen niet verplicht stellen</message>
 	<message key="manager.sections.assigned">De redacteuren van deze sectie</message>
 	<message key="manager.sections.create">Sectie aanmaken</message>
-	<message key="manager.sections.disableComments">Lezerscommentaren uitschakelen voor deze sectie.</message>
 	<message key="manager.section.sectionEditorInstructions">Voeg een sectieredacteur toe aan deze sectie. Bepaal na het toevoegen of de sectieredacteur de REVIEW (peer review) en/of REDACTIE (tekstbewerken, opmaak en proeflezen) gaat regelen voor inzendingen voor deze sectie. Sectieredacteuren worden toegevoegd door te klikken op Sectieredacteuren bij Rollen in Tijdschriftbeheer.</message>
 	<message key="manager.sections.editorRestriction">Items kunnen alleen door redacteuren en sectieredacteuren ingezonden worden.</message>
 	<message key="manager.sections.editors">Sectieredacteuren</message>
@@ -170,12 +169,6 @@
 	<message key="manager.setup.disciplineProvideExamples">Geef voorbeelden van relevante academische disciplins voor dit tijdschrift</message>
 	<message key="manager.setup.displayCurrentIssue">De inhoudsopgave van het huidige nummer toevoegen (indien beschikbaar).</message>
 	<message key="manager.setup.editorDecision">Beslissing redacteur</message>
-	<message key="manager.setup.editorialMembers">Ga naar Teamleden en voeg redactie- en/of beoordelingsteamleden toe. Dit kan op ieder gewenst moment gebeuren.</message>
-	<message key="manager.setup.editorialProcess1">Een of meer redacteuren voeren de stappen uit zonder vooraf bepaalde rollen.</message>
-	<message key="manager.setup.editorialProcess2">De eindredacteur behandelt de inzendings-wachtrij en de inhoudsopgave, de sectieredacteuren behandelen de reviews en redactie van de inzendingen.</message>
-	<message key="manager.setup.editorialProcess3">De eindredacteur behandelt de inzendings-wachtrij, de redactie van de inzendingen en de inhoudsopgave, de sectieredacteuren doen de reviews.</message>
-	<message key="manager.setup.editorialReviewBoard">Redactie / Review team</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Tijdschriften hebben een redactieteam om de redactionele richting van het tijdschrift te beoordelen, deel te nemen in het benoemen van redacteuren, en door middel van de reputatie van de leden van het redactieteam, het tijdschrift aanzicht in het veld te geven. Reviewteams hebben een soortgelijke rol maar leiden bovendien de reviewprocedure. Reviewteam leden hebben geen toegang tot het administratieve systeem van het tijdschrift maar worden toegevoegd aan de lijst van beschikbare reviewers.</message>
 	<message key="manager.setup.emailBounceAddress">Retouradres voor onbestelbare e-mail</message>
 	<message key="manager.setup.emailBounceAddressDescription">E-mails die niet afgeleverd kunnen worden, resulteren in een foutbericht op dit adres.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Noot:</strong> Om deze optie te activeren moet de beheerder de <tt>allow_envelope_sender</tt> optie in het OJS configuratiebestand inschakelen. Additionale server configuratie kan noodzakelijk zijn om deze optie te gebruiken (die niet op alle servers ondersteund wordt) zoals aangegeven in de OJS documentatie.]]></message>
@@ -246,8 +239,6 @@
 	<message key="manager.setup.journalLogo.altText">Tijdschrift logo</message>
 	<message key="manager.setup.journalPageFooter">Tijdschriftpagina voettekst</message>
 	<message key="manager.setup.journalPageFooterDescription">Dit is de voettekst van uw tijdschrift. De voettekst kan veranderd worden door de HTML code ervan in het tekstvak hieronder in te voeren. Voorbeelden van een voettekst zijn een navigatiebalk, een teller, enz. Deze voettekst verschijnt op iedere pagina.</message>
-	<message key="manager.setup.journalPageHeader">Paginakop</message>
-	<message key="manager.setup.journalPageHeaderDescription">Een grafische versie (als .gif, .jpg of .png bestand) van de titel en het logo van het tijdschrift, wellicht een kleinere versie van degene op de homepage staat, kan als kop gebruikt worden op de andere tijdschriftpagina's. Deze vervangt de tekstversie die daar anders staat.</message>
 	<message key="manager.setup.journalPolicies">Stap 2. Beleid van het tijdschrift</message>
 	<message key="manager.setup.journalSetup">Tijdschrift inrichten</message>
 	<message key="manager.setup.journalSetupUpdated">De instellingen van uw tijdschrift zijn bijgewerkt.</message>

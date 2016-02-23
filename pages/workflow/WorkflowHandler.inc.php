@@ -3,8 +3,8 @@
 /**
  * @file pages/workflow/WorkflowHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class WorkflowHandler
@@ -32,7 +32,7 @@ class WorkflowHandler extends PKPWorkflowHandler {
 				'editorDecisionActions', // Submission & review
 				'externalReview', // review
 				'editorial',
-				'production', 'galleysTab', // Production
+				'production',
 				'submissionHeader',
 				'submissionProgressBar',
 				'expedite'
@@ -44,25 +44,6 @@ class WorkflowHandler extends PKPWorkflowHandler {
 	//
 	// Public handler methods
 	//
-
-	/**
-	 * Show the production stage accordion contents
-	 * @param $request PKPRequest
-	 * @param $args array
-	 * @return JSONMessage JSON object
-	 */
-	function galleysTab($args, $request) {
-		$templateMgr = TemplateManager::getManager($request);
-		$galleyDao = DAORegistry::getDAO('ArticleGalleyDAO');
-		$submission = $this->getAuthorizedContextObject(ASSOC_TYPE_SUBMISSION);
-		$galleys = $galleyDao->getBySubmissionId($submission->getId());
-		$templateMgr->assign('submission', $submission);
-		$templateMgr->assign('galleys', $galleys);
-		$templateMgr->assign('currentGalleyTabId', (int) $request->getUserVar('currentGalleyTabId'));
-
-		return $templateMgr->fetchJson('workflow/galleysTab.tpl');
-	}
-
 	/**
 	 * Expedites a submission through the submission process, if the submitter is a manager or editor.
 	 * @param $args array
@@ -84,14 +65,19 @@ class WorkflowHandler extends PKPWorkflowHandler {
 				$notificationManager = new NotificationManager();
 				$user = $request->getUser();
 				import('lib.pkp.classes.log.SubmissionLog');
+				import('classes.log.SubmissionEventLogEntry'); // Log consts
 				SubmissionLog::logEvent($request, $submission, SUBMISSION_LOG_ISSUE_METADATA_UPDATE, 'submission.event.issueMetadataUpdated');
 				$notificationManager->createTrivialNotification($user->getId(), NOTIFICATION_TYPE_SUCCESS, array('contents' => __('notification.savedIssueMetadata')));
+
+				// For indexing
+				import('classes.search.ArticleSearchIndex');
+				$articleSearchIndex = new ArticleSearchIndex();
 
 				// Now, create a galley for this submission.  Assume PDF, and set to 'available'.
 				$articleGalleyDao = DAORegistry::getDAO('ArticleGalleyDAO');
 				$articleGalley = $articleGalleyDao->newDataObject();
 				$articleGalley->setGalleyType('pdfarticlegalleyplugin');
-				$articleGalley->setIsAvailable(true);
+				$articleGalley->setIsApproved(true);
 				$articleGalley->setSubmissionId($submission->getId());
 				$articleGalley->setLocale($submission->getLocale());
 				$articleGalley->setLabel('PDF');
@@ -100,11 +86,12 @@ class WorkflowHandler extends PKPWorkflowHandler {
 
 				// Next, create a galley PROOF file out of the submission file uploaded.
 				$submissionFileDao = DAORegistry::getDAO('SubmissionFileDAO');
+				import('lib.pkp.classes.submission.SubmissionFile'); // SUBMISSION_FILE_... constants
 				$submissionFiles = $submissionFileDao->getLatestRevisions($submission->getId(), SUBMISSION_FILE_SUBMISSION);
-				// Assume a single file was uploaded, but check for something that's PDF anyway.
+				// Watch for a single file, or any PDFs.
 				foreach ($submissionFiles as $submissionFile) {
 					// test both mime type and file extension in case the mime type isn't correct after uploading.
-					if ($submissionFile->getFileType() == 'application/pdf' || preg_match('/\.pdf$/', $submissionFile->getOriginalFileName())) {
+					if (count($submissionFiles) == 1 || $submissionFile->getFileType() == 'application/pdf' || preg_match('/\.pdf$/', $submissionFile->getOriginalFileName())) {
 
 						// Get the path of the current file because we change the file stage in a bit.
 						$currentFilePath = $submissionFile->getFilePath();
@@ -117,9 +104,16 @@ class WorkflowHandler extends PKPWorkflowHandler {
 						$submissionFile->setAssocId($articleGalleyId);
 
 						$submissionFileDao->insertObject($submissionFile, $currentFilePath);
+
+						// Update file index
+						$articleSearchIndex->submissionFileChanged($submission->getId(), SUBMISSION_SEARCH_GALLEY_FILE, $submissionFile->getFileId());
 						break;
 					}
 				}
+
+				// Update index
+				$articleSearchIndex->articleMetadataChanged($submission);
+				$articleSearchIndex->articleChangesFinished();
 
 				// no errors, clear all notifications for this submission which may have been created during the submission process and close the modal.
 				$context = $request->getContext();

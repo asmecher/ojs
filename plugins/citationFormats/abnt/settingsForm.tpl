@@ -1,8 +1,8 @@
 {**
  * settingsForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Contributed by Lepidus Tecnologia
  *
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -36,7 +36,7 @@
 	<tr>
 		<td class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td class="value">
-			{plugin_url|assign:"setupFormUrl" path="settings"}
+			{plugin_url|assign:"setupFormUrl" path="settings" escape=false}
 			{form_language_chooser form="setupForm" url=$setupFormUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
 		</td>

@@ -4,8 +4,8 @@
 <!--
   * locale/uk_UA/emailTemplateData.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localized email templates XML file.
@@ -67,7 +67,6 @@
                <body><![CDATA[Ваш пароль для доступу до веб-сайту {$siteTitle} був успішно змінений. Будь ласка, збережіть вказані нижче ім'я користувача та пароль, оскільки ці дані будуть Вам необхідні протягом усієї подальшої роботи з цим журналом.<br />
 <br />
 Ваше ім'я користувача: {$username}<br />
-Ваш новий пароль: {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
                <description>Цей лист надсилається зареєстрованому користувачу після того, як він успішно скинув свій пароль за допомогою процесу, викладеного у листі PASSWORD_RESET_CONFIRM.</description>
@@ -156,7 +155,7 @@ URL-адреса маніфесту видавця LOCKSS для нашого ж
 <br />
 Дякуємо, що надіслали рукопис &quot;{$submissionTitle}&quot; для публікації у виданні &quot;{$contextName}&quot;. Онлайнова система керування журналом, яку ми використовуємо, дозволяє авторам відслідковувати редакційне опрацювання поданих до друку рукописів. Для цього потрібно увійти на веб-сайт журналу зі своїм іменем користувача:<br />
 <br />
-URL рукопису: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL рукопису: {$submissionUrl}<br />
 Ім'я користувача: {$authorUsername}<br />
 <br />
 Якщо Ви маєте питання, будь ласка, звертайтеся до мене. Дякую за вибір цього журналу як місця публікації своєї роботи.<br />
@@ -196,7 +195,7 @@ URL рукопису: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 Як редактор розділу Ви були призначені керувати процесом редакційного опрацювання подання &quot;{$submissionTitle}&quot; до видання &quot;{$contextName}&quot;.  <br />
 <br />
-URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL подання: {$submissionUrl}<br />
 Ім'я користувача: {$editorUsername}<br />
 <br />
 Дякую,<br />
@@ -587,7 +586,7 @@ URL подання:  <a href="{$submissionLayoutUrl}">{$submissionLayoutUrl}</a>
 5. Збережіть та надішліть виправлення редактору верстки та коректору.<br />
 6. Натисніть на зображення поштового конверту під заголовком &quot;Завершення&quot;, щоб надіслати лист редактору.<br />
 <br />
-URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL подання: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
                <description>Цим листом редактор розділу повідомляє автору, що гранка його статті готова до коректури. У листі міститься інформація про статтю та про те, як отримати доступ до нєї.</description>
@@ -624,7 +623,7 @@ URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 5. Збережіть та надішліть виправлення редактору верстки.<br />
 6. Натисніть на зображення поштового конверту під заголовком &quot;Завершення&quot;, щоб надіслати лист редактору.<br />
 <br />
-URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL подання: {$submissionUrl}<br />
 Ім'я користувача: {$proofreaderUsername}<br />
 <br />
 Якщо зараз Ви не маєте можливості виконати цю роботу або маєте додаткові питання, будь ласка, повідомте мені. Дякую за працю для нашого журналу.<br />
@@ -661,7 +660,7 @@ URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 6. Натисніть на зображення поштового конверту під заголовком &quot;Завершення&quot; кроку 3, щоб надіслати лист редактору.<br />
 <br />
 URL видання {$contextName}: <a href="{$journalUrl}">{$journalUrl}</a><br />
-URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL подання: {$submissionUrl}<br />
 Ім'я користувача: {$layoutEditorUsername}<br />
 <br />
 Якщо зараз Ви не маєте можливості виконати цю роботу або маєте додаткові питання, будь ласка, повідомте мені. Дякую за працю для нашого журналу.<br />
@@ -1019,7 +1018,7 @@ URL подання: <a href="{$submissionReviewUrl}">{$submissionReviewUrl}</a><
 <br />
 Перероблена версія рукопису &quot;{$submissionTitle}&quot; була вивантажена автором {$authorName}.<br />
 <br />
-URL подання: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL подання: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>Цей лист автоматично надсилається призначеному редактору, коли автор вивантажує перероблену версію своєї статті.</description>

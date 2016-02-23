@@ -3,8 +3,8 @@
 /**
  * @file tests/data/60-content/JmwandengaSubmissionTest.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class JmwandengaSubmissionTest
@@ -39,30 +39,30 @@ class JmwandengaSubmissionTest extends ContentBaseTestCase {
 		$this->findSubmissionAsEditor('dbarnes', null, $title);
 		$this->assignParticipant('Section editor', 'David Buskins');
 		$this->sendToReview();
-		$this->waitForElementPresent('//a[contains(text(), \'Review\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Review\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignReviewer('jjanssen', 'Julie Janssen');
 		$this->assignReviewer('amccrae', 'Aisla McCrae');
 		$this->assignReviewer('agallego', 'Adela Gallego');
 		$this->recordEditorialDecision('Accept Submission');
-		$this->waitForElementPresent('//a[contains(text(), \'Editorial\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Copyediting\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignParticipant('Copyeditor', 'Sarah Vogt');
 		$this->recordEditorialDecision('Send To Production');
-		$this->waitForElementPresent('//a[contains(text(), \'Production\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Production\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignParticipant('Layout Editor', 'Stephen Hellier');
 		$this->assignParticipant('Proofreader', 'Sabine Kumar');
 
 		// Create a galley
-		$this->waitForElementPresent('css=[id^=component-grid-articlegalleys-articlegalleygrid-add-button-]');
-		$this->click('css=[id^=component-grid-articlegalleys-articlegalleygrid-add-button-]');
+		$this->waitForElementPresent($selector='css=[id^=component-grid-articlegalleys-articlegalleygrid-addFormat-button-]');
+		$this->click($selector);
 		$this->waitForElementPresent('css=[id^=label-]');
 		$this->type('css=[id^=label-]', 'PDF');
-		$this->select('id=galleyType', 'PDF Article Galley');
-		$this->click('//span[text()=\'Save\']/..');
-		$this->waitJQuery();
+		$this->select('id=galleyType', 'PDF.JS PDF Viewer');
+		$this->click('//button[text()=\'Save\']');
+		$this->waitForElementNotPresent('css=div.pkp_modal_panel');
 
 		// Upload a galley file
-		$this->waitForElementPresent('css=a[id^=component-articleGalleyFiles-][id*=-addFile-button-]');
-		$this->click('css=a[id^=component-articleGalleyFiles-][id*=-addFile-button-]');
+		$this->waitForElementPresent($selector='//table[contains(@id,\'component-grid-articlegalleys-articlegalleygrid-\')]//span[contains(.,\'PDF\')]/../a[contains(@id,\'-name-addFile-button-\')]');
+		$this->click($selector);
 		$this->uploadWizardFile('PDF');
 
 		$this->logOut();

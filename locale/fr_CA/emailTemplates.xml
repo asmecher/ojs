@@ -4,8 +4,8 @@
 <!--
   * locale/fr_CA/emailTemplateData.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localized email templates XML file.
@@ -29,7 +29,6 @@ Réinitialisation du mot de passe : {$url}<br />
 		<body><![CDATA[Votre mot de passe pour le site Web {$siteTitle} a été réinitialisé avec succès. Veuillez conserver précieusement votre nom d'utilisateur ainsi que votre mot de passe. Vous en aurez besoin pour chacune de vos interactions avec la revue.<br />
 <br />
 Votre nom d'utilisateur : {$username}<br />
-Votre nouveau mot de passe : {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
 		<description><![CDATA[Ce courriel est envoyé aux utilisateurs inscrits lorsqu'ils ont réussi à réinitialiser leur mot de passe en ayant suivi la procédure décrite dans le courriel « Confirmation de la réinitialisation du mot de passe ».]]></description>
@@ -97,7 +96,7 @@ Merci,<br />
 <br />
 Nous vous remercions d'avoir soumis le manuscrit intitulé « {$submissionTitle} » à la revue {$contextName}. Grâce à notre système de gestion en ligne, vous pourrez suivre votre soumission tout au long du processus d'édition simplement en accédant au site Web de la revue.<br />
 <br />
-URL du manuscrit : <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL du manuscrit : {$submissionUrl}<br />
 Nom d'utilisateur : {$authorUsername}<br />
 <br />
 Si vous avez des questions, n'hésitez pas à communiquer avec nous. Nous vous remercions d'avoir pensé à notre revue pour la publication de vos travaux.<br />
@@ -138,7 +137,7 @@ Une évaluation initiale de votre manuscrit intitulé « {$submissionTitle} » a
 <br />
 La soumission intitulée « {$submissionTitle} » pour la revue {$contextName} vous a été attribuée. Vous êtes conséquemment responsable, en tant que Rédacteur de rubrique, de faire cheminer cet article à travers le processus d'évaluation.<br />
 <br />
-URL de la soumission : <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL de la soumission : {$submissionUrl}<br />
 Nom d'utilisateur : {$editorUsername}<br />
 <br />
 Merci,<br />
@@ -486,7 +485,7 @@ Nous aimerions que vous procédiez à la correction d'épreuves du manuscrit int
 5. Enregistrer et envoyer par courriel les corrections au Responsable de la mise en page et au Correcteur d'épreuves.<br />
 6. Envoyer le courriel TERMINÉ au rédacteur.<br />
 <br />
-URL du manuscrit : <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL du manuscrit : {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]&gt;]]></body>
 		<description>Ce courriel du Rédacteur de rubrique à l'Auteur avise ce dernier que les épreuves de la soumission sont prêtes pour la correction d'épreuves. Il fournit de l'information sur la soumission et comment y accéder.</description>
@@ -523,7 +522,7 @@ Nous aimerions que vous procédiez à la correction d'épreuves du manuscrit int
 5. Enregistrer et envoyer par courriel les corrections au Responsable de la mise en page et au Correcteur d'épreuves.<br />
 6. Envoyer le courriel TERMINÉ au rédacteur.<br />
 <br />
-URL du manuscrit : <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL du manuscrit : {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]&gt;]]></body>
 		<description>Ce courriel du Rédacteur de rubrique au Correcteur d'épreuves demande que ce dernier fasse la correction des épreuves de l'article. Il fournit de l'information sur l'article, et comment y accéder.</description>
@@ -557,7 +556,7 @@ Nous aimerions que vous insériez les modifications nécessaires à la suite de 
 4. Envoyer le courriel TERMINÉ de l'Étape 3 de Correction d'épreuves au rédacteur.<br />
 <br />
 URL de {$contextName} : <a href="{$journalUrl}">{$journalUrl}</a><br />
-URL du manuscrit : <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL du manuscrit : {$submissionUrl}<br />
 Nom d'utilisateur : {$layoutEditorUsername}<br />
 <br />
 Si vous ne pouvez pas effectuer ce travail pour le moment ou si vous avez des questions, veuillez communiquer avec moi. Je vous remercie de votre collaboration.<br />

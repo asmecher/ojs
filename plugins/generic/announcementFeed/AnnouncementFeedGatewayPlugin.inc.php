@@ -3,8 +3,8 @@
 /**
  * @file plugins/generic/announcementFeed/AnnouncementFeedGatewayPlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class AnnouncementFeedGatewayPlugin
@@ -97,10 +97,11 @@ class AnnouncementFeedGatewayPlugin extends GatewayPlugin {
 
 	/**
 	 * Handle fetch requests for this plugin.
+	 * @param $args array
+	 * @param $request PKPRequest
 	 */
-	function fetch($args) {
+	function fetch($args, $request) {
 		// Make sure we're within a Journal context
-		$request = $this->getRequest();
 		$journal = $request->getJournal();
 		if (!$journal) return false;
 

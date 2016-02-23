@@ -1,8 +1,8 @@
 {**
  * plugins/importexport/pubIds/templates/importExportIndex.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * List of operations this plugin can perform
@@ -16,8 +16,8 @@
 <br/>
 
 <h3>{translate key="plugins.importexport.pubIds.export"}</h3>
-<ul class="plain">
-	<li>&#187; <a href="{plugin_url path="selectIssue"}">{translate key="plugins.importexport.pubIds.export.forIssues"}</a></li>
+<ul>
+	<li><a href="{plugin_url path="selectIssue"}">{translate key="plugins.importexport.pubIds.export.forIssues"}</a></li>
 </ul>
 
 <h3>{translate key="plugins.importexport.pubIds.import"}</h3>

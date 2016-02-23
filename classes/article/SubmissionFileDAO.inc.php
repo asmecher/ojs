@@ -3,8 +3,8 @@
 /**
  * @file classes/article/SubmissionFileDAO.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SubmissionFileDAO
@@ -26,32 +26,6 @@ class SubmissionFileDAO extends PKPSubmissionFileDAO {
 	 */
 	function SubmissionFileDAO() {
 		return parent::PKPSubmissionFileDAO();
-	}
-
-
-	//
-	// Implement protected template methods from PKPSubmissionFileDAO
-	//
-	/**
-	 * @copydoc PKPSubmissionFileDAO::getDelegateClassNames()
-	 */
-	function getDelegateClassNames() {
-		return array_replace(
-			parent::getDelegateClassNames(),
-			array(
-			)
-		);
-	}
-
-	/**
-	 * @copydoc PKPSubmissionFileDAO::getGenreCategoryMapping()
-	 */
-	function getGenreCategoryMapping() {
-		return array_replace(
-			parent::getGenreCategoryMapping(),
-			array(
-			)
-		);
 	}
 
 

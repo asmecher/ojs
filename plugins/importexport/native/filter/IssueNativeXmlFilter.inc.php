@@ -3,8 +3,8 @@
 /**
  * @file plugins/importexport/native/filter/IssueNativeXmlFilter.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueNativeXmlFilter
@@ -255,7 +255,6 @@ class IssueNativeXmlFilter extends NativeExportFilter {
 			$sectionNode->setAttribute('hide_title', $section->getHideTitle());
 			$sectionNode->setAttribute('hide_author', $section->getHideAuthor());
 			$sectionNode->setAttribute('hide_about', $section->getHideAbout());
-			$sectionNode->setAttribute('disable_comments', $section->getDisableComments());
 			$sectionNode->setAttribute('abstract_word_count', $section->getAbstractWordCount());
 
 			$this->createLocalizedNodes($doc, $sectionNode, 'abbrev', $section->getAbbrev(null));

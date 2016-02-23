@@ -3,8 +3,8 @@
 /**
  * @file classes/DOIExportPlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DOIExportPlugin
@@ -13,7 +13,7 @@
  * @brief Base class for DOI export/registration plugins.
  */
 
-import('classes.plugins.ImportExportPlugin');
+import('lib.pkp.classes.plugins.ImportExportPlugin');
 
 // Export types.
 define('DOI_EXPORT_ISSUES', 0x01);
@@ -1087,7 +1087,7 @@ abstract class DOIExportPlugin extends ImportExportPlugin {
 	 * @param $journal Journal
 	 * @return array
 	 */
-	function &_getUnregisteredIssues(&$journal) {
+	function _getUnregisteredIssues($journal) {
 		// Retrieve all issues that have not yet been registered.
 		$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 		$issues = $issueDao->getBySetting($this->getPluginId(). '::' . DOI_EXPORT_REGDOI, null, $journal->getId());
@@ -1112,7 +1112,7 @@ abstract class DOIExportPlugin extends ImportExportPlugin {
 	 * @param $journal Journal
 	 * @return array
 	 */
-	function &_getUnregisteredArticles(&$journal) {
+	function _getUnregisteredArticles($journal) {
 		// Retrieve all published articles that have not yet been registered.
 		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO'); /* @var $publishedArticleDao PublishedArticleDAO */
 		$articles = $publishedArticleDao->getBySetting($this->getPluginId(). '::' . DOI_EXPORT_REGDOI, null, $journal->getId());
@@ -1134,7 +1134,7 @@ abstract class DOIExportPlugin extends ImportExportPlugin {
 	 * @param $journal Journal
 	 * @return array
 	 */
-	function &_getUnregisteredGalleys(&$journal) {
+	function _getUnregisteredGalleys($journal) {
 		// Retrieve all galleys that have not yet been registered.
 		$galleyDao = DAORegistry::getDAO('ArticleGalleyDAO'); /* @var $galleyDao ArticleGalleyDAO */
 		$galleyFactory = $galleyDao->getGalleysBySetting($this->getPluginId(). '::' . DOI_EXPORT_REGDOI, null, null, $journal->getId());
@@ -1142,9 +1142,9 @@ abstract class DOIExportPlugin extends ImportExportPlugin {
 		// Retrieve issues, articles and language for galleys.
 		$galleyData = array();
 		while ($galley = $galleyFactory->next()) {
-			$preparedGalley =& $this->_prepareGalleyData($galley, $journal);
+			$preparedGalley = $this->_prepareGalleyData($galley, $journal);
 			if (is_array($preparedGalley)) {
-				$galleyData[] =& $preparedGalley;
+				$galleyData[] = $preparedGalley;
 			}
 			unset($galley, $preparedGalley);
 		}

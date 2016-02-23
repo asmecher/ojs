@@ -3,8 +3,8 @@
 /**
  * @file plugins/pubIds/doi/DOIPubIdPlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DOIPubIdPlugin
@@ -53,19 +53,12 @@ class DOIPubIdPlugin extends PubIdPlugin {
 
 	/**
 	 * @see Plugin::getTemplatePath()
+	 * @param $inCore boolean True iff a core template should be preferred
 	 */
-	function getTemplatePath() {
-		return parent::getTemplatePath() . 'templates/';
+	function getTemplatePath($inCore = false) {
+		return parent::getTemplatePath($inCore) . 'templates/';
 	}
 
-	/**
-	 * returns the file name for the JS Handler for this plugin's settings form.
-	 * @param $request PKPRequest
-	 * @return string
-	 */
-	function getJSFileUrl($request) {
-		return $request->getBaseUrl() . '/' . $this->getPluginPath() . '/js/DOISettingsFormHandler.js';
-	}
 
 	//
 	// Implement template methods from PubIdPlugin.

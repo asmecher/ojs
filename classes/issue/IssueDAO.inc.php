@@ -3,8 +3,8 @@
 /**
  * @file classes/issue/IssueDAO.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueDAO
@@ -29,7 +29,7 @@ class IssueDAO extends DAO {
 		if ($cache->getCacheId() === 'current') {
 			$issue = $this->getCurrent($id, false);
 		} else {
-			$issue = $this->getById($id, null, false);
+			$issue = $this->getByBestId($id, null, false);
 		}
 		$cache->setCache($id, $issue);
 		return $issue;
@@ -236,7 +236,7 @@ class IssueDAO extends DAO {
 			'issue_id', 'locale', 'setting_name'
 		);
 		$updateArray = array(
-			'issue_id' => $issueId,
+			'issue_id' => (int) $issueId,
 			'locale' => '',
 			'setting_name' => 'pub-id::'.$pubIdType,
 			'setting_type' => 'string',

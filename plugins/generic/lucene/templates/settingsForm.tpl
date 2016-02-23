@@ -1,8 +1,8 @@
 {**
  * plugins/generic/lucene/templates/settingsForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Lucene plugin settings
@@ -223,7 +223,7 @@
 					</select>
 					<script>
 						function rebuildIndexClick() {ldelim}
-							var confirmation = confirm('{translate|escape:"jsparam" key="plugins.generic.lucene.settings.indexRebuild.confirm"}');
+							var confirmation = confirm({translate|json_encode key="plugins.generic.lucene.settings.indexRebuild.confirm"});
 							if (confirmation === true) jumpToIndexAdminAnchor();
 							return confirmation;
 						{rdelim}

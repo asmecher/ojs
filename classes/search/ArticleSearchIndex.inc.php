@@ -3,8 +3,8 @@
 /**
  * @file classes/search/ArticleSearchIndex.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ArticleSearchIndex
@@ -31,7 +31,7 @@ class ArticleSearchIndex extends SubmissionSearchIndex {
 	 *
 	 * @param $article Article
 	 */
-	function articleMetadataChanged(&$article) {
+	function articleMetadataChanged($article) {
 		// Check whether a search plug-in jumps in.
 		$hookResult = HookRegistry::call(
 			'ArticleSearchIndex::articleMetadataChanged',
@@ -71,6 +71,17 @@ class ArticleSearchIndex extends SubmissionSearchIndex {
 			self::_updateTextIndex($articleId, SUBMISSION_SEARCH_COVERAGE, array_merge(array_values((array) $article->getCoverageGeo(null)), array_values((array) $article->getCoverageChron(null)), array_values((array) $article->getCoverageSample(null))));
 			// FIXME Index sponsors too?
 		}
+	}
+
+	/**
+	 * Delete keywords from the search index.
+	 * @param $articleId int
+	 * @param $type int optional
+	 * @param $assocId int optional
+	 */
+	function deleteTextIndex($articleId, $type = null, $assocId = null) {
+		$searchDao = DAORegistry::getDAO('ArticleSearchDAO');
+		return $searchDao->deleteSubmissionKeywords($articleId, $type, $assocId);
 	}
 
 	/**
@@ -121,7 +132,7 @@ class ArticleSearchIndex extends SubmissionSearchIndex {
 	 *
 	 * @param $article Article
 	 */
-	function submissionFilesChanged(&$article) {
+	function submissionFilesChanged($article) {
 		// Check whether a search plug-in jumps in.
 		$hookResult = HookRegistry::call(
 			'ArticleSearchIndex::submissionFilesChanged',

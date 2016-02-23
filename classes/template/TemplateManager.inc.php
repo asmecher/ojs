@@ -3,8 +3,8 @@
 /**
  * @file classes/template/TemplateManager.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class TemplateManager
@@ -60,17 +60,16 @@ class TemplateManager extends PKPTemplateManager {
 				// Assign page header
 				$this->assign('displayPageHeaderTitle', $context->getLocalizedPageHeaderTitle());
 				$this->assign('displayPageHeaderLogo', $context->getLocalizedPageHeaderLogo());
-				$this->assign('displayPageHeaderTitleAltText', $context->getLocalizedSetting('pageHeaderTitleImageAltText'));
 				$this->assign('displayPageHeaderLogoAltText', $context->getLocalizedSetting('pageHeaderLogoImageAltText'));
 				$this->assign('displayFavicon', $context->getLocalizedFavicon());
 				$this->assign('faviconDir', $request->getBaseUrl() . '/' . $publicFileManager->getJournalFilesPath($context->getId()));
-				$this->assign('alternatePageHeader', $context->getLocalizedSetting('journalPageHeader'));
 				$this->assign('metaSearchDescription', $context->getLocalizedSetting('searchDescription'));
 				$this->assign('metaSearchKeywords', $context->getLocalizedSetting('searchKeywords'));
 				$this->assign('metaCustomHeaders', $context->getLocalizedSetting('customHeaders'));
 				$this->assign('numPageLinks', $context->getSetting('numPageLinks'));
 				$this->assign('itemsPerPage', $context->getSetting('itemsPerPage'));
 				$this->assign('enableAnnouncements', $context->getSetting('enableAnnouncements'));
+				$this->assign('contextSettings', $context->getSettingsDAO()->getSettings($context->getId()));
 
 				// Assign stylesheets and footer
 				$contextStyleSheet = $context->getSetting('journalStyleSheet');
@@ -78,18 +77,18 @@ class TemplateManager extends PKPTemplateManager {
 					$this->addStyleSheet($request->getBaseUrl() . '/' . $publicFileManager->getJournalFilesPath($context->getId()) . '/' . $contextStyleSheet['uploadName'], STYLE_SEQUENCE_LAST);
 				}
 
+				// Get a link to the settings page for the current context.
+				// This allows us to reduce template duplication by using this
+				// variable in templates/common/header.tpl, instead of
+				// reproducing a lot of OMP/OJS-specific logic there.
+				$router = $request->getRouter();
+				$dispatcher = $request->getDispatcher();
+				$this->assign( 'contextSettingsUrl', $dispatcher->url($request, ROUTE_PAGE, null, 'management', 'settings', 'journal') );
+
 				import('classes.payment.ojs.OJSPaymentManager');
 				$paymentManager = new OJSPaymentManager($request);
 				$this->assign('journalPaymentsEnabled', $paymentManager->isConfigured());
-
-				// Include footer links if they have been defined.
-				$footerCategoryDao = DAORegistry::getDAO('FooterCategoryDAO');
-				$footerCategories = $footerCategoryDao->getNotEmptyByContextId($context->getId());
-				$this->assign('footerCategories', $footerCategories->toArray());
-
-				$footerLinkDao = DAORegistry::getDAO('FooterLinkDAO');
-				$this->assign('maxLinks', $footerLinkDao->getLargestCategoryTotalbyContextId($context->getId()));
-				$this->assign('pageFooter', $context->getLocalizedSetting('journalPageFooter'));
+				$this->assign('pageFooter', $context->getLocalizedSetting('pageFooter'));
 			} else {
 				// Add the site-wide logo, if set for this locale or the primary locale
 				$displayPageHeaderTitle = $site->getLocalizedPageHeaderTitle();

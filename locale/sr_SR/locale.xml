@@ -4,11 +4,11 @@
 <!-- 
   * locale/sr_SR/locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the sr_SR (Serbian/Srpski) locale.
+  * Localization strings for the sr_SR (Cрпски) locale.
   *
   * Marija Matesic(mmatesi1@ffzg.hr), Tomislav Biscan (info@seofruits.com.hr) Exp $
   -->
@@ -474,11 +474,6 @@ Sadržaj priloženog fajla možete proveriti ukoliko kliknete na njegovo ime. Um
 <li>Koristite <i>*</i> u izrazu kao zamenski znak za bilo koji niz znakova; npr. <i>soci*</i> pronaći će dokumente koji sadrže "sociološka" ili "socijalna".</li>
 </ul>]]></message>
 
-	<!--  Interstitial page for PDFs  --><message key="article.pdf.title">Prenosni format dokumenta (PDF)</message>
-	
-	<!--  Interstitial page for non-PDF non-HTML galleys  --><message key="article.nonpdf.title">Preuzimanje članka</message>
-	<message key="article.nonpdf.note"><![CDATA[Fajl koji ste odabrali trebo bi automatski početi prebacivanje na Vaš računar. Ako se to ne dogodi, kliknite na link ispod. Ovaj fajl možda zahteva posebni program ili dodatak za prikaz.<br /><br />Ako se fajl ne preuzima automatski, <a href="{$url}">kliknite ovde</a>.]]></message>
-	
 	<!--  Site index  --><message key="site.journalsHosted">Časopisi hostovani na ovom sajtu</message>
 	<message key="site.journalView">Pregled časopisa</message>
 	<message key="site.journalRegister">Registracija</message>
@@ -759,7 +754,6 @@ Autori koji objavljuju u ovom časopisu pristaju na sljedeće uvijete:
 	<message key="reviewer.article.restrictedFileAccess">Tekst prijave će biti na raspolaganju kada i ako recenzent prihvati ponudu izrade recenzije.</message>
 	<message key="reviewer.article.enterReviewForm">Kliknite na ikonu kako biste ispunili recenzijski obrazac.</message>
 	<message key="reviewer.article.reviewFormResponse.form.responseRequired">Molimo popunite obavezna polja.</message>
-	<message key="common.pageHeader.altText">Zaglavlje stranice</message>
 	<message key="common.homePageHeader.altText">Zaglavlje naslovne stranice</message>
 	<message key="common.journalHomepageImage.altText">Slika naslovne stranice časopisa</message>
 	<message key="article.coverPage.altText">Slika naslovne stranice članka</message>
@@ -843,7 +837,6 @@ Autori koji objavljuju u ovom časopisu pristaju na sljedeće uvijete:
 	<message key="user.subscriptions.form.ipRangeValid">Unesite ispravan IP opseg.</message>
 	<message key="user.subscriptions.form.deleteIpRange">Obriši</message>
 	<message key="user.subscriptions.form.addIpRange">Dodaj</message>
-	<message key="article.pdf.download">Preuzmi PDF fajl</message>
 	<message key="about.history">Istorija časopisa</message>
 	<message key="about.subscriptions.individual">Individualne pretplate</message>
 	<message key="about.subscriptions.institutional">Institucionalne pretplate</message>
@@ -872,7 +865,6 @@ Autori koji objavljuju u ovom časopisu pristaju na sljedeće uvijete:
 	<message key="user.subscriptions.form.domainInstructions"><![CDATA[Ukoliko je domen unet, IP opsezi su opcioni.<br />Ispravne vrednosti su imena domena (npr. ff.uns.ac.rs)]]></message>
 	<message key="user.subscriptions.form.domainIPRangeRequired">Odabrani tip pretplate zahteva da unesete domen i/ili IP opsege radi autentifikacije.</message>
 	<message key="user.subscriptions.form.ipRangeInstructions"><![CDATA[Ukoliko su IP opsezi uneti, domen je opcion.<br />Ispravne vrednosti uključuju IP adresu (npr. 142.58.103.1), IP opseg (npr. 142.58.103.1 - 142.58.103.4) IP opseg sa "wildcard" (npr.  142.58.*.*) i IP opseg sa CIDR (npr. 142.58.100.0/24).]]></message>
-	<message key="article.pdf.pluginMissing"><![CDATA[<p>PDF fajl koji ste odabrali trebalo bi da se učita ovde ako vaš web pregledač ima PDF Reader plug-in instaliran (na primer, najnovija verzija <a href="https://get.adobe.com/reader/">Adobe Acrobat Reader</a>).</p> <p>Alternativno, možete preuzeti PDF fajl direktno na računar, odakle se može otvoriti pomoću PDF čitač. Da biste preuzeli PDF, kliknite na "Preuzmi PDF fajl" link ispod.</p>]]></message>
 	<message key="payment.subscription.purchase">Kupi pretplatu</message>
 	<message key="installer.installApplication">Instaliraj OJS</message>
 	<message key="installer.upgradeApplication">Nadogradi OJS</message>

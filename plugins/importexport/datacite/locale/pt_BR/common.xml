@@ -4,14 +4,14 @@
 <!--
   * plugins/importexport/datacite/locale/pt_BR/common.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
   -->
  
-<locale name="pt_BR" full_name="Português do Brasil">
+<locale name="pt_BR" full_name="Português (Brasil)">
 	<message key="plugins.importexport.common.error.DOIsNotAvailable">Para usar este plugin, acesse a categoria de plugins "Identificadores públicos", habilite e configure o plugin DOI e especifique um prefixo DOI válido nele.</message>
 	<message key="plugins.importexport.common.error.pluginNotConfigured">O plugin não está totalmente configurado.</message>
 

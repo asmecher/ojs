@@ -3,8 +3,8 @@
 /**
  * @file tests/data/60-content/RcerpaSubmissionTest.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class RcerpaSubmissionTest
@@ -38,18 +38,13 @@ class RcerpaSubmissionTest extends ContentBaseTestCase {
 		$this->logOut();
 
 		$this->findSubmissionAsEditor('dbarnes', null, $title);
-		$this->waitForElementPresent($selector = '//span[text()=\'Expedite submission\']/..');
-		$this->click($selector);
-		$this->waitForElementPresent($selector = '//span[text()=\'OK\']/..');
-		$this->click($selector);
-		$this->waitForElementPresent($selector = 'css=[id^=issueEntry-button-]');
-		$this->click($selector);
-		$this->waitForElementPresent($selector = '//a[@name=\'catalog\']');
+		$this->waitForElementPresent($selector = 'css=[id^=expedite-button-]');
 		$this->click($selector);
 		$this->waitForElementPresent($selector = 'id=issueId');
-		$this->select($selector, 'Vol 1, No 1 (2014)');
-		$this->waitForElementPresent($selector = '//span[text()=\'Save\']/..');
+		$this->select($selector, 'Vol 1 No 1 (2014)');
+		$this->waitForElementPresent($selector = '//button[text()=\'Save\']');
 		$this->click($selector);
+		$this->waitForElementNotPresent('css=div.pkp_modal_panel');
 		$this->logOut();
 	}
 }

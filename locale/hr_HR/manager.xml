@@ -4,8 +4,8 @@
 <!--
   * locale/hr_HR/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the hr_HR (Hrvatski) locale.
@@ -87,7 +87,6 @@
 	<message key="manager.sections.abstractsNotRequired">Ne trebaju sadržavati sažetke</message>
 	<message key="manager.sections.assigned">Urednici ove rubrike</message>
 	<message key="manager.sections.create">Kreiraj rubriku</message>
-	<message key="manager.sections.disableComments">Onemogući komentare čitatelja za ovu rubriku.</message>
 	<message key="manager.section.sectionEditorInstructions">Opcijama "odredi urednika" i "ukloni ulogu urednika" odredite koji će od postojećih urednika rubrika imati ovlasti uređivanja ove rubrike.</message>
 	<message key="manager.sections.editorRestriction">Samo urednici mogu prijavljivati priloge u ovu rubriku.</message>
 	<message key="manager.sections.editors">Urednici rubrika</message>
@@ -167,12 +166,6 @@
 	<message key="manager.setup.doiPrefix">DOI prefiks</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[DOI (Digital Object Identifier) prefiks dodijeljuje <a href="http://www.crossref.org" target="_new">CrossRef</a>, a unosi se u formatu 10.xxxx (npr. 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Urednička odluka</message>
-	<message key="manager.setup.editorialMembers">Odite na članove upravnog organa i dodajte članove uredništva i/ili recenzente. To može biti učinjeno u bili kojem trenutku prilikom rada sa časopisom.</message>
-	<message key="manager.setup.editorialProcess1">Jedan ili više urednika upravljaju glavnim koracima bez određenih uloga.</message>
-	<message key="manager.setup.editorialProcess2">Glavni urednik upravlja Redom čekanja prijave i Kazalom sadržaja, dok Urednici rubrika upravljaju Recenzijom prijave i Uređivanjem prijave.</message>
-	<message key="manager.setup.editorialProcess3">Glavni urednik upravlja Redom čekanja prijave, Uređivanjem prijave i Kazalom sadržaja, dok Urednici rubrika upravljaju Recenzijom prijave.</message>
-	<message key="manager.setup.editorialReviewBoard">Uredništvo / Recenzenti</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Časopisi imaju uredništva koja organiziraju lektorske smjernice časopisa, sudjeluju na sastancima urednika i na temelju reputacije članova upravnog organa daju časopisu određeni položaj u području. Recenzenti imaju sličnu ulogu, ali u tom postupku recenzije svi su ravnopravni. Recenzenti nemaju pristup administrativnom sustavu časopisa, ali će biti dodani na listu onih koji su raspoloživi za rad stručnih recenzija.</message>
 	<message key="manager.setup.emailBounceAddress">Adresa obavijesti o nedostavljanju</message>
 	<message key="manager.setup.emailBounceAddressDescription">Bilo koja nedostavljena e-pošta rezultirat će slanjem poruke o pogrešci na ovu adresu.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Obavijest:</strong> Kako bi aktivirao ovu opciju, administrator stranice mora omogućiti <tt>allow_envelope_sender</tt> u konfiguracijskoj datoteci OJS-a. Dodatna konfiguracija poslužitelja je potrebna da bi podržala ovu funkcionalnost (što nije moguće na svim poslužiteljima) -  naznačeno u  OJS dokumentaciji.]]></message>
@@ -241,8 +234,6 @@
 	<message key="manager.setup.journalLogo.altText">Logotip časopisa</message>
 	<message key="manager.setup.journalPageFooter">Podnožje stranice časopisa</message>
 	<message key="manager.setup.journalPageFooterDescription">Ovo je podnožje stranica vašeg časopisa. Da biste promijenili ili dopunili podnožje, zalijepite HTML kod u tekstni okvir ispod. Na primjer, ovdje možete postaviti druge navigacijske trake, brojač posjeta, i sl. Ovo podnožje će se pojaviti na svakoj stranici.</message>
-	<message key="manager.setup.journalPageHeader">Zaglavlje stranice časopisa</message>
-	<message key="manager.setup.journalPageHeaderDescription">U zaglavlju svake stranice časopisa mogu se nalaziti tekstualna ili grafička verzija naslova te logotip časopisa (u obliku .gif, .jpg, ili .png datoteke). Ovi elementi mogu biti različiti (na primjer, manji) od onih postavljenih na naslovnoj stranici (5.1).</message>
 	<message key="manager.setup.journalSetupUpdated">Uređivanje postavki časopisa je ažurirano.</message>
 	<message key="manager.setup.journalStyleSheetInvalid">Neispravan format stilske tablice časopisa. Prihvaćeni format je .css.</message>
 	<message key="manager.setup.journalTheme">Stilska tema časopisa</message>

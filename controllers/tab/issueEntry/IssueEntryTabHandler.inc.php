@@ -3,8 +3,8 @@
 /**
  * @file controllers/tab/issueEntry/IssueEntryTabHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueEntryTabHandler
@@ -69,6 +69,7 @@ class IssueEntryTabHandler extends PublicationEntryTabHandler {
 					$form = new IssueEntryPublicationMetadataForm($submission->getId(), $user->getId(), $this->getStageId(), array('displayedInContainer' => true, 'tabPos' => $this->getTabPosition()));
 					$notificationKey = 'notification.savedIssueMetadata';
 					import('lib.pkp.classes.log.SubmissionLog');
+					import('classes.log.SubmissionEventLogEntry'); // Log consts
 					SubmissionLog::logEvent($request, $submission, SUBMISSION_LOG_ISSUE_METADATA_UPDATE, 'submission.event.issueMetadataUpdated');
 					break;
 			}

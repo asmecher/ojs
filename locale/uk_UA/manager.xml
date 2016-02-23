@@ -4,11 +4,11 @@
 <!--
   * locale/uk_UA/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the uk_UA (Ukrainian) locale.
+  * Localization strings for the uk_UA (Українська) locale.
   *
   * Translated by Denys Solovianenko, 2011
   * V. I. Vernadsky National Library of Ukraine
@@ -122,7 +122,6 @@
        <message key="manager.sections.assigned">Редактори цього розділу</message>
        <message key="manager.sections.confirmDelete">Ви впевнені, що хочете назавжди видалити цей розділ? Всі публікації цього розділу потрібно буде перепублікувати.</message>
        <message key="manager.sections.create">Створити розділ</message>
-       <message key="manager.sections.disableComments">Заборонити коментарі читачів для цього розділу.</message>
        <message key="manager.section.sectionEditorInstructions">Додайте для цього розділу редактора, який автоматично буде призначатися для роботи з поданнями. У іншому випадку, редакторів розділу, відповідальних за кожне окреме подання, потрібно буде призначати вручну. Доданий редактор розділу автоматично ставатиме відповідальним за нагляд за процесами наукового рецензування та редакційної обробки (літературного редагування, верстки та коректури) рукописів, поданих для публікації у цьому розділі. Створити нових редакторів розділів можна, натиснувши посилання "Редактори розділів" у розділі "Ролі" сторінки "Менеджмент журналу".</message>
        <message key="manager.sections.editorRestriction">Об'єкти можуть надсилатись лише Редакторами та Редакторами розділів.</message>
        <message key="manager.sections.editors">Редактори розділу</message>
@@ -207,12 +206,6 @@
        <message key="manager.setup.disciplineProvideExamples">Наведіть приклади академічних дисциплін, відповідних проблематиці цього журналу</message>
        <message key="manager.setup.displayCurrentIssue">Додати сторінку змісту поточного випуску (якщо він наявний).</message>
        <message key="manager.setup.editorDecision">Рішення редактора</message>
-       <message key="manager.setup.editorialMembers">Перейти до налаштувань редакційних рад та додати членів редколегії та/або ради рецензентів. Це можна зробити на будь-якому етапі видання журналу.</message>
-       <message key="manager.setup.editorialProcess1">Всі основні кроки будуть виконуватись одним або кількома редакторами без додаткового розподілу ролей.</message>
-       <message key="manager.setup.editorialProcess2">Відповідальний редактор контролює редакційну чергу та створює сторінки змісту випусків, а редактори розділів відповідають за процеси рецензування та редагування подань.</message>
-       <message key="manager.setup.editorialProcess3">Відповідальний редактор контролює редакційну чергу, керує редагуванням подань та створює сторінки змісту випусків, а редактори розділів відповідають за процеси рецензування подань.</message>
-       <message key="manager.setup.editorialReviewBoard">Редколегія / Рада рецензентів</message>
-       <message key="manager.setup.editorialReviewBoardDescription">Журнали мають редакційні колегії, які слідкують за редакційною політикою журналу, беруть участь у призначенні редакторів, крім того, репутація та статус членів редколегії важливі для затвердження репутації журналу в межах наукової спільноти. Ради рецензентів відіграють таку ж роль, але крім цього, вони очолюють процес наукового рецензування. Члени ради рецензентів не будуть мати доступу до системи адміністрування журналу, але вони будуть додані до списку доступних рецензентів.</message>
        <message key="manager.setup.emailBounceAddress">Адреса повернення</message>
        <message key="manager.setup.emailBounceAddressDescription">На цю адресу будуть надсилатися повідомлення про всі недоставлені листи.</message>
        <message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Примітка:</strong> Щоб активувати цю опцію, адміністратор повинен дозволити директиву <tt>allow_envelope_sender</tt> у файлі конфігурації OJS. Крім того, як зазначено у документації OJS, налаштування цієї опції може вимагати також додаткових конфігурацій (що можливо не на всіх серверах).]]></message>
@@ -286,8 +279,6 @@
        <message key="manager.setup.journalLogo.altText">Логотип журналу</message>
        <message key="manager.setup.journalPageFooter">Нижній колонтитул сторінки</message>
        <message key="manager.setup.journalPageFooterDescription">Це нижній колонтитул сторінок Вашого журналу. Щоб змінити або оновити нижній колонтитул, вставте код HTML у поле нижче. Наприклад, у нижньому колонтитулі може розміщуватись ще одна навігаційна панель, лічильник тощо. Нижній колонтитул з'явиться на всіх сторінках сайту журналу.</message>
-       <message key="manager.setup.journalPageHeader">Заголовок сторінки</message>
-       <message key="manager.setup.journalPageHeaderDescription">Замість тексту, який відображається на сторінках сайту за замовчуванням, можна вивантажити графічну версію назви та логотипу журналу (як файл формату .gif, .jpg або .png). Ця графічна версія може бути такою ж, як і вивантажена для заголовку домашньої сторінки, але може і відрізнятися від неї.</message>
        <message key="manager.setup.journalPolicies">Крок 2. Політика журналу</message>
        <message key="manager.setup.journalSetup">Налаштування журналу</message>
        <message key="manager.setup.journalSetupUpdated">Налаштування Вашого журналу оновлені.</message>

@@ -4,8 +4,8 @@
 <!--
   * locale/tr_TR/emailTemplateData.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localized email templates XML file.
@@ -30,7 +30,6 @@ Eğer şifrenizi değiştirmek istiyorsanız aşağıdaki bağlantıyı tıklay�
 		<body><![CDATA[{$siteTitle} sitesinde kullanacağınız şifreniz değiştirilmiştir. Kullanıcı adı ve şifre dergi ile yapacağınız tüm çalışmalarda gerekli olduğundan güvenli bir yere not ediniz. <br />
 <br />
 Kullanıcı adı: {$username}<br />
-Yeni şifreniz: {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
 		<description>Bu e-posta PASSWORD_RESET_CONFIRM mesajında aktarılan süreç doğrultusunda şifre değişikliği yapmış kayıtlı kullanıcılara gönderilmektedir.</description>
@@ -126,7 +125,7 @@ Teşekkür ederim<br />
 <br />
 {$contextName} dergisine gönderdiğiniz &quot;{$submissionTitle}&quot; adlı gönderi için teşekkür ederiz. Kullanmakta olduğumuz internet erişimli dergi yönetim sistemi ile, dergi web sitesine aşağıdaki bilgilerle giriş yaparak çalışmanızı yayın işlemleri boyunca takip edebilirsiniz:<br />
 <br />
-Erişim adresi: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Erişim adresi: {$submissionUrl}<br />
 Kullanıcı Adı: {$authorUsername}<br />
 <br />
 Eğer herhangi bir soru veya sorununuz olursa lütfen bizimle iletişime geçiniz. Bu dergiyi mesleğinizle ilgili bir buluşma yeri olarak gördüğünüz için teşekkür ederiz.<br />
@@ -170,7 +169,7 @@ Bu süreçteki değerli yardımlarınız için tekrar teşekkür ederim.<br />
 <br />
 {$contextName} için gönderilen &quot;{$submissionTitle}&quot; başlıklı başvuru editörü olduğunuz dergi bölümünde yayınlanmak için değerlendirilecektir. Yayına hazırlık sürecininde başarılar dileriz. <br />
 <br />
-Başvuru Erişim Adresi: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Başvuru Erişim Adresi: {$submissionUrl}<br />
 Kullanıcı Adı: {$editorUsername}<br />
 <br />
 Teşekkürler,<br />
@@ -487,7 +486,7 @@ Sorunuz olur ise bana yazabilirsiniz.<br />
 <br />
 {$contextName} için &quot;{$submissionTitle}&quot; başlıklı çalışmanızın mizanpajı tamamlanarak, prova dizgisi değerlendirmenize hazır hale gelmiştir. Lütfen dergi sitemize aşağıdaki bağlantıdan girip, &quot;PROVA DİZGİYİ GÖR&quot; bağlantısını izleyerek yazınızın yayınlanacak biçimini gözden geçiriniz. Lütfen saptadığınız hatalar veya dilediğiniz geliştirmeleri prova dizgi düzeltme yönergesini izleyerek, sayfadaki Prova Dizgi Düzeltme kutusuna yazarak, form aracılığı ile bize iletiniz.<br />
 <br />
-Makalenize ulaşım bağlantısı: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Makalenize ulaşım bağlantısı: {$submissionUrl}<br />
 <br />
 Eğer bu işlem ile ilgili soru veya sorunlarınız olur ise bana iletiniz.<br />
 Dergimize değerli katkılarınız için teşekkür ederiz.<br />
@@ -525,7 +524,7 @@ Dergimize değerli katkılarınız için tekrar teşekkür ederiz.<br />
 <br />
 {$contextName} için &quot;{$submissionTitle}&quot; başlıklı çalışmanın prova dizgisinin son biçimini değerlendirmenizi rica ederim.<br />
 <br />
-Makaleye ulaşım bağlantısı: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Makaleye ulaşım bağlantısı: {$submissionUrl}<br />
 Kullanıcı adınız: {$proofreaderUsername}<br />
 <br />
 İşin gerçekleştirilmesi ile ilgili bir sorununuz veya diğer sorularınız için bana yazabilirsiniz.<br />
@@ -559,7 +558,7 @@ Dergimizin kalitesine katkılarınız için teşekkür ederiz.<br />
 <br />
 {$contextName} için &quot;{$submissionTitle}&quot; başlıklı çalışmanın prova dizgisi son biçimini almıştır. Tarafınızdan yayınlanmadan önceki son kontrolün yapılmasını rica ederim.<br />
 <br />
-Makaleye ulaşım bağlantısı: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Makaleye ulaşım bağlantısı: {$submissionUrl}<br />
 Kullanıcı adınız: {$layoutEditorUsername}<br />
 <br />
 İşin gerçekleştirilmesi ile ilgili bir sorununuz veya diğer sorularınız için bana yazabilirsiniz.<br />
@@ -992,7 +991,7 @@ We hope that you enjoy your gift!<br />
 <br />
 A revised version of &quot;{$submissionTitle}&quot; has been uploaded by the author {$authorName}.<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email is automatically sent to the assigned editor when author uploads a revised version of an article.</description>

@@ -4,14 +4,14 @@
 <!--
   * @file plugins/importexport/datacite/locale/sr_SR/common.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Shared localization strings
   -->
  
-<locale name="sr_SR" full_name="Srpski">
+<locale name="sr_SR" full_name="Cрпски">
 	<message key="plugins.importexport.common.error.DOIsNotAvailable">Ako želite da koristite ovaj dodatak idite u kategoriju dodataka "Public Identifier (Javni dodaci)" i uključite i konfigurišite dodatak DOI.</message>
 	<message key="plugins.importexport.common.error.pluginNotConfigured">Dodatak nije u potpunosti podešen.</message>
 

@@ -1,8 +1,8 @@
 {**
  * templates/controllers/grid/issues/form/coverForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Form for creation and modification of an issue
@@ -15,8 +15,8 @@
 			{ldelim}
 				$uploader: $('#pluploadimage'),
 				uploaderOptions: {ldelim}
-					uploadUrl: '{url|escape:javascript op="uploadFile"}',
-					baseUrl: '{$baseUrl|escape:javascript}'
+					uploadUrl: {url|json_encode op="uploadFile" escape=false},
+					baseUrl: {$baseUrl|json_encode}
 				{rdelim}
 			{rdelim}
 		);
@@ -29,7 +29,7 @@
 			{fbvElement type="checkbox" id="showCoverPage" value=1 checked=$showCoverPage label="editor.issues.showCoverPage" inline=true}
 		{/fbvFormSection}
 	{/fbvFormArea}
-	{fbvFormArea id="coverFile" class="border"}
+	{fbvFormArea id="coverFile"}
 		{fbvFormSection title="editor.issues.coverPage"}
 			<div id="pluploadimage"></div>
 			<input type="hidden" name="temporaryFileId" id="temporaryFileId" value="" />

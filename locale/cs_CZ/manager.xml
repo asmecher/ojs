@@ -4,11 +4,11 @@
 <!--
   * /locale/cs_CZ/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the cs_CZ (Czech) locale.
+  * Localization strings for the cs_CZ (Čeština) locale.
   *
   -->
 
@@ -90,7 +90,6 @@
 	<message key="manager.sections.abstractsNotRequired">Nepožadovat abstrakta</message>
 	<message key="manager.sections.assigned">Editoři této sekce</message>
 	<message key="manager.sections.create">Vytvořit sekci</message>
-	<message key="manager.sections.disableComments">Zakázat komentáře čtenářů pro tuto sekci.</message>
 	<message key="manager.section.sectionEditorInstructions">Vyberte z dostupných editorů sekcí a "Přidělte editora" této sekci.</message>
 	<message key="manager.sections.editorRestriction">Položky mohou být zaslány pouze editory a editory sekcí.</message>
 	<message key="manager.sections.editors">Editoři sekce</message>
@@ -172,12 +171,6 @@
 	<message key="manager.setup.doiPrefix">DOI Prefix</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[DOI (Digital Object Identifier) prefix je přidělován <a href="http://www.crossref.org" target="_new">CrossRef</a> a má formát 10.xxxx (například 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Rozhodnutí editora</message>
-	<message key="manager.setup.editorialMembers">Přejděte k části Členové rady a přidejte členy redakční rady a/nebo recenzní rady. Můžete to provést v kterémkoliv bodě fungování časopisu.</message>
-	<message key="manager.setup.editorialProcess1">Jeden nebo více editorů obsluhuje základní kroky aniž by měli podroběnji stanoveny své role.</message>
-	<message key="manager.setup.editorialProcess2">Editor obsluhuje frontu příspěvků a obsah, zatímco editoři sekcí obsluhují recenze příspěvků a redigování příspěvků.</message>
-	<message key="manager.setup.editorialProcess3">Editor obsluhuje frontu příspěvků, redigování příspěvků a obsah, zatímco editoři sekcí obsluhují recenze příspěvků.</message>
-	<message key="manager.setup.editorialReviewBoard">Redakční / recenzní rada</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Časopisy mají redakční rady, aby dohlížely na redakční směřování časopisu, účastnily se editorských úkolů a na základě reputace členů rady určovaly pozici časopisu v oboru. Recenzní rada hraje podobnou roli, ale navíc vede recenzní řízení. Členové recenzní rady nebudou mít přístup do administrativního systému časopisu, ale budou přidáni do seznamu osob, které jsou k dispozici pro vypracovávání recenzí.</message>
 	<message key="manager.setup.emailBounceAddress">Adresa pro nedoručitelné zprávy</message>
 	<message key="manager.setup.emailBounceAddressDescription">Jakékoliv nedoručitelné e-maily povedou k zaslání chybové zprávy na tuto adresu.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Poznámka</strong> Pro aktivaci této možnosti musí administrátor stránky povolit možnost <tt>allow_envelope_sender</tt> v konfiguračním souboru OJS. Pro podporu této funkce může být vyžadována další konfigurace serveru (která nemusí být možná na všech serverech), jak je naznačeno v dokumentaci OJS.]]></message>
@@ -248,8 +241,6 @@
 	<message key="manager.setup.journalLogo.altText">Logo časopisu</message>
 	<message key="manager.setup.journalPageFooter">Zápatí stránky časopisu</message>
 	<message key="manager.setup.journalPageFooterDescription">Toto je zápatí vašeho časopisu. Pro změnu nebo aktualizaci zápatí vložte HTML kód do textového pole níže. Může jít například o další navigační panel, počítadlo atd. Toto zápatí se objeví na každé stránce.</message>
-	<message key="manager.setup.journalPageHeader">Hlavička stránky časopisu</message>
-	<message key="manager.setup.journalPageHeaderDescription">Pro stránky časopisu můžete nahrát grafickou verzi názvu časopisu a logo - pokud možno v menší verzi než byla použita pro domácí stránku - (jako soubory typu .gif, .jpg, nebo .png), které nahradí jinak zobrazovanou textovou verzi.</message>
 	<message key="manager.setup.journalPolicies">Krok 2. Pravidla časopisu</message>
 	<message key="manager.setup.journalSetup">Nastavení časopisu</message>
 	<message key="manager.setup.journalSetupUpdated">Nastavení časopisu bylo aktualizováno.</message>

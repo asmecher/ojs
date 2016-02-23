@@ -3,8 +3,8 @@
 /**
  * @file classes/tasks/ReviewReminder.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ReviewReminder
@@ -24,6 +24,13 @@ class ReviewReminder extends ScheduledTask {
 		$this->ScheduledTask();
 	}
 
+	/**
+	 * @see ScheduledTask::getName()
+	 */
+	function getName() {
+		return __('admin.scheduledTask.reviewReminder');
+	}
+
 	function sendReminder ($reviewAssignment, $submission, $context) {
 		$reviewAssignmentDao = DAORegistry::getDAO('ReviewAssignmentDAO');
 		$userDao = DAORegistry::getDAO('UserDAO');
@@ -36,7 +43,7 @@ class ReviewReminder extends ScheduledTask {
 
 		$reviewerAccessKeysEnabled = $context->getSetting('reviewerAccessKeysEnabled');
 
-		$email = new ArticleMailTemplate($submission, $reviewerAccessKeysEnabled?'REVIEW_REMIND_AUTO_ONECLICK':'REVIEW_REMIND_AUTO', $context->getPrimaryLocale(), false, $context);
+		$email = new ArticleMailTemplate($submission, $reviewerAccessKeysEnabled?'REVIEW_REMIND_AUTO_ONECLICK':'REVIEW_REMIND_AUTO', $context->getPrimaryLocale(), $context, false);
 		$email->setContext($context);
 		$email->setReplyTo(null);
 		$email->addRecipient($reviewer->getEmail(), $reviewer->getFullName());
@@ -85,7 +92,10 @@ class ReviewReminder extends ScheduledTask {
 
 	}
 
-	function execute() {
+	/**
+	 * @see ScheduledTask::executeActions()
+	 */
+	protected function executeActions() {
 		$submission = null;
 		$context = null;
 

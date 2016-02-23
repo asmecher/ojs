@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/emailTemplateData.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localized email templates XML file.
@@ -84,7 +84,6 @@ Reset my password: {$url}<br />
 		<body><![CDATA[Your password has been successfully reset for use with the {$siteTitle} web site. Please retain this username and password, as it is necessary for all work with the journal.<br />
 <br />
 Your username: {$username}<br />
-Your new password: {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
 		<description>This email is sent to a registered user when they have successfully reset their password following the process described in the PASSWORD_RESET_CONFIRM email.</description>
@@ -175,7 +174,7 @@ Thank you,<br />
 <br />
 Thank you for submitting the manuscript, &quot;{$submissionTitle}&quot; to {$contextName}. With the online journal management system that we are using, you will be able to track its progress through the editorial process by logging in to the journal web site:<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 Username: {$authorUsername}<br />
 <br />
 If you have any questions, please contact me. Thank you for considering this journal as a venue for your work.<br />
@@ -197,7 +196,7 @@ An initial review of &quot;{$submissionTitle}&quot; has made it clear that this 
 <br />
 The submission, &quot;{$submissionTitle},&quot; to {$contextName} has been assigned to you to see through the editorial process in your role as Section Editor.<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 Username: {$editorUsername}<br />
 <br />
 Thank you,<br />
@@ -436,13 +435,13 @@ Please confirm your ability to complete this vital contribution to the work of t
 		<subject>Editor Decision</subject>
 		<body><![CDATA[{$authorName}:<br />
 <br />
-We have reached a decision regarding your submission to {$journalTitle}, &quot;{$submissionTitle}&quot;.<br />
+We have reached a decision regarding your submission to {$contextName}, &quot;{$submissionTitle}&quot;.<br />
 <br />
-Our decision is to:<br />
+Our decision is to: Accept Submission<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
-		<description>This email from the Editor or Section Editor to an Author notifies them of a final decision regarding their submission.</description>
+		<description>This email from the Editor or Section Editor to an Author notifies them of a final "accept submission" decision regarding their submission.</description>
 	</email_text>
 	<email_text key="EDITOR_DECISION_SEND_TO_EXTERNAL">
 		<subject>Editor Decision</subject>
@@ -450,9 +449,9 @@ Our decision is to:<br />
 <br />
 We have reached a decision regarding your submission to {$contextName}, &quot;{$submissionTitle}&quot;.<br />
 <br />
-Our decision is to:<br />
+Our decision is to: Send to Review<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
@@ -464,7 +463,7 @@ Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 The editing of your submission, &quot;{$submissionTitle},&quot; is complete.  We are now sending it to production.<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
@@ -474,37 +473,37 @@ Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 		<subject>Editor Decision</subject>
 		<body><![CDATA[{$authorName}:<br />
 <br />
-We have reached a decision regarding your submission to {$journalTitle}, &quot;{$submissionTitle}&quot;.<br />
+We have reached a decision regarding your submission to {$contextName}, &quot;{$submissionTitle}&quot;.<br />
 <br />
-Our decision is to:<br />
+Our decision is: Revisions Required<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
-		<description>This email from the Editor or Section Editor to an Author notifies them of a final decision regarding their submission.</description>
+		<description>This email from the Editor or Section Editor to an Author notifies them of a final "revisions required" decision regarding their submission.</description>
 	</email_text>
 	<email_text key="EDITOR_DECISION_RESUBMIT">
 		<subject>Editor Decision</subject>
 		<body><![CDATA[{$authorName}:<br />
 <br />
-We have reached a decision regarding your submission to {$journalTitle}, &quot;{$submissionTitle}&quot;.<br />
+We have reached a decision regarding your submission to {$contextName}, &quot;{$submissionTitle}&quot;.<br />
 <br />
-Our decision is to:<br />
+Our decision is to: Resubmit for Review<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
-		<description>This email from the Editor or Section Editor to an Author notifies them of a final decision regarding their submission.</description>
+		<description>This email from the Editor or Section Editor to an Author notifies them of a final "resubmit" decision regarding their submission.</description>
 	</email_text>
 	<email_text key="EDITOR_DECISION_DECLINE">
 		<subject>Editor Decision</subject>
 		<body><![CDATA[{$authorName}:<br />
 <br />
-We have reached a decision regarding your submission to {$journalTitle}, &quot;{$submissionTitle}&quot;.<br />
+We have reached a decision regarding your submission to {$contextName}, &quot;{$submissionTitle}&quot;.<br />
 <br />
-Our decision is to:<br />
+Our decision is to: Decline Submission<br />
 <br />
 {$editorialContactSignature}<br />
 ]]></body>
-		<description>This email from the Editor or Section Editor to an Author notifies them of a final decision regarding their submission.</description>
+		<description>This email from the Editor or Section Editor to an Author notifies them of a final "decline" decision regarding their submission.</description>
 	</email_text>
 	<email_text key="COPYEDIT_REQUEST">
 		<subject>Copyediting Request</subject>
@@ -815,7 +814,7 @@ We hope that you enjoy your gift!<br />
 <br />
 A revised version of &quot;{$submissionTitle}&quot; has been uploaded by the author {$authorName}.<br />
 <br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email is automatically sent to the assigned editor when author uploads a revised version of an article.</description>

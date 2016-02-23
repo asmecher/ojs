@@ -3,8 +3,8 @@
 /**
  * @file classes/article/ArticleGalley.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ArticleGalley
@@ -30,10 +30,7 @@ class ArticleGalley extends Representation {
 	 * @return boolean
 	 */
 	function isHTMLGalley() {
-		if ($this->getGalleyType() == 'htmlarticlegalleyplugin')
-			return true;
-		else
-			return false;
+		return $this->getGalleyType() == 'htmlarticlegalleyplugin';
 	}
 
 	/**
@@ -41,10 +38,7 @@ class ArticleGalley extends Representation {
 	 * @return boolean
 	 */
 	function isPdfGalley() {
-		if ($this->getGalleyType() == 'pdfarticlegalleyplugin')
-			return true;
-		else
-			return false;
+		return $this->getGalleyType() == 'pdfarticlegalleyplugin';
 	}
 
 	/**
@@ -112,6 +106,15 @@ class ArticleGalley extends Representation {
 	}
 
 	/**
+	 * Override the parent class to fetch the non-localized label.
+	 * @see Representation::getLocalizedName()
+	 * @return string
+	 */
+	function getLocalizedName() {
+		return $this->getLabel();
+	}
+
+	/**
 	 * Get locale.
 	 * @return string
 	 */
@@ -159,22 +162,6 @@ class ArticleGalley extends Representation {
 	}
 
 	/**
-	 * Determines if a galley is available or not.
-	 * @return boolean
-	 */
-	function getIsAvailable() {
-		return $this->getData('isAvailable') ? true : false;
-	}
-
-	/**
-	 * Sets whether a galley is available or not.
-	 * @param boolean $isAvailable
-	 */
-	function setIsAvailable($isAvailable) {
-		return $this->setData('isAvailable', $isAvailable);
-	}
-
-	/**
 	 * Set the type of this galley, which maps to an articleGalley plugin.
 	 * @param string $galleyType
 	 */
@@ -196,13 +183,14 @@ class ArticleGalley extends Representation {
 	 * @return array SubmissionFile
 	 */
 	function getLatestGalleyFiles($fileExtensionMatch = null) {
+		import('lib.pkp.classes.submission.SubmissionFile'); // SUBMISSION_FILE_... constants
 		$submissionFileDao = DAORegistry::getDAO('SubmissionFileDAO');
 		$submissionFiles = $submissionFileDao->getLatestRevisionsByAssocId(
 			ASSOC_TYPE_GALLEY, $this->getId(),
 			$this->getSubmissionId(), SUBMISSION_FILE_PROOF
 		);
 
-		if (!$fileExtensionMatch) {
+		if ($fileExtensionMatch === null) {
 			return $submissionFiles;
 		} else {
 			$filteredFiles = array();
@@ -225,13 +213,7 @@ class ArticleGalley extends Representation {
 	function getFirstGalleyFile($fileType = null, $allFiles = false) {
 		$submissionFiles = $this->getLatestGalleyFiles($fileType);
 		if (is_array($submissionFiles) && sizeof($submissionFiles) > 0) {
-			if ($allFiles) {
-				return array_shift($submissionFiles);
-			} else { // return first viewable file.
-				foreach ($submissionFiles as $id => $file) {
-					if ($file->getViewable()) return $file;
-				}
-			}
+			return array_shift($submissionFiles);
 		}
 
 		return null;

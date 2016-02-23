@@ -3,8 +3,8 @@
 /**
  * @file plugins/metadata/dc11/filter/Dc11SchemaArticleAdapter.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class Dc11SchemaArticleAdapter
@@ -86,13 +86,7 @@ class Dc11SchemaArticleAdapter extends MetadataDataObjectAdapter {
 		// Creator
 		$authors = $article->getAuthors();
 		foreach($authors as $author) {
-			$authorName = $author->getFullName(true);
-			$affiliation = $author->getLocalizedAffiliation();
-			if (!empty($affiliation)) {
-				$authorName .= '; ' . $affiliation;
-			}
-			$dc11Description->addStatement('dc:creator', $authorName);
-			unset($authorName);
+			$dc11Description->addStatement('dc:creator', $author->getFullName(true));
 		}
 
 		// Subject

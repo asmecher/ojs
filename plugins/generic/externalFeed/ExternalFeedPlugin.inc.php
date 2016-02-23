@@ -3,8 +3,8 @@
 /**
  * @file plugins/generic/externalFeed/ExternalFeedPlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ExternalFeedPlugin
@@ -150,6 +150,8 @@ class ExternalFeedPlugin extends GenericPlugin {
 		$journalId = $journal?$journal->getId():0;
 
 		if ($this->getEnabled()) {
+			// Only page requests will be handled
+			if (!is_a($request->getRouter(), 'PKPPageRouter')) return false;
 			$requestedPage = $request->getRequestedPage();
 
 			if (empty($requestedPage) || $requestedPage == 'index') {
@@ -227,7 +229,7 @@ class ExternalFeedPlugin extends GenericPlugin {
 		if ($this->getEnabled()) {
 			$smarty =& $params[1];
 			$output =& $params[2];
-			$output .= '<li>&#187; <a href="' . $this->smartyPluginUrl(array('op'=>'plugin', 'path'=>'feeds'), $smarty) . '">' . TemplateManager::smartyTranslate(array('key'=>'plugins.generic.externalFeed.manager.feeds'), $smarty) . '</a></li>';
+			$output .= '<li><a href="' . $this->smartyPluginUrl(array('op'=>'plugin', 'path'=>'feeds'), $smarty) . '">' . TemplateManager::smartyTranslate(array('key'=>'plugins.generic.externalFeed.manager.feeds'), $smarty) . '</a></li>';
 		}
 		return false;
 	}

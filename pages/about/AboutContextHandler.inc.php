@@ -3,8 +3,8 @@
 /**
  * @file pages/about/AboutContextHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class AboutContextHandler
@@ -36,45 +36,64 @@ class AboutContextHandler extends Handler {
 
 		import('lib.pkp.classes.security.authorization.ContextRequiredPolicy');
 		$this->addPolicy(new ContextRequiredPolicy($request));
+
 		return parent::authorize($request, $args, $roleAssignments);
 	}
 
 	/**
-	 * Display contact page.
+	 * Display about page.
 	 * @param $args array
 	 * @param $request PKPRequest
 	 */
-	function contact($args, $request) {
+	function index($args, $request) {
 		$settingsDao = DAORegistry::getDAO('JournalSettingsDAO');
 		$context = $request->getContext();
-		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->assign('contextSettings', $settingsDao->getSettings($context->getId()));
-		$templateMgr->display('about/contact.tpl');
-	}
 
-	/**
-	 * Display description page.
-	 * @param $args array
-	 * @param $request PKPRequest
-	 */
-	function description($args, $request) {
+		$this->setupTemplate($request);
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->display('about/description.tpl');
-	}
+		$contextSettings = $settingsDao->getSettings($context->getId());
+		$templateMgr->assign('contextSettings', $contextSettings);
 
-	/**
-	 * Display sponsorship page.
-	 * @param $args array
-	 * @param $request PKPRequest
-	 */
-	function sponsorship($args, $request) {
-		$context = $request->getContext();
-		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->assign('contributorNote', $context->getLocalizedSetting('contributorNote'));
-		$templateMgr->assign('contributors', $context->getSetting('contributors'));
-		$templateMgr->assign('sponsorNote', $context->getLocalizedSetting('sponsorNote'));
-		$templateMgr->assign('sponsors', $context->getSetting('sponsors'));
-		$templateMgr->display('about/sponsorship.tpl');
+		// Contact details
+		$contactName = $contextSettings['contactName'];
+		$contactTitle = $context->getLocalizedSetting('contactTitle');
+		$contactAffiliation = $context->getLocalizedSetting('contactAffiliation');
+		$contactPhone = $contextSettings['contactPhone'];
+		$contactEmail = $contextSettings['contactEmail'];
+		$supportName = $contextSettings['supportName'];
+		$supportPhone = $contextSettings['supportPhone'];
+		$supportEmail = $contextSettings['supportEmail'];
+
+		// Whether or not contact details should be displayed
+		if ($contactName || $contactTitle || $contactAffiliation ||
+			$contactPhone || $contactEmail ) {
+			$templateMgr->assign('showContact', true);
+		}
+
+		// Whether or not to show contact details for a support tech
+		if ($supportName || $supportPhone || $supportEmail ) {
+			$templateMgr->assign('showSupportContact', true);
+		}
+
+		$templateMgr->assign('mailingAddress', $contextSettings['mailingAddress']);
+		$templateMgr->assign('contactName', $contactName);
+		$templateMgr->assign('contactTitle', $contactTitle);
+		$templateMgr->assign('contactAffiliation', $contactAffiliation);
+		$templateMgr->assign('contactPhone', $contactPhone);
+		$templateMgr->assign('contactEmail', $contactEmail);
+		$templateMgr->assign('supportName', $supportName);
+		$templateMgr->assign('supportPhone', $supportPhone);
+		$templateMgr->assign('supportEmail', $supportEmail);
+
+		// Sponsorship details
+		$templateMgr->assign(array(
+			'contributorNote' => $context->getLocalizedSetting('contributorNote'),
+			'contributors' => $context->getSetting('contributors'),
+			'sponsorNote' => $context->getLocalizedSetting('sponsorNote'),
+			'sponsors' => $context->getSetting('sponsors'),
+		));
+
+		$templateMgr->display('frontend/pages/about.tpl');
 	}
 
 	/**
@@ -83,18 +102,9 @@ class AboutContextHandler extends Handler {
 	 * @param $request PKPRequest
 	 */
 	function editorialTeam($args, $request) {
+		$this->setupTemplate($request);
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->display('about/editorialTeam.tpl');
-	}
-
-	/**
-	 * Display editorialPolicies page.
-	 * @param $args array
-	 * @param $request PKPRequest
-	 */
-	function editorialPolicies($args, $request) {
-		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->display('about/editorialPolicies.tpl');
+		$templateMgr->display('frontend/pages/editorialTeam.tpl');
 	}
 
 	/**
@@ -103,6 +113,8 @@ class AboutContextHandler extends Handler {
 	 * @param $request PKPRequest
 	 */
 	function submissions($args, $request) {
+		$this->setupTemplate($request);
+
 		$context = $request->getContext();
 		$templateMgr = TemplateManager::getManager($request);
 		$submissionChecklist = $context->getLocalizedSetting('submissionChecklist');
@@ -111,7 +123,16 @@ class AboutContextHandler extends Handler {
 			reset($submissionChecklist);
 		}
 		$templateMgr->assign('submissionChecklist', $submissionChecklist);
-		$templateMgr->display('about/submissions.tpl');
+		$templateMgr->display('frontend/pages/submissions.tpl');
+	}
+
+	/**
+	 * @copydoc PKPHandler::setupTemplate()
+	 */
+	function setupTemplate($request) {
+		parent::setupTemplate($request);
+		$templateMgr = TemplateManager::getManager($request);
+		$templateMgr->assign('userRoles', $this->getAuthorizedContextObject(ASSOC_TYPE_USER_ROLES));
 	}
 }
 

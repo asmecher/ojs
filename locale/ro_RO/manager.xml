@@ -4,11 +4,11 @@
 <!--
   * locale/ro_RO/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the ro_RO (Romanian) locale.
+  * Localization strings for the ro_RO (Limba Română) locale.
   * Provided by Constantinescu Nicolaie. 
   *
   -->
@@ -115,7 +115,6 @@
 	<message key="manager.sections.abstractsNotRequired">Nu necesită abstracte</message>
 	<message key="manager.sections.assigned">Redactorii acestei secţiuni</message>
 	<message key="manager.sections.create">Creează secţiune</message>
-	<message key="manager.sections.disableComments">Dezactivează comentariile cititorilor pentru această secţiune.</message>
 	<message key="manager.section.sectionEditorInstructions">Adaugă un redactor de secțiune acestei secțiuni pentru a avea automat atribuite propunerile către acesta. Alternativa este ca redactorii de secțiune să fie angajați manual la momentul când apare o propunere. Dacă un redactor de secțiune este adăugat, acesta poate fi desemnat automat pentru a supraveghea EVALUAREA (peer review) și/sau REDACTAREA (redactarea, machetarea și corectura) propunerilor către această secțiune. Redactorii de secțiune sunt creați dând clic pe redactorii de secțiune de sub roluri în secțiunea de management a revistei.</message>
 	<message key="manager.sections.editorRestriction">Articolele pot fi propuse doar de redactori şi de redactorii de secţiune.</message>
 	<message key="manager.sections.editors">Redactorii de secțiune</message>
@@ -208,12 +207,6 @@
 	<message key="manager.setup.doiSuffixDescription">Un sufix DOI poate avea orice formă, dar trebuie să fie unic pentru fiecare articol publicat.</message>
 	<message key="manager.setup.doiSuffixPublisherId">Folosește „identificator particularizat” pentru articolele publicate ca fiind un sufix DOI (acesta trebuie activat la Pasul 4).</message>
 	<message key="manager.setup.editorDecision">Decizia redactorului</message>
-	<message key="manager.setup.editorialMembers">Mergi la membrii colectivului şi mai adaugă dintre aceștia la colectivul redacţional şi/sau la cel de evaluare. Acest lucru poate fi făcut în orice moment al activităţii revistei.</message>
-	<message key="manager.setup.editorialProcess1">Unu sau mai mulţi redactori gestionează paşii de bază fără a avea roluri desemnate.</message>
-	<message key="manager.setup.editorialProcess2">Redactorul manager gestionează lista propunerilor şi cuprinsul în timp ce redactorii secţiunilor se ocupă de evaluarea propunerilor şi de editarea acestora.</message>
-	<message key="manager.setup.editorialProcess3">Redactorul manager gestionează lista propunerilor şi cuprinsul în timp ce redactorii secţiunilor se ocupă de evaluarea propunerilor şi de editarea acestora.</message>
-	<message key="manager.setup.editorialReviewBoard">Colectivul editorial / de evaluatori</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Revistele au un colectiv editorial care îngrijeşte la direcţiile redacţionale ale revistei, participă în numirea redactorilor iar prin calitatea membrilor acestui colectiv dau o poziţie revistei în sfera domeniului. Colectivul de evaluare joacă un rol similar, dar, în plus, conduc procesele de evaluare. Membrii colectivului de evaluare nu vor avea acces la sistemul administrativ al revistei, dar vor fi adăugaţi la lista celor care sunt disponibili pentru a face evaluări.</message>
 	<message key="manager.setup.emailBounceAddress">Adresă de salt</message>
 	<message key="manager.setup.emailBounceAddressDescription">Orice email care nu poate fi trimis va avea ca rezultat o eroare trimisă la această adresă.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Notă:</strong> Pentru a folosi această opţiune, administratorul trebuie să activeze opţiunea <tt>allow_envelope_sender</tt> din fişierul de configurare al OJS. Poate să fie nevoie de configurări suplimentare pentru server pentru a suporta această funcţie (ceea ce nu se poate aplica pentru toate serverele), după cum este precizat şi în documentaţia OJS.]]></message>
@@ -288,8 +281,6 @@
 	<message key="manager.setup.journalLogo.altText">Logo-ul revistei</message>
 	<message key="manager.setup.journalPageFooter">Coloncifrul revistei (footer)</message>
 	<message key="manager.setup.journalPageFooterDescription">Acesta este coloncifrul revistei. pentru a modifica sau actualiza puteţi copia cod HTML în căsuţa de mai jos. De exemplu, ar putea fi o altă bară de navigare, un contor, etc. Acest coloncifru va apărea în fiecare pagină.</message>
-	<message key="manager.setup.journalPageHeader">Colontitlul revistei (header)</message>
-	<message key="manager.setup.journalPageHeaderDescription">O versiune grafică a titlului revistei şi a logo-ului (ca un fişier .gif, .jpg, sau .png), poate o versiune mai mică a celui utilizat pe pagina principală și poate fi încărcat pentru a apărea ca şi colontitlu pe paginile revistei, care va înlocui versiunea text implicită.</message>
 	<message key="manager.setup.journalPolicies">Pasul 2. Politicile revistei</message>
 	<message key="manager.setup.journalSetup">Setarea revistei</message>
 	<message key="manager.setup.journalSetupUpdated">Setările revistei au fost actualizate.</message>

@@ -4,11 +4,11 @@
 <!--
   * locale/sv_SE/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2000-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2000-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the sv_SE (Swedish) locale.
+  * Localization strings for the sv_SE (Svenska) locale.
   *
   -->
 
@@ -167,12 +167,6 @@
 	<message key="manager.setup.doiPrefix">DOI prefix</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[ DOI (Digital Object Identifier) prefixet tilldelas av <a href="http://www.crossref.org" target="_new">CrossRef</a> i formatet 10.xxxx (ex. 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Redaktörens beslut</message>
-	<message key="manager.setup.editorialMembers">Gå till Medlemmar i Redaktionen och lägg till Redaktion och/eller redaktionsråd för granskning. Det här kan göras närsonhelst under installationen av tidskriften.</message>
-	<message key="manager.setup.editorialProcess1">En eller flera redaktörer hanterar de grundläggande stegen utan fördefinierade roller.</message>
-	<message key="manager.setup.editorialProcess2">Redaktionsledaren administrerar inskickade manuskript och innehållsförteckning, Sektionsredaktören administrerar manusgranskning och manusredigering.</message>
-	<message key="manager.setup.editorialProcess3">Redaktionsledaren administrerar inskickade manuskript, manusredigering, och innehållsförteckning, Sektionsredaktören administrerar manusgranskning.</message>
-	<message key="manager.setup.editorialReviewBoard">Redaktion och redaktionsråd för granskning</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Redaktionen ansvarar för tidskriftsarbetets redaktionella riktning, deltar i utnämning av redaktörer samt går i god för tidkriftens rykte och rennommé, Redaktionsrådet för granskning har en liknande funktion men leder dessutom granskningsprocessen. Medlemmar i redaktionsrådet för granskning har inte tillgång till tidskriftens administrativa del men ingår på listan för granskare.</message>
 	<message key="manager.setup.emailBounceAddress">Felaktig adress</message>
 	<message key="manager.setup.emailBounceAddressDescription">Felmeddelande för E-post som inte kan levereras skickas till den här adressen.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<<strong>Observera:</strong> För att göra det här valet måste sidadministratören aktivera <tt>allow_envelope_sender</tt> i OJS konfigureringsfil. Ytterligare serverkonfigurering kan komma att bli nödvändig (något som inte alla servrar tillåter, se OJS-dokumentationen för info.)]]></message>
@@ -242,8 +236,6 @@
 	<message key="manager.setup.journalLogo">Tidskriftens logo</message>
 	<message key="manager.setup.journalPageFooter">Tidskriftens sidfot</message>
 	<message key="manager.setup.journalPageFooterDescription">Det här är tiskriftens sidfot. För att ändra eller uppdatera sidfoten, klistra in HTML-koden i rutan nedan. (T.ex. räknare, ytterligare navigeringsfält etc.) Sidfoten kommer att synas på varje sida.</message>
-	<message key="manager.setup.journalPageHeader">Tidskriftens sidhuvud</message>
-	<message key="manager.setup.journalPageHeaderDescription">En grafisk representation av tidskriftens titel och logo (.gif, .jpg, eller .png file), förslagsvis en mindre version av den som används på hemsidan, kan laddas upp till sidhuvudet och ersätta den text som syns i annat fall.</message>
 	<message key="manager.setup.journalPolicies">Step 2. Tidskriftens policy</message>
 	<message key="manager.setup.journalSetup">Installation av tidskriften</message>
 	<message key="manager.setup.journalSetupUpdated">Tidskriftsinstallationen har uppdaterats.</message>

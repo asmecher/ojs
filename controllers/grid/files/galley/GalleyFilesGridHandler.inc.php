@@ -3,8 +3,8 @@
 /**
  * @file controllers/grid/files/galley/GalleyFilesGridHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class GalleyFilesGridHandler
@@ -13,45 +13,55 @@
  * @brief Subclass of file editor/auditor grid for proof files.
  */
 
-// import grid signoff files grid base classes
-import('controllers.grid.files.signoff.SignoffFilesGridHandler');
-import('controllers.grid.files.galley.GalleyFilesSignoffGridCategoryRow');
+import('lib.pkp.controllers.grid.files.fileList.FileListGridHandler');
 
-// Import file class which contains the SUBMISSION_FILE_* constants.
-import('lib.pkp.classes.submission.SubmissionFile');
-
-// Import SUBMISSION_EMAIL_* constants.
-import('classes.mail.ArticleMailTemplate');
-
-class GalleyFilesGridHandler extends SignoffFilesGridHandler {
+class GalleyFilesGridHandler extends FileListGridHandler {
 	/**
 	 * Constructor
 	 */
 	function GalleyFilesGridHandler() {
-		parent::SignoffFilesGridHandler(
+		import('lib.pkp.controllers.grid.files.proof.ProofFilesGridDataProvider');
+		parent::FileListGridHandler(
+			new ProofFilesGridDataProvider(),
 			WORKFLOW_STAGE_ID_PRODUCTION,
-			SUBMISSION_FILE_PROOF,
-			'SIGNOFF_PROOFING',
-			SUBMISSION_EMAIL_PROOFREAD_NOTIFY_AUTHOR,
-			ASSOC_TYPE_GALLEY
+			FILE_GRID_ADD|FILE_GRID_MANAGE|FILE_GRID_DELETE|FILE_GRID_VIEW_NOTES|FILE_GRID_EDIT
 		);
 
 		$this->addRoleAssignment(
-			array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR, ROLE_ID_ASSISTANT, ROLE_ID_AUTHOR),
-			array('dependentFiles')
+			array(
+				ROLE_ID_SUB_EDITOR,
+				ROLE_ID_MANAGER,
+				ROLE_ID_ASSISTANT
+			),
+			array(
+				'fetchGrid', 'fetchRow',
+				'addFile', 'selectFiles',
+				'downloadFile',
+				'deleteFile',
+				'viewLibrary',
+			)
 		);
-
-		$this->setEmptyCategoryRowText('grid.noAuditors');
 	}
 
-	function authorize($request, $args, $roleAssignments){
+	/**
+	 * Authorize the request.
+	 * @param $request PKPRequest
+	 * @param $args array
+	 * @param $roleAssignments array
+	 * @return boolean
+	 */
+	function authorize($request, $args, $roleAssignments) {
+		import('lib.pkp.classes.security.authorization.SubmissionAccessPolicy');
+		$this->addPolicy(new SubmissionAccessPolicy($request, $args, $roleAssignments));
 
 		// If a file ID was specified, authorize it.  dependentFiles requires this.
 		// fileId corresponds to the main galley file that these other files depend on.
 		if ($request->getUserVar('fileId')) {
-			import('classes.security.authorization.SubmissionFileAccessPolicy');
+			import('lib.pkp.classes.security.authorization.SubmissionFileAccessPolicy');
 			$this->addPolicy(new SubmissionFileAccessPolicy($request, $args, $roleAssignments, SUBMISSION_FILE_ACCESS_MODIFY));
 		}
+		import('lib.pkp.classes.security.authorization.internal.RepresentationRequiredPolicy');
+		$this->addPolicy(new RepresentationRequiredPolicy($request, $args));
 
 		return parent::authorize($request, $args, $roleAssignments);
 	}
@@ -64,13 +74,11 @@ class GalleyFilesGridHandler extends SignoffFilesGridHandler {
 	 * @param PKPRequest $request
 	 */
 	function initialize($request) {
-		$galley = $this->getGalley();
-		$this->setAssocId($galley->getId());
-
 		parent::initialize($request);
 
 		$router = $request->getRouter();
 
+		// Add a "view document library" action
 		$this->addAction(
 			new LinkAction(
 				'viewLibrary',
@@ -85,58 +93,56 @@ class GalleyFilesGridHandler extends SignoffFilesGridHandler {
 		);
 
 		// Basic grid configuration
-		$this->setId('articleGalleyFiles-' . $this->getAssocId());
+		$representation = $this->getAuthorizedContextObject(ASSOC_TYPE_REPRESENTATION);
+		$this->setId('articleGalleyFiles-' . $representation->getId());
 		$this->setTitle('submission.galleyFiles');
-		$this->setInstructions('submission.proofReadingDescription');
 	}
 
-	/**
-	 * @copydoc SignoffFilesGridHandler::getRowInstance()
-	 */
-	function getRowInstance() {
-		$row = parent::getRowInstance();
-		$row->setRequestArgs($this->getRequestArgs());
-		return $row;
-	}
 
+	//
+	// Public handler methods
+	//
 	/**
-	 * @copydoc GridHandler::getRequestArgs()
+	 * Show the form to allow the user to select files from previous stages
+	 * @param $args array
+	 * @param $request PKPRequest
+	 * @return JSONMessage JSON object
 	 */
-	function getRequestArgs() {
-		return array_merge(
-			parent::getRequestArgs(),
-			array('articleGalleyId' => $this->getAssocId())
-		);
-	}
-
-	/**
-	 * Get the row handler - override the default row handler
-	 * @return CopyeditingFilesGridRow
-	 */
-	function getCategoryRowInstance() {
-		$galley = $this->getGalley();
-		$row = new GalleyFilesSignoffGridCategoryRow($galley->getId(), $this->getStageId());
+	function selectFiles($args, $request) {
 		$submission = $this->getSubmission();
-		$row->setCellProvider(new SignoffFilesGridCellProvider($submission->getId(), $this->getStageId()));
-		$row->addFlag('gridRowStyle', true);
-		return $row;
+		$representation = $this->getAuthorizedContextObject(ASSOC_TYPE_REPRESENTATION);
+
+		import('lib.pkp.controllers.grid.files.proof.form.ManageProofFilesForm');
+		$manageProofFilesForm = new ManageProofFilesForm($submission->getId(), $representation->getId());
+		$manageProofFilesForm->initData($args, $request);
+		return new JSONMessage(true, $manageProofFilesForm->fetch($request));
 	}
 
 	/**
-	 * display the template containing the dependent files grid.
+	 * Display the template containing the dependent files grid.
 	 * @param array $args
 	 * @param PKPRequest $request
 	 * @return JSONMessage JSON object
 	 */
 	function dependentFiles($args, $request) {
-
 		$templateMgr = TemplateManager::getManager($request);
 		$submissionFile = $this->getAuthorizedContextObject(ASSOC_TYPE_SUBMISSION_FILE);
-		if ($submissionFile) {
-			$templateMgr->assign('fileId', $submissionFile->getFileId());
-			$templateMgr->assign('submissionId', $submissionFile->getSubmissionId());
-			return $templateMgr->fetchJson('controllers/grid/files/galley/dependentFiles.tpl');
-		}
+		assert($submissionFile);
+		$templateMgr->assign('fileId', $submissionFile->getFileId());
+		$templateMgr->assign('submissionId', $submissionFile->getSubmissionId());
+		return $templateMgr->fetchJson('controllers/grid/files/galley/dependentFiles.tpl');
+	}
+
+	/**
+	 * Load the (read only) context file library.
+	 * @param $args array
+	 * @param $request PKPRequest
+	 * @return JSONMessage JSON object
+	 */
+	function viewLibrary($args, $request) {
+		$templateMgr = TemplateManager::getManager($request);
+		$templateMgr->assign('canEdit', true);
+		return $templateMgr->fetchJson('controllers/tab/settings/library.tpl');
 	}
 }
 

@@ -4,11 +4,11 @@
 <!--
   * locale/ru_RU/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the ru_RU (Russian) locale.
+  * Localization strings for the ru_RU (Русский) locale.
   *
   -->
 
@@ -83,12 +83,6 @@
 	<message key="manager.setup.disciplineExamples"></message>
 	<message key="manager.setup.disciplineProvideExamples"></message>
 	<message key="manager.setup.displayCurrentIssue">Добавить содержание к текущему изданию.</message>
-	<message key="manager.setup.editorialMembers">Перейти к членам коллегии и добавить новых редакторов или рецензентов. Это можно сделать в любое время.</message>
-	<message key="manager.setup.editorialProcess1"></message>
-	<message key="manager.setup.editorialProcess2"></message>
-	<message key="manager.setup.editorialProcess3"></message>
-	<message key="manager.setup.editorialReviewBoard">Редакторы и рецензенты</message>
-	<message key="manager.setup.editorialReviewBoardDescription"></message>
 	<message key="manager.setup.emailBounceAddress">Обратный адрес</message>
 	<message key="manager.setup.emailBounceAddressDescription"></message>
 	<message key="manager.setup.emails"></message>
@@ -143,8 +137,6 @@
 	<message key="manager.setup.journalLogo">Логотип</message>
 	<message key="manager.setup.journalPageFooter"></message>
 	<message key="manager.setup.journalPageFooterDescription"></message>
-	<message key="manager.setup.journalPageHeader"></message>
-	<message key="manager.setup.journalPageHeaderDescription"></message>
 	<message key="manager.setup.journalPolicies">Шаг 2. Редакционная политика</message>
 	<message key="manager.setup.journalSetup">Установка журнала</message>
 	<message key="manager.setup.journalSetupUpdated">Установка журнала обновлена.</message>
@@ -420,7 +412,6 @@
 	<message key="manager.plugins.installFailed">Установка не удалась</message>
 	<message key="manager.plugins.upgradeFailed">Обновление не удалось</message>
 	<message key="manager.sections.abstractsNotRequired">Не требовать резюме</message>
-	<message key="manager.sections.disableComments">Выключить комментарии читателей в этой секции.</message>
 	<message key="manager.sections.form.mustAllowPermission">Пожалуйста убедитесь, что поставлена хотя-бы одна галочка для каждого звпроса Редактора Секции</message>
 	<message key="manager.sections.form.reviewFormId">Пожалуйста убедитесь, что Вы выбрали правильную форму рецензента.</message>
 	<message key="manager.sections.hideAbout">Опустить эту секцию из раздела "О журнале".</message>

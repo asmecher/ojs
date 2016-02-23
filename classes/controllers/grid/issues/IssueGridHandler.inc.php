@@ -8,8 +8,8 @@
 /**
  * @file controllers/grid/issues/IssueGridHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IssueGridHandler
@@ -49,8 +49,8 @@ class IssueGridHandler extends GridHandler {
 	 * @copydoc PKPHandler::authorize()
 	 */
 	function authorize($request, &$args, $roleAssignments) {
-		import('lib.pkp.classes.security.authorization.PkpContextAccessPolicy');
-		$this->addPolicy(new PkpContextAccessPolicy($request, $roleAssignments));
+		import('lib.pkp.classes.security.authorization.ContextAccessPolicy');
+		$this->addPolicy(new ContextAccessPolicy($request, $roleAssignments));
 
 		// If a signoff ID was specified, authorize it.
 		if ($request->getUserVar('issueId')) {
@@ -111,7 +111,7 @@ class IssueGridHandler extends GridHandler {
 	 * Get the row handler - override the default row handler
 	 * @return IssueGridRow
 	 */
-	function getRowInstance() {
+	protected function getRowInstance() {
 		return new IssueGridRow();
 	}
 
@@ -300,18 +300,16 @@ class IssueGridHandler extends GridHandler {
 	 */
 	function issueGalleys($args, $request) {
 		$issue = $this->getAuthorizedContextObject(ASSOC_TYPE_ISSUE);
-		$issueId = $issue->getId();
-
 		$templateMgr = TemplateManager::getManager($request);
-		import('classes.issue.IssueAction');
-		$templateMgr->assign('issueId', $issueId);
-		$templateMgr->assign('unpublished',!$issue->getPublished());
-		$templateMgr->assign('issue', $issue);
-
-		$issueGalleyDao = DAORegistry::getDAO('IssueGalleyDAO');
-		$templateMgr->assign('issueGalleys', $issueGalleyDao->getByIssueId($issue->getId()));
-
-		return new JSONMessage(true, $templateMgr->fetch('controllers/grid/issues/issueGalleys.tpl'));
+		$dispatcher = $request->getDispatcher();
+		return $templateMgr->fetchAjax(
+			'issueGalleysGridContainer',
+			$dispatcher->url(
+				$request, ROUTE_COMPONENT, null,
+				'grid.issueGalleys.IssueGalleyGridHandler', 'fetchGrid', null,
+				array('issueId' => $issue->getId())
+			)
+		);
 	}
 
 	/**
@@ -401,9 +399,9 @@ class IssueGridHandler extends GridHandler {
 		);
 
 		$dispatcher = $request->getDispatcher();
-		// FIXME: Find a better way to reload the containing tabs.
-		// Without this, issues don't move between tabs properly.
-		return $request->redirectUrlJson($dispatcher->url($request, ROUTE_PAGE, null, 'manageIssues'));
+		$json = new JSONMessage();
+		$json->setEvent('containerReloadRequested', array('tabsUrl' => $dispatcher->url($request, ROUTE_PAGE, null, 'manageIssues', 'index')));
+		return $json;
 	}
 
 	/**
@@ -432,9 +430,9 @@ class IssueGridHandler extends GridHandler {
 		}
 
 		$dispatcher = $request->getDispatcher();
-		// FIXME: Find a better way to reload the containing tabs.
-		// Without this, issues don't move between tabs properly.
-		return $request->redirectUrlJson($dispatcher->url($request, ROUTE_PAGE, null, 'manageIssues'));
+		$json = new JSONMessage();
+		$json->setEvent('containerReloadRequested', array('tabsUrl' => $dispatcher->url($request, ROUTE_PAGE, null, 'manageIssues', 'index')));
+		return $json;
 	}
 }
 

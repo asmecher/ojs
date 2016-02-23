@@ -4,8 +4,8 @@
 /**
  * @file plugins/pubIds/doi/js/DOISettingsFormHandler.js
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DOISettingsFormHandler.js
@@ -14,12 +14,10 @@
  * @brief Handle the DOI Settings form.
  */
 (function($) {
-
 	/** @type {Object} */
-	$.pkp.plugins.pubIds =
-			$.pkp.plugins.pubIds ||
-			{ doi: { js: { } } };
-
+	$.pkp.plugins.pubIds.doi =
+			$.pkp.plugins.pubIds.doi ||
+			{ js: { } };
 
 
 	/**

@@ -4,11 +4,11 @@
 <!--
   * locale/fa_IR/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the fa_IR (Persian) locale.
+  * Localization strings for the fa_IR (فارسی) locale.
   *
   -->
 
@@ -93,7 +93,6 @@
 	<message key="manager.sections.abstractsNotRequired">نیاز به چکیده ندارد</message>
 	<message key="manager.sections.assigned">دبیر این نوع مقاله</message>
 	<message key="manager.sections.create">ایجاد نوع مقاله</message>
-	<message key="manager.sections.disableComments">غیر فعال کردن ارائه نظر توسط خوانندگان برای این نوع مقاله</message>
 	<message key="manager.section.sectionEditorInstructions">از بین دبیران یک نفر را انتخاب و به عنوان دبیر این نوع مقاله انتخاب کنید.</message>
 	<message key="manager.sections.editorRestriction">این نوع مقاله فقط توسط دبیران قابل ارسال است.</message>
 	<message key="manager.sections.editors">دبیران نوع مقاله</message>
@@ -173,12 +172,6 @@
 	<message key="manager.setup.displayCurrentIssue">افزودن فهرست مطالب شماره جاری در صورت موجود بودن.</message>
 	<message key="manager.setup.doiPrefix">DOI پیشوند</message>
 	<message key="manager.setup.editorDecision">تصمیم دبیر</message>
-	<message key="manager.setup.editorialMembers">به قسمت اعضای شورا رفته و اعضای شورای نویسندگان یا کارشناسان را کم یا زیاد کنید. این کار را در هر زمانی در طول حیات آن لاین مجله میتوان انجام داد.</message>
-	<message key="manager.setup.editorialProcess1">یک یا چند دبیر مراحل پایه ای را بدون انتصاب رل انجام میدهند.</message>
-	<message key="manager.setup.editorialProcess2">دبیر ااداره کننده به نوبت ساب میشن و فهرست مطالب رسیدگی میکند و کارشناسی ساب میشن و ویرایش آن ها به عهده دبیران دیگر خواهد بود.</message>
-	<message key="manager.setup.editorialProcess3">دبیر ااداره کننده به نوبت ساب میشن ، ویرایش آنها و فهرست مطالب رسیدگی میکند و کارشناسی ساب میشن به عهده دبیران دیگر خواهد بود.</message>
-	<message key="manager.setup.editorialReviewBoard">شورای نویسندگان و کارشناسان</message>
-	<message key="manager.setup.editorialReviewBoardDescription">شورای نویسندگان امور دبیری را سرپرستی میکند ، دبیر هر مقاله را تعیین می کند ، و با کمک شهرت دبیران موجب شهرت مجله میشود. شورای کارشناسی نقش مشابهی دارد ، به علاوه کارشناسی را نیز به عهده دارند. اعضای شورای کارشناسا ن به قسمت های مدیریتی سیستم دسترسی ندارند بلکه توسط دبیران برای انجام کارشناسی منصوب می شوند.</message>
 	<message key="manager.setup.emailBounceAddress">آدرس برگشت</message>
 	<message key="manager.setup.emailBounceAddressDescription">اگر ایمیلی برگشت بخورد پیغامی به این ادرس ارسال می شود</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>توجه:</strong> برای فعال ساختن این گزینه مدیر سایت میبایست گزینه <tt>allow_envelope_sender</tt> در فایل تنظیمات OJS فعال سازد. همچنین ممکن است ویژگی خاص سرور نیز لازم باشد که ممکن است همه سرور ها آن را نداشته باشند. برای اطلاعات بیشتر به مستندات OJS مراجعه کنید.]]></message>
@@ -248,8 +241,6 @@
 	<message key="manager.setup.journalLogo.altText">لوگوی مجله</message>
 	<message key="manager.setup.journalPageFooter">پاورقی صفحات مجله</message>
 	<message key="manager.setup.journalPageFooterDescription">این قسمت پاورقی صفحات مجله را نشان میدهد. برای تغییر یا بروزرسانی آن ، متن HTML دلخواه خود را در جعبه متن زیر وارد کنید. به عنوان مثال میتوانید یک منوی گشت و گذار دیر ، یک شمارشگر بازدید کننده ها و غیره میتواند باشد. این پاورقی در تمام صفحات ظاهر میشود.</message>
-	<message key="manager.setup.journalPageHeader">هدر صفحات مجله</message>
-	<message key="manager.setup.journalPageHeaderDescription">یک نسخه گرافیک عنوان و لوگوی مجله بصورت فایل .gif, .jpg, یا .png که بهتر است نسخه ای کوچک ت از نسخه بکاررفته در صفحه خانگی باشد را میتوان آپلود کرد تا به عنوان هدر در تمام صفحات مجله ظاهر شود. در غیر این صورت نسخه متنی بکار خواهد رفت.</message>
 	<message key="manager.setup.journalPolicies">مرحله 2: سیاست گذاری</message>
 	<message key="manager.setup.journalSetup">نصب مجله</message>
 	<message key="manager.setup.journalSetupUpdated">نصب مجله بروزرسانی شد</message>

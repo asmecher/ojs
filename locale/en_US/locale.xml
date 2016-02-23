@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -26,7 +26,8 @@
 	-->
 
 	<!-- common -->
-	<message key="context.select">Select a Journal...</message>
+	<message key="context.current">Current Journal:</message>
+	<message key="context.select">Switch to another journal:</message>
 
 	<!-- Categories -->
 	<message key="navigation.categories">Categories</message>
@@ -50,7 +51,6 @@
 	<message key="common.confirmComplete">Are you sure you wish to mark this task as completed? You may not be able to make changes afterwards.</message>
 	<message key="common.payment">Payment</message>
 	<message key="common.payments">Payments</message>
-	<message key="common.pageHeader.altText">Page Header</message>
 	<message key="common.homePageHeader.altText">Homepage Header</message>
 	<message key="common.journalHomepageImage.altText">Journal Homepage Image</message>
 
@@ -83,7 +83,7 @@
 	<message key="common.queue.short.submissionsInReview">In Review</message>
 	<message key="common.queue.long.submissionsArchives">Archives</message>
 	<message key="common.queue.short.submissionsArchives">Archives</message>
-	<message key="common.queue.long.active">Active Submissions</message>
+	<message key="common.queue.long.active">Active</message>
 	<message key="common.queue.short.active">Active</message>
 	<message key="common.queue.long.completed">Archive</message>
 	<message key="common.queue.short.completed">Archive</message>
@@ -140,6 +140,9 @@
 	<message key="article.fontSize.small.altText">Small</message>
 	<message key="article.fontSize.medium.altText">Medium</message>
 	<message key="article.fontSize.large.altText">Large</message>
+	<message key="article.return">Return to Article Details</message>
+	<message key="article.publishedIn">Published in {$issueLink}.</message>
+	<message key="article.publishedInWithSection">Published in the {$sectionTitle} section in {$issueLink}.</message>
 
 	<!-- Submission Tracking - Common -->
 	<message key="submission.submissionEditing">Submission Editing</message>
@@ -234,7 +237,7 @@
 	<message key="issue.fullIssue">Full Issue</message>
 	<message key="issue.nonpdf.title">Issue Download</message>
 	<message key="issue.viewIssue">View Issue</message>
-	<message key="issue.viewIssueDescription">View or download the full issue</message>
+	<message key="issue.return">Return to Issue Details</message>
 
 	<!-- Common Subscription Type Terms -->
 	<message key="subscriptionTypes.currency">Currency</message>
@@ -314,8 +317,8 @@
 	<message key="reader.subscribersOnly">Subscribers Only</message>
 	<message key="reader.subscriptionRequiredLoginText">Subscription required to access item. To verify subscription, log in to journal.</message>
 	<message key="reader.openAccess">Open Access</message>
-	<message key="reader.subscriptionAccess">Subscription Access</message>
-	<message key="reader.subscriptionOrFeeAccess">Subscription or Fee Access</message>
+	<message key="reader.subscriptionAccess">Requires Subscription</message>
+	<message key="reader.subscriptionOrFeeAccess">Requires Subscription or Fee</message>
 
 	<!-- Reader Comments -->
 	<message key="comments.commentsOnArticle">Comments on this article</message>
@@ -681,7 +684,7 @@ Active is how many reviews are currently being considered or underway.]]></messa
 	<message key="submission.comments.saveAndEmailEditor">Save and Email Editor</message>
 
 	<!-- Registration -->
-	<message key="user.register.selectContext">Select a journal to register with</message>
+	<message key="user.register.selectContext">Select a journal to register with:</message>
 	<message key="user.register.noJournals">There are no journals you may register with on this site.</message>
 	<message key="user.register.privacyStatement">Privacy Statement</message>
 	<message key="user.register.alreadyRegisteredOtherContext"><![CDATA[<a href="{$registerUrl}">Click here</a> if you are already registered with this or another journal on this site.]]></message>
@@ -757,9 +760,10 @@ Active is how many reviews are currently being considered or underway.]]></messa
 </ul>]]></message>
 
 	<!-- Interstitial page for PDFs -->
+	<message key="article.pageTitle">View of {$title}</message>
 	<message key="article.pdf.title">Portable Document Format (PDF)</message>
-	<message key="article.pdf.download">Download this PDF file</message>
-	<message key="article.pdf.pluginMissing"><![CDATA[<p>The PDF file you selected should load here if your Web browser has a PDF reader plug-in installed (for example, a recent version of <a href="https://get.adobe.com/reader/">Adobe Acrobat Reader</a>).</p>]]></message>
+	<message key="article.download">Download this PDF file</message>
+	<message key="article.pluginMissing"><![CDATA[<p>The PDF file you selected should load here if your Web browser has a PDF reader plug-in installed (for example, a recent version of <a href="https://get.adobe.com/reader/">Adobe Acrobat Reader</a>).</p>]]></message>
 
 	<!-- Interstitial page for non-PDF non-HTML galleys -->
 	<message key="article.nonpdf.title">Article Download</message>
@@ -779,6 +783,7 @@ Active is how many reviews are currently being considered or underway.]]></messa
 
 	<!-- Archive index -->
 	<message key="archive.archives">Archives</message>
+	<message key="archive.archivesPageNumber">Archives - Page {$pageNumber}</message>
 	<message key="archive.browse">Browse through the older issues</message>
 	<message key="archive.issueUnavailable">Issue Unavailable</message>
 
@@ -796,11 +801,9 @@ Active is how many reviews are currently being considered or underway.]]></messa
 	<message key="about.sponsors">Sponsors</message>
 	<message key="about.contributors">Sources of Support</message>
 	<message key="about.onlineSubmissions">Online Submissions</message>
-	<message key="about.onlineSubmissions.haveAccount">Already have a Username/Password for {$journalTitle}?</message>
-	<message key="about.onlineSubmissions.login">Go to Login</message>
-	<message key="about.onlineSubmissions.needAccount">Need a Username/Password?</message>
-	<message key="about.onlineSubmissions.registration">Go to Registration</message>
-	<message key="about.onlineSubmissions.registrationRequired">Registration and login are required to submit items online and to check the status of current submissions.</message>
+	<message key="about.onlineSubmissions.login">Login</message>
+	<message key="about.onlineSubmissions.register">Register</message>
+	<message key="about.onlineSubmissions.registrationRequired">You must be registered and logged in to submit items and track current submissions. {$login} to an existing account or {$register} a new account.</message>
 	<message key="about.authorGuidelines">Author Guidelines</message>
 	<message key="about.submissionPreparationChecklist">Submission Preparation Checklist</message>
 	<message key="about.submissionPreparationChecklist.description">As part of the submission process, authors are required to check off their submission's compliance with all of the following items, and submissions may be returned to authors that do not adhere to these guidelines.</message>
@@ -838,6 +841,7 @@ Active is how many reviews are currently being considered or underway.]]></messa
 	<message key="help.ojsHelp">Open Journal Systems Help</message>
 	<message key="help.ojsHelpAbbrev">OJS Help</message>
 	<message key="help.searchReturnResults">Return to Search Results</message>
+	<message key="help.goToEditPage">Edit {$sectionTitle}</message>
 
 	<!-- Donations -->
 	<message key="donations.thankYou">Thank You</message>
@@ -1103,12 +1107,11 @@ Validation may fail on search URLs that require posted form data.]]></message>
 
 	<message key="notification.type.articleSubmitted">A new article, "{$title}", has been submitted.</message>
 	<message key="notification.type.editing">Editing Events</message>
+	<message key="notification.type.submissionSubmitted">A new article, "{$title}," has been submitted.</message>
 	<message key="notification.type.editorDecisionComment">A comment has been left on the editor decision for "{$title}."</message>
 	<message key="notification.type.galleyModified">A galley has been modified for "{$title}."</message>
 	<message key="notification.type.issuePublished">An issue has been published.</message>
-	<message key="notification.type.metadataModified">"{$title}'s" metadata has been modified.</message>
 	<message key="notification.type.newAnnouncement">A new announcement has been created.</message>
-	<message key="notification.type.reviewerComment">A reviewer has commented on "{$title}."</message>
 	<message key="notification.type.reviewerFormComment">A review form review has been submitted for "{$title}."</message>
 	<message key="notification.type.reviewing">Reviewing Events</message>
 	<message key="notification.type.site">Site Events</message>
@@ -1144,6 +1147,13 @@ Validation may fail on search URLs that require posted form data.]]></message>
 	<message key="notification.type.approveSubmission">This submission is currently awaiting approval before it will appear in the issue.</message>
 	<message key="notification.type.approveSubmissionTitle">Awaiting approval.</message>
 
-	<message key="user.profile.form.showOtherContexts">Show Other Journals</message>
-	<message key="user.profile.form.hideOtherContexts">Hide Other Journals</message>
+	<message key="user.profile.form.showOtherContexts">Register with other journals</message>
+	<message key="user.profile.form.hideOtherContexts">Hide other journals</message>
+
+	<message key="article.view.interstitial">Please choose an article file to download.</message>
+	<message key="grid.catalogEntry.availableRepresentation.approved">Approved</message>
+	<message key="grid.catalogEntry.availableRepresentation.notApproved">Awaiting Approval</message>
+	<message key="grid.catalogEntry.approvedRepresentation.title">Galley Approval</message>
+	<message key="grid.catalogEntry.approvedRepresentation.message"><![CDATA[<p>Approve this galley for publication.</p>]]></message>
+	<message key="grid.catalogEntry.approvedRepresentation.removeMessage"><![CDATA[<p>Remove approval of this galley.</p>]]></message>
 </locale>

@@ -3,8 +3,8 @@
 /**
  * @file controllers/grid/citation/CitationGridHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class CitationGridHandler
@@ -37,7 +37,7 @@ class CitationGridHandler extends PKPCitationGridHandler {
 	 */
 	function authorize($request, &$args, $roleAssignments) {
 		// Make sure the user can edit the submission in the request.
-		import('classes.security.authorization.SubmissionAccessPolicy');
+		import('lib.pkp.classes.security.authorization.SubmissionAccessPolicy');
 		$this->addPolicy(new SubmissionAccessPolicy($request, $args, $roleAssignments, 'assocId'));
 		return parent::authorize($request, $args, $roleAssignments);
 	}
@@ -48,7 +48,7 @@ class CitationGridHandler extends PKPCitationGridHandler {
 	function initialize($request, $args) {
 		// Associate the citation editor with the authorized article.
 		$this->setAssocType(ASSOC_TYPE_ARTICLE);
-		$article =& $this->getAuthorizedContextObject(ASSOC_TYPE_ARTICLE);
+		$article = $this->getAuthorizedContextObject(ASSOC_TYPE_ARTICLE);
 		assert(is_a($article, 'Article'));
 		$this->setAssocObject($article);
 

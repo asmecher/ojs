@@ -4,8 +4,8 @@
 <!--
   * locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the cs_CZ (Čeština) locale.
@@ -654,13 +654,6 @@ současného hesla.<br /><br />Pro resetování Vašeho hesla vložte níže Va�
 <li>Použijte <b>*</b> v termínu jako divokou kartu pro nalezení jakékoliv sekvence znaků; např. <i>soci* etika</i> by vrátilo dokumenty obsahující "sociologický" nebo "sociální"</li>
 </ul>]]></message>
 
-	<!-- Interstitial page for PDFs -->
-	<message key="article.pdf.title">Portable Document Format (PDF)</message>
-	
-	<!-- Interstitial page for non-PDF non-HTML galleys -->
-	<message key="article.nonpdf.title">Stažení článku</message>
-	<message key="article.nonpdf.note"><![CDATA[Stahování vybraného souboru by mělo začít automaticky. Pokud nezačne, klikněte na odkaz níže. Vězte, že soubor může vyžadovat pro své zobrazení speciální prohlížeč nebo plug-in.<br /><br />Pokud nezačalo stahování automaticky, <a href="{$url}">klikněte zde</a>.]]></message>
-	
 	<!-- Site index -->
 	<message key="site.journalsHosted">Časopisy hostované na této stránce</message>
 	<message key="site.journalView">Zobrazit časopis</message>
@@ -906,7 +899,6 @@ Ověřování může selhat při vyhledávání URL, které vyžadují "posted f
 	<message key="help.searchReturnResults">Zpět k výsledkům vyhledávání</message>
 	<message key="reviewer.article.enterReviewForm">Pro vyplnění formuláře posudku klikněte na ikonu.</message>
 	<message key="reviewer.article.reviewFormResponse.form.responseRequired">Vyplňte prosím požadované položky.</message>
-	<message key="common.pageHeader.altText">Záhlaví stránky</message>
 	<message key="common.homePageHeader.altText">Záhlaví domácí stránky</message>
 	<message key="common.journalHomepageImage.altText">Obrázek domácí stránky časopisu</message>
 	<message key="article.coverPage.altText">Obrázek obalu</message>

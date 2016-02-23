@@ -1,8 +1,8 @@
 {**
  * templates/controllers/grid/issues/form/issueData.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Form for creation and modification of an issue
@@ -15,8 +15,8 @@
 			{ldelim}
 				$uploader: $('#pluploadcss'),
 				uploaderOptions: {ldelim}
-					uploadUrl: '{url|escape:javascript op="uploadFile"}',
-					baseUrl: '{$baseUrl|escape:javascript}'
+					uploadUrl: {url|json_encode op="uploadFile" escape=false},
+					baseUrl: {$baseUrl|json_encode}
 				{rdelim}
 			{rdelim}
 		);
@@ -33,7 +33,7 @@
 	{/if}
 
 	{if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION || $issuePublished}
-		{fbvFormArea id="issueAccessArea" title="editor.issues.access" class="border"}
+		{fbvFormArea id="issueAccessArea" title="editor.issues.access"}
 			{fbvFormSection}
 				{if $issuePublished}
 					{fbvElement type="text" label="editor.issues.datePublished" id="datePublished" value=$datePublished|date_format:"%y-%m-%d" size=$fbvStyles.size.SMALL inline=true class="datepicker"}
@@ -45,7 +45,7 @@
 	{/if}
 
 
-	{fbvFormArea id="identificationArea" class="border" title="editor.issues.identification"}
+	{fbvFormArea id="identificationArea" title="editor.issues.identification"}
 		{fbvFormSection}
 			{fbvElement type="text" label="issue.volume" id="volume" value=$volume maxlength="40" inline=true size=$fbvStyles.size.SMALL}
 			{fbvElement type="text" label="issue.number" id="number" value=$number maxlength="40" inline=true size=$fbvStyles.size.SMALL}

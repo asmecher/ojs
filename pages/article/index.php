@@ -7,8 +7,8 @@
 /**
  * @file pages/article/index.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_article
@@ -18,9 +18,6 @@
 
 switch ($op) {
 	case 'view':
-	case 'viewArticle':
-	case 'viewRST':
-	case 'viewFile':
 	case 'download':
 		define('HANDLER_CLASS', 'ArticleHandler');
 		import('pages.article.ArticleHandler');

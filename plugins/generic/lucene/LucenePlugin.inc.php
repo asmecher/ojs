@@ -3,8 +3,8 @@
 /**
  * @file plugins/generic/lucene/LucenePlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class LucenePlugin
@@ -93,7 +93,7 @@ class LucenePlugin extends GenericPlugin {
 	function &getMailTemplate($emailKey, $journal = null) {
 		if (!isset($this->_mailTemplates[$emailKey])) {
 			import('lib.pkp.classes.mail.MailTemplate');
-			$mailTemplate = new MailTemplate($emailKey, null, null, $journal, true, true);
+			$mailTemplate = new MailTemplate($emailKey, null, $journal, true, true);
 			$this->_mailTemplates[$emailKey] =& $mailTemplate;
 		}
 		return $this->_mailTemplates[$emailKey];

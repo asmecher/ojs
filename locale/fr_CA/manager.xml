@@ -4,8 +4,8 @@
 <!--
   * locale/fr_CA/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the fr_CA (Français (Canada)) locale.
@@ -90,7 +90,6 @@
 	<message key="manager.sections.abstractsNotRequired">Résumé non obligatoire</message>
 	<message key="manager.sections.assigned">Rédacteurs de cette rubrique</message>
 	<message key="manager.sections.create">Créer une rubrique</message>
-	<message key="manager.sections.disableComments">Désactiver les commentaires des lecteurs pour cette rubrique.</message>
 	<message key="manager.section.sectionEditorInstructions">Ajouter un Rédacteur de rubrique à cette rubrique afin que les soumissions soient automatiquement assignées à ce Rédacteur de rubrique. (Sinon, les Rédacteurs de rubriques peuvent être assignés manuellement, suite à la réception d'une soumission.) S'il a été ajouté, un Rédacteur de rubrique peut automatiquement être assigné pour superviser l'ÉVALUATION (évaluation par les pairs) et/ou la RÉVISION (révision, mise ne page et correction d'épreuves) des soumissions de cette rubrique. Des Rédacteurs de rubrique peuvent être créés en cliquant sur Rédacteur de rubrique sous Rôles dans Gestion de la revue.</message>
 	<message key="manager.sections.editorRestriction">Les articles ne peuvent être soumis que par les Rédacteurs et les Rédacteurs de rubrique.</message>
 	<message key="manager.sections.editors">Rédacteurs de rubrique</message>
@@ -172,12 +171,6 @@
 	<message key="manager.setup.doiPrefix">Préfixe DOI</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[Le préfixe DOI (Digital Object Identifier) est attribué par <a href="http://www.crossref.org" target="_new">CrossRef</a> et correspond au format 10.xxxx (par ex., 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Décision du rédacteur</message>
-	<message key="manager.setup.editorialMembers">Aller à Membres du comité et ajouter les noms des membres des comités éditorial et/ou d'évaluation. Cela peut être fait à n'importe quel moment de l'exploitation de la revue.</message>
-	<message key="manager.setup.editorialProcess1">Un ou plusieurs rédacteurs s'occupent des étapes de base sans rôle désigné.</message>
-	<message key="manager.setup.editorialProcess2">Le Rédacteur en chef gère la File d'attente des soumissions et le Sommaire, tandis que les Rédacteurs de rubrique se chargent de l'Évaluation des soumissions et de la Révision des soumissions.</message>
-	<message key="manager.setup.editorialProcess3">Le Rédacteur en chef gère la File d'attente des soumissions, la Révision des soumissions et le Sommaire, tandis que les Rédacteurs de rubrique se chargent de l'Évaluation des soumissions.</message>
-	<message key="manager.setup.editorialReviewBoard">Comité éditorial / d'évaluation</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Les revues disposent de comités éditoriaux pour superviser la direction éditoriale de la revue, participer à la nomination des rédacteurs, et, grâce à la réputation des membres du comité, impartir à la revue une certaine position sociale dans le domaine. Les comités d'évaluation jouent un rôle semblable mais, en outre, ils dirigent le processus d'évaluation par les pairs. Les membres du comité d'évaluation n'auront pas accès au système de gestion de la revue, mais ils feront partie de la liste des personnes disponibles pour effectuer une évaluation par les pairs.</message>
 	<message key="manager.setup.emailBounceAddress">Adresse de courriel pour les messages non délivrés</message>
 	<message key="manager.setup.emailBounceAddressDescription">Tout courriel non délivré entraînera un message d'erreur envoyé à cette adresse.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Note :</strong> Pour activer cette option, l'administrateur du site Web doit activer l'option <tt>allow_envelope_sender</tt> dans le fichier de configuration d'OJS. Une configuration supplémentaire sur le serveur peut être requise afin de prendre en charge cette fonctionnalité, laquelle n'est pas possible sur tous les serveurs, tel qu'indiqué dans la documentation d'OJS.]]></message>
@@ -248,8 +241,6 @@
 	<message key="manager.setup.journalLogo.altText">Logo de la revue</message>
 	<message key="manager.setup.journalPageFooter">Pied de page de la revue</message>
 	<message key="manager.setup.journalPageFooterDescription">Cela est le pied de page de votre revue. Pour modifier ou mettre à jour le pied de page, copier le code HTML dans la zone de texte ci-dessous. Des exemples pourraient être une autre barre de navigation, un compteur, etc. Ce pied de page figurera dans toutes les pages.</message>
-	<message key="manager.setup.journalPageHeader">En-têtes des pages de la revue</message>
-	<message key="manager.setup.journalPageHeaderDescription">Une version graphique du titre et du logo de la revue (fichier .gif, .jpg, ou .png), possiblement une version plus petite que celle qui est utilisée dans la page d'accueil, peut être téléchargée pour servir d'en-tête dans les pages de la revue, et remplacera la version textuelle qui y figure habituellement.</message>
 	<message key="manager.setup.journalPolicies">Étape 2. Politiques de la revue</message>
 	<message key="manager.setup.journalSetup">Configuration de la revue</message>
 	<message key="manager.setup.journalSetupUpdated">La configuration de votre revue a été mise à jour.</message>

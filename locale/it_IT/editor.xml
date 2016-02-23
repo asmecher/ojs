@@ -4,8 +4,8 @@
 <!--
   * locale/it_IT/editor.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2000-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2000-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the it_IT (Italiano) locale.
@@ -96,8 +96,9 @@
 	<message key="editor.issues.noLiveIssues">Nessun numero attivo</message>
 	<message key="editor.issues.open">Aperto</message>
 	<message key="editor.issues.pages">Paginazione</message>
+	<message key="editor.navigation.issues">Fascicoli</message>
 	<message key="editor.navigation.futureIssues">Fascicoli futuri</message>
-	<message key="grid.action.addIssue">Crea un fascicolo</message>
+	<message key="editor.navigation.createIssue">Crea un fascicolo</message>
 	<message key="editor.navigation.issueArchive">Fascicoli pubblicati</message>
 	<message key="editor.article.designateReviewVersion">Imposta il file originale come versione di revisione</message>
 	<message key="editor.article.uploadReviewVersion">Carica un file modificato da mandare in revisione</message>

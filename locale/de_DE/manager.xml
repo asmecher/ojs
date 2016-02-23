@@ -4,8 +4,8 @@
 <!--
   * locale/de_DE/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * Localization strings for the de_DE (Deutsch (Deutschland)) locale.
   * Please contact Marco Tullney, marco.tullney@fu-berlin.de, with any questions regarding this translation.
@@ -121,7 +121,6 @@
 	<message key="manager.sections.confirmDelete">Sind Sie sicher, dass Sie diese Rubrik endgültig entfernen wollen?</message>
 	<message key="manager.sections.alertDelete">Bevor diese Rubrik entfernt werden kann, müssen Sie Artikel aus dieser Rubrik in andere Rubriken verschieben.</message>
 	<message key="manager.sections.create">Eine Rubrik erstellen</message>
-	<message key="manager.sections.disableComments">Leser/innenkommentare für diese Rubrik ausschalten.</message>
 	<message key="manager.section.sectionEditorInstructions"><![CDATA[Fügen Sie dieser Rubrik eine/n Rubrikredakteur/in aus den zur Verfügung stehenden Rubrikredakteur/innen hinzu. Sobald er/sie hinzugefügt worden ist, geben Sie an, ob die/der Rubrikredakteur/in den BEGUTACHTUNGS- (Peer Review) oder den REDAKTIONSPROZESS (Lektorat, Layout und Korrekturlektorat) von Beiträgen zu dieser Rubrik durchführen soll. Rubrikredakteur/innen können Sie anlegen, in dem Sie auf <a href="{$sectionEditorsUrl}">Rubrikredakteur/innen</a> unter Funktionen in der Zeitschriftenverwaltung klicken.]]></message>
 	<message key="manager.sections.editorRestriction">Beiträge können nur von Redakteur/innen und Rubrikredakteur/innen eingereicht werden.</message>
 	<message key="manager.sections.editors">Rubrikredakteur/innen</message>
@@ -206,12 +205,6 @@
 	<message key="manager.setup.disciplineProvideExamples">Geben Sie Beispiele für die relevanten Fachgebiete der Zeitschrift an</message>
 	<message key="manager.setup.displayCurrentIssue">Fügen Sie das Inhaltsverzeichnis (falls vorhanden) der aktuellen Ausgabe ein.</message>
 	<message key="manager.setup.editorDecision">Redaktionsentscheidung</message>
-	<message key="manager.setup.editorialMembers">Unter "Komiteemitglieder" können die Namen der Mitglieder des Redakteur/innen- und/oder Begutachtungsgremiums eingegeben werden. Dies kann zu jedem Zeitpunkt erfolgen.</message>
-	<message key="manager.setup.editorialProcess1">Ein/e oder mehrere Redakteur/innen sind ohne festgelegte Funktionen für die grundlegenden Schritte bei der redaktionellen Bearbeitung zuständig.</message>
-	<message key="manager.setup.editorialProcess2">Die Redakteurin/der Redakteur ist für die Liste der eingegangenen Beiträge, für die Liste der anstehenden Veröffentlichungen und für das Inhaltsverzeichnis zuständig, während das Begutachtungsverfahren und die weitere redaktionelle Bearbeitung der Beiträge in die Zuständigkeit der Rubrikredakteur/innen fällt.</message>
-	<message key="manager.setup.editorialProcess3">Die Redakteurin/der Redakteur ist für die Liste der eingegangenen Beiträge, für die Redaktion der Beiträge, für die Liste der anstehenden Veröffentlichungen und für das Inhaltsverzeichnis zuständig, die Rubrikredakteur/innen sind mit der Begutachtung befasst.</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Beiräte legen die redaktionelle Ausrichtung der Zeitschrift fest, beteiligen sich an der Auswahl von Redakteur/innen und tragen - durch den Ruf, den ihre Mitglieder haben - zum Ansehen der Zeitschrift in ihrem Fachgebiet bei. Begutachtungskomitees lenken zusätzlich den Peer-Review-Prozess. Mitglieder des Begutachtungskomitees haben keinen Zugang zum Verwaltungssystem der Zeitschrift, stehen jedoch auf der Liste potenzieller Gutachter/innen.</message>
-	<message key="manager.setup.editorialReviewBoard">Redaktion und Begutachtung</message>
 	<message key="manager.setup.emailBounceAddress">Antwortadresse</message>
 	<message key="manager.setup.emailBounceAddressDescription">Jede E-Mail, die nicht zugestellt werden kann, erzeugt eine Fehlermeldung, die an diese Adresse geschickt wird.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Anmerkung:</strong> Die Website-Administrator/in muss in der OJS-Konfigurationsdatei die Option <tt>allow_envelope_sender</tt> aktivieren, um dies zu ermöglichen. Weitere Servereinstellungen können erforderlich sein (und sind nicht unbedingt auf allen Servern verfügbar). Siehe OJS-Dokumentation.]]></message>
@@ -285,8 +278,6 @@
 	<message key="manager.setup.journalLogo.altText">Logo der Zeitschrift</message>
 	<message key="manager.setup.journalPageFooter">Fußzeile der Zeitschrift </message>
 	<message key="manager.setup.journalPageFooterDescription">Dies ist die Fußzeile Ihrer Zeitschrift. Sollten Sie sie ändern oder aktualisieren wollen, kopieren Sie den neuen HTML-Text in das nachstehende Textfeld. Beispiele könnten eine zusätzliche Navigationszeile oder ein Zähler sein. Diese Fußzeile wird auf allen Seiten erscheinen.</message>
-	<message key="manager.setup.journalPageHeader">Kopfzeile der Seite</message>
-	<message key="manager.setup.journalPageHeaderDescription">Grafische Versionen von Zeitschriftentitel und -logo (als .gif-, .jpg- oder .png-Dateien), eventuell eine kleinere Version der Grafiken auf der Startseite, können als Kopfzeile auf die Seiten der Zeitschrift hochgeladen werden, um die Textversion zu ersetzen, die ansonsten erscheint.</message>
 	<message key="manager.setup.journalPolicies">2. Schritt: Zeitschriftenrichtlinien und Publikationsprozess</message>
 	<message key="manager.setup.journalSetup">Einrichten der Zeitschrift</message>
 	<message key="manager.setup.journalSetupUpdated">Die Konfiguration Ihrer Zeitschrift wurde aktualisiert.</message>

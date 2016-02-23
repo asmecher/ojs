@@ -1,47 +1,32 @@
 {**
- * templates/workflow/production.tpl
+ * templates/controllers/tab/workflow/production.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Production workflow stage
  *}
-<script type="text/javascript">
-	// Initialise JS handler.
-	$(function() {ldelim}
-		$('#production').pkpHandler(
-			'$.pkp.pages.workflow.ProductionHandler',
-			{ldelim}
-				formatsTabContainerSelector: '#galleyTabsContainer',
-				submissionProgressBarSelector: '#submissionProgressBarDiv'
-			{rdelim}
-		);
-	{rdelim});
-</script>
-{include file="controllers/tab/workflow/stageParticipants.tpl"}
 
 <div id="production">
 	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="productionNotification" requestOptions=$productionNotificationRequestOptions}
 
-	<p class="pkp_help">{translate key="editor.submission.production.introduction"}</p>
+	<div class="pkp_context_sidebar">
+		{include file="controllers/tab/workflow/stageParticipants.tpl"}
+		{include file="common/helpLink.tpl" chapter="chapter_9_production.md"}
+	</div>
 
-	{url|assign:productionReadyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.productionReady.ProductionReadyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$stageId escape=false}
-	{load_url_in_div id="productionReadyFilesGridDiv" url=$productionReadyFilesGridUrl}
+	<div class="pkp_content_panel">
 
-	{if array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), $userRoles)}
-		{fbvFormArea id="galleys"}
-			{fbvFormSection}
-				<!--  Galleys -->
-				{url|assign:galleyGridUrl router=$smarty.const.ROUTE_COMPONENT  component="grid.articleGalleys.ArticleGalleyGridHandler" op="fetchGrid" submissionId=$submission->getId()}
-				{load_url_in_div id="formatsGridContainer"|uniqid url=$galleyGridUrl}
-			{/fbvFormSection}
-		{/fbvFormArea}
-	{else}
-		<h3>{translate key="submission.galleys"}</h3>
-	{/if}
+		<p class="pkp_help">{translate key="editor.submission.production.introduction"}</p>
 
-	<div id='galleyTabsContainer'>
-		{include file="controllers/tab/workflow/galleysTab.tpl" galleyTabsId=$galleyTabsId galleys=$representations}
+		{url|assign:productionReadyFilesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.files.productionReady.ProductionReadyFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$stageId escape=false}
+		{load_url_in_div id="productionReadyFilesGridDiv" url=$productionReadyFilesGridUrl}
+
+		{url|assign:queriesGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.queries.QueriesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$stageId escape=false}
+		{load_url_in_div id="queriesGridDiv" url=$queriesGridUrl}
+
+		{url|assign:representationsGridUrl router=$smarty.const.ROUTE_COMPONENT component="grid.articleGalleys.ArticleGalleyGridHandler" op="fetchGrid" submissionId=$submission->getId() escape=false}
+		{load_url_in_div id="formatsGridContainer"|uniqid url=$representationsGridUrl}
 	</div>
 </div>

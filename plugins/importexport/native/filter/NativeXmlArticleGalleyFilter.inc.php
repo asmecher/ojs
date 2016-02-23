@@ -3,8 +3,8 @@
 /**
  * @file plugins/importexport/native/filter/NativeXmlArticleGalleyFilter.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class NativeXmlArticleGalleyFilter
@@ -67,7 +67,7 @@ class NativeXmlArticleGalleyFilter extends NativeXmlRepresentationFilter {
 
 		$representation = parent::handleElement($node);
 
-		if ($node->getAttribute('available') == 'true') $representation->setIsAvailable(true);
+		if ($node->getAttribute('approved') == 'true') $representation->setIsApproved(true);
 
 		$galleyType = $node->getAttribute('galley_type');
 		$representation->setGalleyType($galleyType);

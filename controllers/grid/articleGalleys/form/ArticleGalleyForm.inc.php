@@ -3,8 +3,8 @@
 /**
  * @file controllers/grid/articleGalleys/form/ArticleGalleyForm.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ArticleGalleyForm
@@ -64,7 +64,7 @@ class ArticleGalleyForm extends Form {
 
 		$templateMgr->assign('submissionId', $this->_submission->getId());
 		if ($this->_articleGalley) {
-			$templateMgr->assign('articleGalleyId', $this->_articleGalley->getId());
+			$templateMgr->assign('representationId', $this->_articleGalley->getId());
 			$templateMgr->assign('articleGalley', $this->_articleGalley);
 			$templateMgr->assign('galleyType', $this->_articleGalley->getGalleyType());
 		}

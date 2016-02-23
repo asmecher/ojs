@@ -1,8 +1,8 @@
 {**
  * plugins/pubIds/urn/templates/settingsForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * URN plugin settings
@@ -24,7 +24,7 @@
 		$('#urnSettingsForm').pkpHandler('$.pkp.controllers.form.AjaxFormHandler');
 	{rdelim});
 </script>
-<form class="pkp_form" id="urnSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="plugin" category="pubIds" plugin=$pluginName verb="settings" save="true"}">
+<form class="pkp_form" id="urnSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="manage" category="pubIds" plugin=$pluginName verb="settings" save="true"}">
 {include file="common/formErrors.tpl"}
 <table class="data">
 	<tr>
@@ -152,11 +152,11 @@
 		<td class="value">
 			<span class="instruct">{translate key="plugins.pubIds.urn.manager.settings.clearURNs.description"}</span>
 			<br />
-			<input type="submit" name="clearPubIds" value="{translate key="plugins.pubIds.urn.manager.settings.clearURNs"}" onclick="return confirm('{translate|escape:"jsparam" key="plugins.pubIds.urn.manager.settings.clearURNs.confirm"}')" class="action"/>
+			<input type="submit" name="clearPubIds" value="{translate key="plugins.pubIds.urn.manager.settings.clearURNs"}" onclick="return confirm({translate|json_encode key="plugins.pubIds.urn.manager.settings.clearURNs.confirm"})" class="action"/>
 		</td>
 	</tr>
 </table>
-{fbvFormArea id="doiSuffixReassignFormArea" class="border" title="plugins.pubIds.urn.manager.settings.clearURNs"}
+{fbvFormArea id="doiSuffixReassignFormArea" title="plugins.pubIds.urn.manager.settings.clearURNs"}
 	{fbvFormSection}
 		<span class="instruct">{translate key="plugins.pubIds.urn.manager.settings.clearURNs.description"}</span><br/>
 		{include file="linkAction/linkAction.tpl" action=$clearPubIdsLinkAction contextId="urnSettingsForm"}

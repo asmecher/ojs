@@ -4,8 +4,8 @@
 <!--
   * locale/ja_JP/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the ja_JP (日本語) locale.
@@ -159,12 +159,6 @@
 	<message key="manager.setup.displayCurrentIssue">（もしあれば）最新号の目次を追加する。</message>
 	<message key="manager.setup.doiPrefix">DOIプリフィックス</message>
 	<message key="manager.setup.editorDecision">編集者の判断</message>
-	<message key="manager.setup.editorialMembers">委員会委員のページで、編集委員会委員または査読委員会委員を追加してください。この処理は、雑誌運営のいつの時点で行っても構いません。</message>
-	<message key="manager.setup.editorialProcess1">1人以上の編集者が担当者が指定されていない基本的ステップを担当する。</message>
-	<message key="manager.setup.editorialProcess2">編集長が受付と目次を担当し、セクションエディタが査読と編集を担当する。</message>
-	<message key="manager.setup.editorialProcess3">編集長が受付と編集、目次を担当し、セクションエディタが査読を担当する。</message>
-	<message key="manager.setup.editorialReviewBoard">編集・査読委員会</message>
-	<message key="manager.setup.editorialReviewBoardDescription">雑誌は、雑誌の編集上の方向性を監督し、編集者の任命を行い、委員会委員の評判により該当分野におけるその雑誌の地位を高めるために編集委員会を設けます。査読委員会も同様な役割を果たしますが、さらに、査読処理を主導します。査読委員会の委員は、雑誌の管理システムへのアクセス権は持ちませんが、査読を行う候補者のリストに追加されます。</message>
 	<message key="manager.setup.emailBounceAddress">返信アドレス</message>
 	<message key="manager.setup.emailBounceAddressDescription">配信できなかったメールは、次のアドレスへエラーメッセージとなり返送されます。</message>
 	<message key="manager.setup.emails">メールの識別</message>
@@ -228,8 +222,6 @@
 	<message key="manager.setup.journalLogo">雑誌ロゴ</message>
 	<message key="manager.setup.journalPageFooter">雑誌ページのフッタ</message>
 	<message key="manager.setup.journalPageFooterDescription">雑誌のフッタです。フッタを変更または更新する場合は、下の記入欄にHTML文を貼り付けてください。フッタの例としては、2つ目のナビゲーションバーやカウンターなどが考えられます。このフッタはすべてのページに表示されます。</message>
-	<message key="manager.setup.journalPageHeader">雑誌ページのヘッダ</message>
-	<message key="manager.setup.journalPageHeaderDescription">雑誌名と雑誌ロゴの画像（.gif, .jpg, .pngファイル。通常はホームページで使用したものより小型のもの）をホームページにアップロードできます。雑誌名の画像を指定すると雑誌名は表示されません。指定がないと雑誌名が表示されます。</message>
 	<message key="manager.setup.journalPolicies">ステップ 2. 雑誌ポリシー</message>
 	<message key="manager.setup.journalSetup">雑誌設定</message>
 	<message key="manager.setup.journalSetupUpdated">雑誌設定が更新されました。</message>
@@ -516,7 +508,6 @@
 	<message key="manager.language.reloadLocalizedDefaultSettings">この言語のデフォルト設定をリロードする</message>
 	<message key="manager.payment.options.purchaseArticleFee">論文購入料</message>
 	<message key="manager.sections.abstractsNotRequired">抄録を必要としない</message>
-	<message key="manager.sections.disableComments">このセクションは読者コメント機能を無効にする</message>
 	<message key="manager.sections.form.mustAllowPermission">各セクション編集者を割り当てるために少なくとも1つはチェックボックスをチェックしてください。</message>
 	<message key="manager.sections.form.reviewFormId">正しい査読フォームを選択したことを確認してください。</message>
 	<message key="manager.sections.hideTocAuthor">このセクションのアイテムは目次に著者名を表示しない</message>

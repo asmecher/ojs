@@ -1,8 +1,8 @@
 {**
  * controllers/tab/settings/siteSetup/form/siteSetupForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Site settings form.
@@ -11,9 +11,10 @@
 <script type="text/javascript">
 	$(function() {ldelim}
 		// Attach the form handler.
-		$('#siteSetupForm').pkpHandler('$.pkp.controllers.tab.settings.form.FileViewFormHandler',
+		$('#siteSetupForm').pkpHandler(
+			'$.pkp.controllers.tab.settings.form.FileViewFormHandler',
 			{ldelim}
-				fetchFileUrl: '{url|escape:javascript op="fetchFile" tab="siteSetup" escape=false}',
+				fetchFileUrl: {url|json_encode op="fetchFile" tab="siteSetup" escape=false},
 			{rdelim}
 		);
 	{rdelim});
@@ -55,7 +56,7 @@
 		{/fbvFormSection}
 	{/fbvFormArea}
 
-	{fbvFormArea id="journalListOptions" class="border"}
+	{fbvFormArea id="journalListOptions"}
 		<p>{translate key="admin.settings.journalsList.description"}</p>
 
 		{fbvFormSection list=true}

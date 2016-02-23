@@ -3,8 +3,8 @@
 /**
  * @file controllers/grid/settings/sections/SectionGridHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SectionGridHandler
@@ -50,8 +50,6 @@ class SectionGridHandler extends SetupGridHandler {
 
 		// Set the grid title.
 		$this->setTitle('section.sections');
-
-		$this->setInstructions('manager.setup.section.description');
 
 		// Elements to be displayed in the grid
 		$sectionDao = DAORegistry::getDAO('SectionDAO');
@@ -124,7 +122,7 @@ class SectionGridHandler extends SetupGridHandler {
 	 * Get the row handler - override the default row handler
 	 * @return SectionGridRow
 	 */
-	function getRowInstance() {
+	protected function getRowInstance() {
 		return new SectionGridRow();
 	}
 

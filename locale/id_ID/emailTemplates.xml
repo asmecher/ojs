@@ -4,8 +4,8 @@
 <!--
   * locale/id_ID/emailTemplates.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings.
@@ -75,7 +75,6 @@ Atur ulang kata sandi saya: {$url}<br />
 		<body><![CDATA[Kata sandi Anda telah sukses diatur ulang untuk penggunaan dengan web site {$siteTitle}. Ingatlah nama pengguna dan kata sandi ini karena diperlukan untuk semua pekerjaan di jurnal.<br />
 <br />
 Nama pengguna Anda: {$username}<br />
-Kata sandi baru Anda: {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
 		<description>Email ini dikirim untuk pengguna yang terdaftar saat mereka telah sukses mengatur ulang kata sandi mereka dengan mengikuti proses yang dideskripsikan di email  PASSWORD_RESET_CONFIRM.</description>
@@ -166,7 +165,7 @@ Terima kasih,<br />
 <br />
 Terima kasih untuk menyerahkan manuskrip, &quot;{$submissionTitle}&quot; untuk {$contextName}. Dengan sistem manajemen jurnal online yang kami gunakan, Anda akan bisa melacak kemajuan naskah dalam proses editorial dengan login ke web site jurnal:<br />
 <br />
-URL Manuskrip: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Manuskrip: {$submissionUrl}<br />
 Nama pengguna Penulis: {$authorUsername}<br />
 <br />
 Jika Anda mempunyai pertanyaan, silakan hubungi saya. Terima kasih untuk mempertimbangkan jurnal ini sebagai tempat untuk karya Anda. <br />
@@ -205,7 +204,7 @@ Review awal &quot;{$submissionTitle}&quot; telah memutuskan naskah ini tidak coc
 <br />
 Naskah, &quot;{$submissionTitle},&quot; untuk {$contextName} telah ditugaskan kepada Anda untuk has been assigned to you to see through the editorial process in your role as Section Editor.  <br />
 <br />
-URL Penyerahan: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Penyerahan: {$submissionUrl}<br />
 Nama Pengguna Editor: {$editorUsername}<br />
 <br />
 Terima kasih,<br />
@@ -605,7 +604,7 @@ Naskah Anda &quot;{$submissionTitle}&quot; untuk {$contextName} sekarang perlu d
 5. Simpan dan kirimkan email tentang koreksi ke Editor Layout dan Proofreader.<br />
 6. Kirim email LENGKAP kepada editor.<br />
 <br />
-URL Penyerahan: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Penyerahan: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>Email ini dari Editor Bagian untuk Penulis yang memberitahu mereka bahwa galley artikel siap untuk di-proofreading. Email ini memberikan informasi tentang artikel dan bagaimana mengaksesnya.</description>
@@ -642,7 +641,7 @@ Naskah &quot;{$submissionTitle}&quot;  untuk {$contextName} sekarang perlu di-pr
 5. Simpan dan kirimkan email tentang koreksi kepada Editor Layout.<br />
 6. Kirim email LENGKAP kepada editor.<br />
 <br />
-URL Manuskrip: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Manuskrip: {$submissionUrl}<br />
 Nama pengguna Proofreader: {$proofreaderUsername}<br />
 <br />
 Jika Anda tidak bisa bertanggung jawab atas pekerjaan ini atau mempunyai pertanyaan, silakan hubungi saya. Terima kasih untuk kontribusi Anda untuk jurnal ini.<br />
@@ -679,7 +678,7 @@ Naskah &quot;{$submissionTitle}&quot; untuk {$contextName} telah diproofread ole
 4. Kirim email LENGKAP di Proofreading Langkah 3 kepada editor.<br />
 <br />
 {$contextName} URL: <a href="{$journalUrl}">{$journalUrl}</a><br />
-URL Penyerahan: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Penyerahan: {$submissionUrl}<br />
 Nama pengguna Layout Editor: {$layoutEditorUsername}<br />
 <br />
 Jika Anda tidak bisa bertanggung jawab atas pekerjaan ini saat ini atau mempunyai pertanyaan, silakan hubungi saya. Terima kasih atas kontribusi Anda untuk jurnal ini. <br />

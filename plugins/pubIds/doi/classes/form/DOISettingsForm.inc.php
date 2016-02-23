@@ -3,8 +3,8 @@
 /**
  * @file plugins/pubIds/doi/classes/form/DOISettingsForm.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DOISettingsForm
@@ -52,9 +52,9 @@ class DOISettingsForm extends Form {
 	 * @param $plugin DOIPubIdPlugin
 	 * @param $journalId integer
 	 */
-	function DOISettingsForm(&$plugin, $journalId) {
+	function DOISettingsForm($plugin, $journalId) {
 		$this->_journalId = $journalId;
-		$this->_plugin =& $plugin;
+		$this->_plugin = $plugin;
 
 		parent::Form($plugin->getTemplatePath() . 'settingsForm.tpl');
 
@@ -69,21 +69,18 @@ class DOISettingsForm extends Form {
 		import('lib.pkp.classes.linkAction.request.RemoteActionConfirmationModal');
 		$application = PKPApplication::getApplication();
 		$request = $application->getRequest();
-		$clearPubIdsLinkAction =
-		new LinkAction(
+		$this->setData('clearPubIdsLinkAction', new LinkAction(
 			'reassignDOIs',
 			new RemoteActionConfirmationModal(
 				__('plugins.pubIds.doi.manager.settings.doiReassign.confirm'),
 				__('common.delete'),
-				$request->url(null, null, 'plugin', null, array('verb' => 'settings', 'clearPubIds' => true, 'plugin' => $plugin->getName(), 'category' => 'pubIds')),
+				$request->url(null, null, 'manage', null, array('verb' => 'settings', 'clearPubIds' => true, 'plugin' => $plugin->getName(), 'category' => 'pubIds')),
 				'modal_delete'
 			),
 			__('plugins.pubIds.doi.manager.settings.doiReassign'),
 			'delete'
-		);
-		$this->setData('clearPubIdsLinkAction', $clearPubIdsLinkAction);
+		));
 		$this->setData('pluginName', $plugin->getName());
-		$this->setData('doiSettingsHandlerJsUrl', $plugin->getJSFileUrl($request));
 	}
 
 

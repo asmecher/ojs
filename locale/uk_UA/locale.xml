@@ -4,11 +4,11 @@
 <!--
   * locale/uk_UA/locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the uk_UA (Ukrainian) locale.
+  * Localization strings for the uk_UA (Українська) locale.
   *
   * Translated by Denys Solovianenko, 2010-2011
   * V. I. Vernadsky National Library of Ukraine
@@ -57,7 +57,6 @@
        <message key="common.confirmComplete">Ви впевнені, що хочете позначити це завдання як завершене? Після цього, ймовірно, ви не матимете можливості вносити зміни.</message>
        <message key="common.payment">Платіж</message>
        <message key="common.payments">Платежі</message>
-       <message key="common.pageHeader.altText">Заголовок сторінки</message>
        <message key="common.homePageHeader.altText">Заголовок домашньої сторінки</message>
        <message key="common.journalHomepageImage.altText">Зображення домашньої сторінки журналу</message>
 
@@ -751,15 +750,6 @@
 <li>Використовуйте у термінах символ <strong>*</strong> як метасимвол, що позначає будь-яку послідовність символів; наприклад, за запитом <em>соці*</em> будуть знайдені документи, що містять слова "соціальний", "соціалістичний", "соціологічний" тощо</li>
 </ul>]]></message>
 
-       <!-- Interstitial page for PDFs -->
-       <message key="article.pdf.title">Portable Document Format (PDF)</message>
-       <message key="article.pdf.download">Завантажити цей PDF-файл</message>
-       <message key="article.pdf.pluginMissing"><![CDATA[<p>Якщо у Вашому браузері встановлений модуль читання PDF-файлів (наприклад, остання версія <a href="https://get.adobe.com/reader/">Adobe Acrobat Reader</a>), то обраний Вами файл PDF завантажиться у це вікно.</p> <p>Крім того, Ви можете завантажити PDF-файл безпосередньо на свій комп'ютер, де його можна буде відкрити за допомогою програми читання PDF-файлів. Щоб завантажити PDF-файл, натисніть посилання "Завантажити" нижче.</p>]]></message>
-       
-       <!-- Interstitial page for non-PDF non-HTML galleys -->
-       <message key="article.nonpdf.title">Завантаження статті</message>
-       <message key="article.nonpdf.note"><![CDATA[Обраний Вами файл почне завантажуватись автоматично. Зауважте, що для перегляду цього файлу може знадобитись спеціалізоване програмне забезпечення.<br /><br />Якщо файл не завантажився автоматично, <a href="{$url}">натисніть сюди</a>.]]></message>
-       
        <!-- Site index -->
        <message key="site.journalsHosted">Журнали, розміщені на цьому сайті</message>
        <message key="site.journalView">Перегляд журналу</message>

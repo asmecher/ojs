@@ -4,8 +4,8 @@
 <!--
   * locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the te_ST (Test Loçale) locale.
@@ -743,7 +743,6 @@
 	<message key="manager.setup.editorialReviewBoard">Éðîtórîål / Rèvîèw Bóårð</message>
 	<message key="manager.setup.useEditorialReviewBoard">Æñ èðîtórîål/rèvîèw bóårð wîll bè üþèð bý thè jóürñål.</message>
 	<message key="manager.setup.editorialReviewBoardDescription">Jóürñålþ håvè Éðîtórîål Bóårðþ tó óvèrþèè thè èðîtórîål ðîrèçtîóñ óf thè jóürñål, pårtîçîpåtè îñ thè åppóîñtmèñt óf èðîtórþ, åñð, bý vîrtüè óf bóårð mèmbèrþ' rèpütåtîóñþ, gîvè thè jóürñål þómè þtåñðîñg îñ thè fîèlð. Rèvîèw Bóårðþ plåý å þîmîlår rólè büt îñ åððîtîóñ, thèý lèåð thè pèèr rèvîèw próçèþþ. Rèvîèw Bóårð mèmbèrþ wîll ñót håvè åççèþþ tó thè jóürñål'þ åðmîñîþtråtîvè þýþtèm büt wîll bè åððèð tó thè lîþt óf thóþè åvåîlåblè tó ðó pèèr rèvîèwþ.</message>
-	<message key="manager.setup.editorialMembers">Gó tó Bóårð Mèmbèrþ åñð åðð Éðîtórîål Bóårð åñð/ór Rèvîèw Bóårð mèmbèrþ. Thîþ çåñ bè ðóñè åt åñý póîñt îñ ópèråtîñg thè jóürñål.</message>
 	<message key="manager.setup.principalContact">Prîñçîpål Çóñtåçt</message>
 	<message key="manager.setup.principalContactDescription">Thîþ póþîtîóñ, whîçh çåñ bè trèåtèð åþ å prîñçîpål èðîtórþhîp, måñågîñg èðîtórþhîp, ór åðmîñîþtråtîvè þtåff póþîtîóñ, wîll bè lîþtèð óñ thè hómèpågè óf thè jóürñål üñðèr Çóñtåçt, ålóñg wîth thè Tèçhñîçål ßüppórt Çóñtåçt.</message>
 	<message key="manager.setup.technicalSupportContact">Tèçhñîçål ßüppórt Çóñtåçt</message>
@@ -953,8 +952,6 @@ Tîtlè óf çlåþþîfîçåtîóñ þýþtèm]]></message>
 	<message key="manager.setup.itemsDescription">Ñåvîgåtîóñ bår îtèmþ çåñ bè åððèð tó thè çürrèñt þèt (Hómè, Æbóüt, Üþèr Hómè, ètç.) thåt åppèår åt thè tóp óf thè pågè.</message>
 	<message key="manager.setup.labelName">Låbèl ñåmè</message>
 	<message key="manager.setup.addNavItem">Æðð Îtèm</message>
-	<message key="manager.setup.journalPageHeader">Jóürñål Pågè Hèåðèr</message>
-	<message key="manager.setup.journalPageHeaderDescription">Æ gråphîç vèrþîóñ óf thè jóürñål'þ tîtlè åñð lógó (.gîf, .jpg, ór .pñg fîlè), póþþîblý å þmållèr vèrþîóñ óf thè óñè üþèð óñ thè hómèpågè, çåñ bè üplóåðèð tó åppèår åþ å hèåðèr óñ jóürñål pågèþ, whîçh wîll rèplåçè thè tèxt vèrþîóñ thåt óthèrwîþè åppèårþ.</message>
 	<message key="manager.setup.alternateHeader">Æltèrñåtè Hèåðèr</message>
 	<message key="manager.setup.alternateHeaderDescription">Æltèrñåtèlý, îñþtèåð óf tîtlè åñð lógó, åñ HTML vèrþîóñ óf thè hèåðèr çåñ bè îñþèrtèð îñtó thè tèxt bóx bèlów. Lèåvè tèxtbóx blåñk îf ñót rèqüîrèð.</message>
 	<message key="manager.setup.journalPageFooter">Jóürñål Pågè Fóótèr</message>

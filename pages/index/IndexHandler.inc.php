@@ -3,8 +3,8 @@
 /**
  * @file pages/index/IndexHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class IndexHandler
@@ -52,10 +52,6 @@ class IndexHandler extends Handler {
 
 		if ($journal) {
 			// Assign header and content for home page
-			$templateMgr->assign('displayPageHeaderTitle', $journal->getLocalizedPageHeaderTitle(true));
-			$templateMgr->assign('displayPageHeaderLogo', $journal->getLocalizedPageHeaderLogo(true));
-			$templateMgr->assign('displayPageHeaderTitleAltText', $journal->getLocalizedSetting('homeHeaderTitleImageAltText'));
-			$templateMgr->assign('displayPageHeaderLogoAltText', $journal->getLocalizedSetting('homeHeaderLogoImageAltText'));
 			$templateMgr->assign('additionalHomeContent', $journal->getLocalizedSetting('additionalHomeContent'));
 			$templateMgr->assign('homepageImage', $journal->getLocalizedSetting('homepageImage'));
 			$templateMgr->assign('homepageImageAltText', $journal->getLocalizedSetting('homepageImageAltText'));
@@ -82,17 +78,7 @@ class IndexHandler extends Handler {
 				}
 			}
 
-			// Include any social media items that are configured for the context itself.
-			$socialMediaDao = DAORegistry::getDAO('SocialMediaDAO');
-			$socialMedia =& $socialMediaDao->getEnabledForContextByContextId($journal->getId());
-			$blocks = array();
-			while ($media = $socialMedia->next()) {
-				$media->replaceCodeVars();
-				$blocks[] = $media->getCode();
-			}
-			$templateMgr->assign('socialMediaBlocks', $blocks);
-
-			$templateMgr->display('index/journal.tpl');
+			$templateMgr->display('frontend/pages/indexJournal.tpl');
 		} else {
 			$site = $request->getSite();
 
@@ -114,7 +100,7 @@ class IndexHandler extends Handler {
 			$templateMgr->assign('site', $site);
 
 			$templateMgr->setCacheability(CACHEABILITY_PUBLIC);
-			$templateMgr->display('index/site.tpl');
+			$templateMgr->display('frontend/pages/indexSite.tpl');
 		}
 	}
 }

@@ -4,11 +4,11 @@
 <!--
   * locale/el_GR/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the el_GR (Greek) locale.
+  * Localization strings for the el_GR (ελληνικά) locale.
   *
   -->
 
@@ -164,12 +164,6 @@
 	<message key="manager.setup.doiPrefix">Το πρόθημα DOI (DOI Prefix)</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[Το πρόθημα DOI (Αναγνωριστικό Ψηφιακού Αντικειμένου) ανατίθεται από <a href="http://www.crossref.org">CrossRef</a>  και βρίσκεται σε μορφή 10.xxxx (π.χ. 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Απόφαση Επιμελητή</message>
-	<message key="manager.setup.editorialMembers">Μετάβαση στα Μέλη Επιτροπών και προσθήκη μελών Επιτροπής Σύνταξης ή/και Επιτροπής αξιολόγησης. Αυτό μπορεί να πραγματοποιηθεί σε οποιοδήποτε σημείο διαχείρισης του περιοδικού.</message>
-	<message key="manager.setup.editorialProcess1">Ένας ή περισσότεροι επιμελητές χειρίζονται τα βασικά βήματα χωρίς να τους έχουν ανατεθεί ρόλοι.</message>
-	<message key="manager.setup.editorialProcess2">Ο Επιμελητής Διαχείρισης χειρίζεται τη «Σειρά αναμονής» για υποβολή και τον «Πίνακα περιεχομένων», ενώ οι επιμελητές ενοτήτων χειρίζονται την «Αξιολόγηση της υποβολής» και τη διαμόρφωση της υποβολής.</message>
-	<message key="manager.setup.editorialProcess3"> Ο επιμελητής Διαχείρισης χειρίζεται την «Σειρά αναμονής» για υποβολή, «την Επιμέλεια της υποβολής» και τον «Πίνακα περιεχομένων», ενώ οι επιμελητές ενοτήτων χειρίζονται την «Αξιολόγηση της υποβολής».</message>
-	<message key="manager.setup.editorialReviewBoard">Επιτροπή Σύνταξης / Αξιολόγησης</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Τα περιοδικά έχουν Επιτροπή Σύνταξης για επίβλεψη της πορείας της επιμέλειας του περιοδικού, συμμετοχή σε συναντήσεις επιμελητών, και, ένεκα της υπόληψης των μελών της επιτροπής, για απόδοση μιας ορισμένης υπόστασης στο περιοδικό. Οι επιτροπές αξιολόγησης διαδραματίζουν παρεμφερή ρόλο αλλά, επιπλέον, ηγούνται της διαδικασίας αξιολόγησης από ομότιμους ειδικούς. Τα μέλη των επιτροπών αξιολόγησης δεν θα έχουν πρόσβαση στο διοικητικό σύστημα του περιοδικού αλλά θα βρίσκονται στη λίστα των ατόμων που είναι διαθέσιμα για αξιολογήσεις από ομότιμους αξιολογητές.</message>
 	<message key="manager.setup.emailBounceAddress">Διεύθυνση επιστροφής σε αποστολέα</message>
 	<message key="manager.setup.emailBounceAddressDescription">Όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου που δεν παραδόθηκαν επιτυχώς θα έχουν ως αποτέλεσμα μήνυμα σφάλματος στη συγκεκριμένη διεύθυνση.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Σημείωση:</strong> Για να ενεργοποιήσετε την συγκεκριμένη επιλογή, ο διαχειριστής του ιστοτόπου πρέπει να ενεργοποιήσεις την επιλογή <tt>allow_envelope_sender</tt> στο αρχείο ρυθμίσεων του OJS. Ενδέχεται να απαιτούνται πρόσθετες ρυθμίσεις διακομιστή για υποστήριξη της συγκεκριμένης λειτουργίας (που ενδέχεται να μην είναι διαθέσιμες σε όλους τους διακομιστές), όπως διευκρινίζεται στα τεκμηριωτικά έγγραφα του OJS.]]></message>
@@ -237,8 +231,6 @@
 	<message key="manager.setup.journalLogo">Λογότυπο περιοδικού</message>
 	<message key="manager.setup.journalPageFooter">Υποσελίδο σελίδας περιοδικού</message>
 	<message key="manager.setup.journalPageFooterDescription">Πρόκειται για το υποσέλιδο του περιοδικού σας. Για να αλλάξετε ή να ενημερώσετε το υποσέλιδο, εισάγετε τον κατάλληλο κώδικα HTML στο παρακάτων πλαίσιο κειμένου. Παραδείγματα θα μπορούσαν να είναι άλλη μια μπάρα πλοήγησης, counter, κτλ. Το συγκεκριμένο υποσέλιδο εμφανίζεται σε κάθε σελίδα.</message>
-	<message key="manager.setup.journalPageHeader">Κεφαλίδα σελίδας περιοδικού</message>
-	<message key="manager.setup.journalPageHeaderDescription">Γραφική έκδοση του τίτλου και του λογοτύπου του περιοδικού (ως αρχεία σε μορφή .gif, .jpg, ή .png), πιθανώς σε μικρότερη έκδοση από αυτή της αρχικής σελίδας, μπορούν να φορτωθούν για να εμφανίζονται ως κεφαλίδα στις σελίδες του περιοδικού, που θα αντικαταστήσει την έκδοση του κειμένου που εμφανίζεται σε διαφορετική περίπτωση.</message>
 	<message key="manager.setup.journalPolicies">Βήμα 2. Πολιτικές </message>
 	<message key="manager.setup.journalSetup">Οργάνωση περιοδικού</message>
 	<message key="manager.setup.journalSetupUpdated">Οι ρυθμίσεις του περιοδικού ενημερώθηκαν.</message>
@@ -535,7 +527,6 @@
 	<message key="manager.language.reloadLocalizedDefaultSettings">Επαναφόρτωση τις εξ'ορισμού παραμέτρους συγκεκριμένης τοπικής ρύθμισης</message>
 	<message key="manager.payment.options.purchaseArticleFee">Αγορά Άρθρου</message>
 	<message key="manager.sections.abstractsNotRequired">Μην απαιτείτε περιλήψεις</message>
-	<message key="manager.sections.disableComments">Απενεργοποιήστε τα σχόλια αναγνωστών για αυτή την ενότητα.</message>
 	<message key="manager.sections.form.mustAllowPermission">Σιγουρευτείτε ότι τουλάχιστον ένα checkbox έχει τσεκαριστεί για κάθε ανάθεση Επιμελητή Ενότητας.</message>
 	<message key="manager.sections.form.reviewFormId">Σιγουρευτείτε ότι έχετε επιλέξει μια έγκυρη φόρμα αξιολόγησης.</message>
 	<message key="manager.sections.hideTocAuthor">Παραλείψτε τα ονόματα των συγγραφέων για τεκμήρια ενοτήτων από τον πίνακα περιεχομένων του τεύχους</message>

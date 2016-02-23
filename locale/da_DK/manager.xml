@@ -4,11 +4,11 @@
 <!--
   * locale/da_DK/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the da_DK (Danish) locale.
+  * Localization strings for the da_DK (Dansk) locale.
   *
   -->
 
@@ -111,7 +111,6 @@
 	<message key="manager.sections.abstractsNotRequired">Kræv ikke abstracts</message>
 	<message key="manager.sections.assigned">Redaktører for denne sektion</message>
 	<message key="manager.sections.create">Opret sektion</message>
-	<message key="manager.sections.disableComments">Deaktiver mulighed for læserkommentarer i denne sektion</message>
 	<message key="manager.section.sectionEditorInstructions">Vælg blandt de tilgængelige sektionsredaktører, og "Tildel redaktør" til denne sektion.</message>
 	<message key="manager.sections.editorRestriction">Elementer kan kun fremsendes af redaktører og sektionsredaktører.</message>
 	<message key="manager.sections.editors">Sektionsredaktører</message>
@@ -191,12 +190,6 @@
 	<message key="manager.setup.disciplineProvideExamples">Angiv eksempler på relevante akademiske fagområder for dette tidsskrift</message>
 	<message key="manager.setup.displayCurrentIssue">Føj indholdsfortegnelsen til den aktuelle udgave (hvis den er tilgængelig).</message>
 	<message key="manager.setup.editorDecision">Redaktørbeslutning</message>
-	<message key="manager.setup.editorialMembers">Gå til Udvalgsmedlemmer, og tilføj redaktionsudvalgs- og/eller bedømmelsesudvalgsmedlemmer. Du kan gøre dette på et hvilket som helst tidspunkt under driften af tidsskriftet.</message>
-	<message key="manager.setup.editorialProcess1">En eller flere redaktører håndterer de grundlæggende trin uden anviste roller.</message>
-	<message key="manager.setup.editorialProcess2">Chefredaktøren håndterer Manuskriptkø og Indholdsfortegnelse, mens sektionsredaktørerne håndterer Manuskriptbedømmelse og Manuskriptredigering.</message>
-	<message key="manager.setup.editorialProcess3">Chefredaktøren håndterer Manuskriptkø, Manuskriptredigering og Indholdsfortegnelse, mens sektionsredaktørerne håndterer Manuskriptbedømmelse.</message>
-	<message key="manager.setup.editorialReviewBoard">Redaktionsudvalg/bedømmelsesudvalg</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Tidsskrifter har redaktionsudvalg, som fører tilsyn med tidsskriftets redaktionelle linje, som deltager i udnævnelsen af redaktører, og som i kraft af udvalgsmedlemmernes renommé giver tidsskriftet en vis status inden for det pågældende felt. Bedømmelsesudvalget spiller en lignende rolle, men leder derudover peer review-processen. Medlemmer af bedømmelsesudvalget har ikke adgang til tidsskriftets administrative system, men står anført på listen over de personer, der kan foretage peer review.</message>
 	<message key="manager.setup.emailBounceAddress">Returadresse</message>
 	<message key="manager.setup.emailBounceAddressDescription">Alle e-mails, der ikke kan leveres, resulterer i en fejlmeddelelse til denne adresse.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Bemærk!</strong> Hvis du vil aktivere denne indstilling, skal webstedsadministratoren aktivere indstillingen <tt>allow_envelope_sender</tt> i OJS-konfigurationsfilen. Understøttelse af denne funktionalitet (som eventuelt ikke er muligt på alle servere) kan kræve yderligere konfiguration af serveren som angivet i dokumentationen til OJS.]]></message>
@@ -267,8 +260,6 @@
 	<message key="manager.setup.journalLogo.altText">Tidsskriftslogo</message>
 	<message key="manager.setup.journalPageFooter">Sidefod til tidsskrift</message>
 	<message key="manager.setup.journalPageFooterDescription">Dette er tidsskriftets sidefod. Sidefoden kan ændres eller opdateres ved at indsætte HTML-kode i tekstboksen nedenfor. Som eksempel kan det være en anden navigationslinje, en tæller osv. Denne sidefod vises på hver side.</message>
-	<message key="manager.setup.journalPageHeader">Sidehoved til tidsskrift</message>
-	<message key="manager.setup.journalPageHeaderDescription">En grafik version af tidsskriftets titel og logo (.gif-, .jpg- eller .png-fil), muligvis en mindre version af den, der bruges på hjemmesiden, kan overføres til tidsskriftets sider som et sidehoved, der erstatter den tekstversion, som ellers er vist.</message>
 	<message key="manager.setup.journalPolicies">Trin 2. Tidsskriftspolitikker</message>
 	<message key="manager.setup.journalSetup">Konfiguration af tidsskrift</message>
 	<message key="manager.setup.journalSetupUpdated">Konfigurationen af tidsskriftet er blevet opdateret.</message>

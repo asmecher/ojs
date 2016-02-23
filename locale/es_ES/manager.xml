@@ -4,8 +4,8 @@
 <!--
   * locale/es_ES/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the es_ES (Español (España)) locale.
@@ -90,7 +90,6 @@
 	<message key="manager.sections.abstractsNotRequired">No requiere resumenes</message>
 	<message key="manager.sections.assigned">Editor/a de esta sección</message>
 	<message key="manager.sections.create">Crear sección</message>
-	<message key="manager.sections.disableComments">Deshabilitar comentarios del lector para esta sección</message>
 	<message key="manager.section.sectionEditorInstructions">Seleccione uno/a de entre los/as Editores/as de Sección disponibles y "Asigne editor/a" a esta sección.</message>
 	<message key="manager.sections.editorRestriction">Sólo los/as editores/as y editores/as de sección pueden enviar elementos.</message>
 	<message key="manager.sections.editors">Editores/as de sección</message>
@@ -171,12 +170,6 @@
 	<message key="manager.setup.doiPrefix">Prefijo de DOI</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[El prefijo de DOI (Identificador de Objecto Digital) esta asignado por <a href="http://www.crossref.org" target="_new">CrossRef</a> y tiene el formato 10.xxxx (p.e. 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Decisión del Editor</message>
-	<message key="manager.setup.editorialMembers">Ir a Miembros del Consejo y añadir miembros al Consejo Editorial y/o al Consejo Revisor. Esta tarea se puede hacer más adelante.</message>
-	<message key="manager.setup.editorialProcess1">Uno/a o más editores/a gestionan los pasos básicos sin roles designados.</message>
-	<message key="manager.setup.editorialProcess2">El/la editor/a principal maneja la cola de envíos, la cola de agenda, y la tabla de contenidos, mientras que los/as editores/as de sección manejan la revisión de envíos y la edición de envíos.</message>
-	<message key="manager.setup.editorialProcess3">El/la editor/a principal maneja la cola de envíos, la edición de envíos, la cola de envíos y la tabla de contenidos, mientras que los/as editores/as de sección manejan la revisión de envíos.</message>
-	<message key="manager.setup.editorialReviewBoard">Consejo Editorial / Revisor</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Las revistas cuentan con Consejos Editoriales / Revisores para supervisar la línea editorial de la revista, participar en la elección de editoras/es, y, mediante la reputación de los miembros del consejo, aportar relevancia a la revista en su área temática. Los Consejos Revisores juegan un papel similar pero además se encargan del proceso de revisión por pares. Los miembros del Consejo Revisor no tendrán acceso al sistema administrativo de la revista, pero se añadirán a la lista de revisores/as.</message>
 	<message key="manager.setup.emailBounceAddress">Dirección de Rebote</message>
 	<message key="manager.setup.emailBounceAddressDescription">Se enviará un mensaje de error a esta dirección por cada correo que no haya podido ser entregado.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Atención:</strong> Para activar esta opción, el/la administrador/a debe habilitar la opción <tt>allow_envelope_sender</tt> en el fichero de configuración de OJS. Es posible que haya que configurar maś cosas en el servidor (lo cuál puede que no sea posible en todos los servidores) para soportar esta funcionalidad, tal y como se indica en la documentación de OJS.]]></message>
@@ -247,8 +240,6 @@
 	<message key="manager.setup.journalLogo.altText">Logo de la Revista</message>
 	<message key="manager.setup.journalPageFooter">Pie de página de la revista</message>
 	<message key="manager.setup.journalPageFooterDescription">Este es el pie de la revista. Para cambiarlo o actualizarlo, pegue el código HTML en la caja de texto. Por ejemplo, otra barra de navegación, un contador, etc. Este pie aparecerá en todas las páginas.</message>
-	<message key="manager.setup.journalPageHeader">Cabecera de página de revista</message>
-	<message key="manager.setup.journalPageHeaderDescription">Se puede subir una versión gráfica del título y logotipo de la revista, en principio una versión más pequeña de la que aparece en la cabecera, (como .gif, .jpg, o .png), que reemplazaría la versión de texto.</message>
 	<message key="manager.setup.journalPolicies">Paso 2. Política de la revista</message>
 	<message key="manager.setup.journalSetup">Configuración de la revista</message>
 	<message key="manager.setup.journalSetupUpdated">La configuración de su revista ha sido actualizada.</message>

@@ -4,11 +4,11 @@
 <!--
   * locale/ml_IN/locale.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the ml_IN (Malayalam) locale.
+  * Localization strings for the ml_IN (മലയാളം) locale.
   *
   -->
  
@@ -55,7 +55,6 @@
 	<message key="common.confirmComplete">ഈ ജോലി പൂര്‍ത്തിയായതായി അടയാളപ്പെടുത്താന്‍ നിങ്ങള്‍ ആഗ്രഹിക്കുന്നു   ? നിങ്ങള്‍ക്ക് പിന്നീട് വ്യത്യാസം വരുതാന്‍ കഴിയില്ല.</message>
 	<message key="common.payment">പണം കൊടുക്കല്‍</message>
 	<message key="common.payments">പണം  ഒടുക്കല്‍</message>
-	<message key="common.pageHeader.altText">താളിന്റെ ഹെഡര്‍</message>
 		
 	<!-- Navigation -->
 	<message key="navigation.journalHelp">ജേണല്‍ ഹെല്പ്</message>
@@ -570,13 +569,6 @@
 	<message key="search.authorIndex">ഓതര്‍ ഇന്‍ഡക്സ് ബ്രൗസ് ചെയ്യുക</message>
 	<message key="search.authorDetails">ഗ്രന്ഥകര്‍ത്താവിന്റെ വിശദാംശങ്ങള്‍</message>
 
-	<!-- Interstitial page for PDFs -->
-	<message key="article.pdf.title">പോര്‍ട്ടബിള്‍ ഡോക്യുമെന്റ് ഫോര്‍മാറ്റ് (പിഡിഎഫ് )</message>
-	<message key="article.pdf.download">ഈ പിഡിഎഫ് ഫയല്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</message>
-	
-	<!-- Interstitial page for non-PDF non-HTML galleys -->
-	<message key="article.nonpdf.title">ലേഖനങ്ങള്‍ ഡൗണ്‍ലോഡ് ചെയ്യുന്നതിന്</message>
-	
 	<!-- Site index -->
 	<message key="site.journalsHosted">ജര്‍ണലുകള്‍ ഈ സൈറ്റില്‍ ആണ് ഹോസ്റ്റ് ചെയ്യപ്പെട്ടിരിക്കുന്നത്</message>
 	<message key="site.journalView">ജര്‍ണല്‍ കാണുക</message>

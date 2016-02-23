@@ -7,8 +7,8 @@
 ;
 ; config.TEMPLATE.inc.php
 ;
-; Copyright (c) 2014-2015 Simon Fraser University Library
-; Copyright (c) 2003-2015 John Willinsky
+; Copyright (c) 2014-2016 Simon Fraser University Library
+; Copyright (c) 2003-2016 John Willinsky
 ; Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
 ;
 ; OJS Configuration settings.
@@ -112,6 +112,15 @@ citation_checking_max_processes = 3
 
 ; Display a message on the site admin and journal manager user home pages if there is an upgrade available
 show_upgrade_warning = On
+
+; Set the following parameter to off if you want to work with the uncompiled (non-minified) JavaScript
+; source for debugging or if you are working off a development branch without compiled JavaScript.
+enable_minified = Off
+
+; Provide a unique site ID and OAI base URL to PKP for statistics and security
+; alert purposes only.
+enable_beacon = On
+
 
 ;;;;;;;;;;;;;;;;;;;;;
 ; Database Settings ;
@@ -220,7 +229,7 @@ umask = 0022
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [finfo]
-mime_database_path = /etc/magic.mime
+; mime_database_path = /etc/magic.mime
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -242,8 +251,15 @@ session_check_ip = On
 
 ; The encryption (hashing) algorithm to use for encrypting user passwords
 ; Valid values are: md5, sha1
-; Note that sha1 requires PHP >= 4.3.0
-encryption = md5
+; NOTE: This hashing method is deprecated, but necessary to permit gradual
+; migration of old password hashes.
+encryption = sha1
+
+; The unique salt to use for generating password reset hashes
+salt = "YouMustSetASecretKeyHere!!"
+
+; The number of seconds before a password reset hash expires (defaults to 7200 / 2 hours)
+reset_seconds = 7200
 
 ; Allowed HTML tags for fields that permit restricted HTML.
 ; Use e.g. "img[src,alt],p" to allow "src" and "alt" attributes to the "img"
@@ -300,10 +316,10 @@ allowed_html = "a[href|target|title],em,strong,cite,code,ul,ol,li[class],dl,dt,d
 ; Default envelope sender to use if none is specified elsewhere
 ; default_envelope_sender = my_address@my_host.com
 
-; Enable attachments in the various "Send Email" pages.
-; (Disabling here will not disable attachments on features that
-; require them, e.g. attachment-based reviews)
-enable_attachments = On
+; Force the default envelope sender (if present)
+; This is useful if setting up a site-wide noreply address
+; The reply-to field will be set with the reply-to or from address.
+; force_default_envelope_sender = Off
 
 ; Amount of time required between attempts to send non-editorial emails
 ; in seconds. This can be used to help prevent email relaying via OJS.
@@ -467,3 +483,6 @@ display_errors = Off
 
 ; Display deprecation warnings
 deprecation_warnings = Off
+
+; Log web service request information for debugging
+log_web_service_info = Off

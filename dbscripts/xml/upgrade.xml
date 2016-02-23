@@ -3,16 +3,16 @@
 <!--
   * upgrade.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Upgrade descriptor file.
   *
   -->
 
-<install version="2.9.0.0">
-	<upgrade minversion="2.0.0.0" maxversion="2.2.9.9">
+<install version="2.9.9.0">
+	<upgrade minversion="2.0.0.0" maxversion="2.9.8.9">
 		<code function="abort" message="installer.unsupportedUpgradeError" />
 	</upgrade>
 
@@ -87,8 +87,6 @@
 	<schema file="lib/pkp/xml/schema/controlledVocab.xml" />
 	<schema file="lib/pkp/xml/schema/submissions.xml" />
 	<schema file="lib/pkp/xml/schema/submissionFiles.xml" />
-	<schema file="lib/pkp/xml/schema/content.xml" />
-	<schema file="lib/pkp/xml/schema/comments.xml" />
 	<schema file="lib/pkp/xml/schema/notes.xml" />
 	<schema file="lib/pkp/xml/schema/views.xml" />
 	<schema file="lib/pkp/xml/schema/genres.xml" />
@@ -209,6 +207,10 @@
 		<code function="fixReviewForms" />
 		<code function="htmlifyEmailTemplates" /><!-- Bug #8929 -->
 		<note file="docs/release-notes/README-3.0b" />
+	</upgrade>
+
+	<upgrade minversion="2.3.0.0" maxversion="3.0.0.9">
+		<note file="docs/release-notes/README-BEACON" />
 	</upgrade>
 
 	<!-- update plugin configuration - should be done as the final upgrade task -->

@@ -3,8 +3,8 @@
 /**
  * @file plugins/themes/default/DefaultThemePlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DefaultThemePlugin
@@ -21,6 +21,8 @@ class DefaultThemePlugin extends ThemePlugin {
 	 */
 	function DefaultThemePlugin() {
 		parent::ThemePlugin();
+
+		HookRegistry::register('Templates::Common::Footer::PageFooter', array($this, 'printJavascript'));
 	}
 
 	/**
@@ -61,7 +63,19 @@ class DefaultThemePlugin extends ThemePlugin {
 	 * @see ThemePlugin::getLessStylesheet
 	 */
 	function getLessStylesheet() {
-		return 'index.less';
+		return 'styles/index.less';
+	}
+
+	/**
+	 * Print JavaScript file into the footer
+	 * @param $hookName string
+	 * @param $args array
+	 * @return boolean Normal hook handling conventions.
+	 */
+	function printJavascript() {
+		$request = Registry::get('request');
+		echo '<script src="' . $request->getBaseUrl() . '/' . $this->getPluginPath() . '/js/main.js" type="text/javascript"></script>';
+		return false;
 	}
 }
 

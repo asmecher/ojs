@@ -4,11 +4,11 @@
 <!--
   * locale/pt_PT/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the pt_PT (Português) locale.
+  * Localization strings for the pt_PT (Português (Portugal)) locale.
   *
   -->
 
@@ -90,7 +90,6 @@
 	<message key="manager.sections.abstractsNotRequired">Não exigir resumos</message>
 	<message key="manager.sections.assigned">Editores desta Secção</message>
 	<message key="manager.sections.create">Criar Secção</message>
-	<message key="manager.sections.disableComments">Desactivar comentários dos leitores para esta secção</message>
 	<message key="manager.section.sectionEditorInstructions">Escolha dentre os Editores de Secção disponíveis e clique em "Designar Editor" a esta secção.</message>
 	<message key="manager.sections.editorRestriction">Restrita a Editores e Editores de Secção.</message>
 	<message key="manager.sections.editors">Editores de Secção</message>
@@ -172,12 +171,6 @@
 	<message key="manager.setup.doiPrefix">Prefixo DOI</message>
 	<message key="manager.setup.doiPrefixDescription"><![CDATA[O Prefixo DOI (Digital Object Identifier) é controlado e oferecido por <a href="http://www.crossref.org" target="_new">CrossRef</a> e possui o formato 10.xxxx (ex.: 10.1234).]]></message>
 	<message key="manager.setup.editorDecision">Decisão Editorial</message>
-	<message key="manager.setup.editorialMembers">Entre em Membros do Equipa para registar pessoas na Equipa Editorial e/ou Revisor. Pode ser realizado a qualquer tempo.</message>
-	<message key="manager.setup.editorialProcess1">Um ou mais editores podem tratar os passos básicos sem papéis definidos.</message>
-	<message key="manager.setup.editorialProcess2">Editor trata da Fila de Submissão e Sumário, enquanto Editores de Secção tratam da Revisão e Edição da Submissão.</message>
-	<message key="manager.setup.editorialProcess3">Editor trata da Fila de Submissão, Edição de Submissão e Sumário, enquanto os Editores de Secção tratam da Revisão da Submissão.</message>
-	<message key="manager.setup.editorialReviewBoard">Equipa Editorial / Revisor</message>
-	<message key="manager.setup.editorialReviewBoardDescription">A função da Equipa Editorial é definir as directrizes, âmbito e público alvo da revista, definir o corpo editorial, e, pela reputação dos seus participantes, proporcionar à revista um posicionamento na área de actuação. A Equipa de Revisores tem uma função similar, porém ainda acompanha o processo de revisão por pares. Os membros do Equipa de Revisores não terão acesso à administração do sistema, mas estarão incluídos na lista de revisores.</message>
 	<message key="manager.setup.emailBounceAddress">Endereço de retorno de e-mail</message>
 	<message key="manager.setup.emailBounceAddressDescription">Qualquer e-mail retornado (não recebido) produzirá uma mensagem de erro para o endereço definido aqui.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Aviso:</strong> Para activar esta opção, o administrador do portal deve activar a opção <tt>allow_envelope_sender</tt> no documento de configuração do sistema. Configurações adicionais no servidor podem ser necessárias para suportar tal funcionalidade (pode não ser possível em todos os tipos de servidores!), como descrito na documentação do sistema.]]></message>
@@ -248,8 +241,6 @@
 	<message key="manager.setup.journalLogo.altText">Logótipo da revista</message>
 	<message key="manager.setup.journalPageFooter">Rodapé da Revista</message>
 	<message key="manager.setup.journalPageFooterDescription">No rodapé da revista é possível incluir ou actualizar o conteúdo, colocando código HTML customizado, como outras barras de navegação, contadores, publicidade. O rodapé aparecerá em todas as páginas.</message>
-	<message key="manager.setup.journalPageHeader">Cabeçalho interno da Revista</message>
-	<message key="manager.setup.journalPageHeaderDescription">Uma versão em formato de imagem do título e logótipo da revista (como .gif, .jpg, ou .png ) pode ser submetida, possivelmente em tamanho reduzido, que substituirá a versão em texto que aparece como padrão.</message>
 	<message key="manager.setup.journalPolicies">Passo 2. Políticas da Revista</message>
 	<message key="manager.setup.journalSetup">Configuração da Revista</message>
 	<message key="manager.setup.journalSetupUpdated">Configurações da revista actualizadas.</message>

@@ -4,11 +4,11 @@
 <!--
   * locale/eu_ES/manager.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2003-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the eu_ES (Basque (Euskara)) locale.
+  * Localization strings for the eu_ES (Euskara) locale.
   *
   -->
 
@@ -85,7 +85,6 @@
 	<message key="manager.sections.abstractsNotRequired">Ez zaie eskatuko laburpenik</message>
 	<message key="manager.sections.assigned">Atal honetako editoreak</message>
 	<message key="manager.sections.create">Sortu atala</message>
-	<message key="manager.sections.disableComments">Desgaitu irakurleen iruzkinak atal honetarako.</message>
 	<message key="manager.section.sectionEditorInstructions">Gehitu Ataleko editore bat, atal honetara iristen diren bidalketak automatikoki esleitzeko Ataleko editore horri. (Bestela, Ataleko editorea eskuz esleitu ahal izango da, bidalketa bat iristen den bakoitzean). Editore bat gehitzen bada, automatikoki esleitu ahal izango zaio atal honetarako bidaltzen diren lanen EBALUAZIOA (adituen ebaluazioa) eta/edo EDIZIOA (zuzenketa, maketazioa eta proba-zuzenketa) gainbegiratzea. Ataleko editoreak sortzeko, Aldizkariaren kudeaketako Funtzioetan, Ataleko editoreak esteka sakatu behar da. </message>
 	<message key="manager.sections.editorRestriction">Editoreek eta Ataleko editoreek bakarrik bidal ditzakete lanak.</message>
 	<message key="manager.sections.editors">Ataleko editoreak</message>
@@ -165,12 +164,6 @@
 	<message key="manager.setup.disciplineProvideExamples">Eman aldizkarian tratatzen diren diziplina akademikoen adibideak</message>
 	<message key="manager.setup.displayCurrentIssue">Gehitu uneko zenbakiaren aurkibidea (baldin badago).</message>
 	<message key="manager.setup.editorDecision">Editorearen erabakia</message>
-	<message key="manager.setup.editorialMembers">Joan Kontseilukideetara, eta gehitu Kontseilu editorialeko eta/edo Adituen kontseiluko kideak. Aldizkariaren edozein fasetan egin daiteke.</message>
-	<message key="manager.setup.editorialProcess1">Editore batek edo gehiagok egiten dituzte oinarrizko urratsak, funtzio zehatzik izendatu gabe.</message>
-	<message key="manager.setup.editorialProcess2">Editore nagusi bat (Zuzendaria) arduratzen da Bidalketen ilaraz eta Aurkibideaz eta Ataleko editoreak arduratzen dira Bidalketen ebaluazioaz eta Bidalketen edizioaz.</message>
-	<message key="manager.setup.editorialProcess3">Editore nagusia (Zuzendaria) arduratzen da Bidalketen ilaraz, Bidalketen Edizioaz eta Aurkibideaz eta Ataleko editoreak arduratzen dira Bidalketen ebaluazioaz.</message>
-	<message key="manager.setup.editorialReviewBoard">Kontseilu editoriala / Adituen kontseilua</message>
-	<message key="manager.setup.editorialReviewBoardDescription">Aldizkariek Kontseilu editorialak izaten dituzte, aldizkariaren zuzendaritza editoriala gainbegiratzeko, editoreen izendapenean parte hartzeko, eta, kontseiluko kideen ospeari esker, aldizkariari bere esparruan izen ona emateko. Adituen kontseiluek antzeko funtzioa izaten dute baina, gainera, adituen ebaluazio-prozesua zuzentzen dute. Adituen kontseiluko kideek ez dute aldizkariaren administrazio-sistemarako sarbiderik izango baina adituen ebaluazioa egiteko erabilgarri daudenen zerrendan sartuko dira.</message>
 	<message key="manager.setup.emailBounceAddress">Erreboteko helbidea</message>
 	<message key="manager.setup.emailBounceAddressDescription">Mezu bat bidali ezinda geratzen den bakoitzean, errore-mezu bat iritsiko da helbide honetara.</message>
 	<message key="manager.setup.emailBounceAddressDisabled"><![CDATA[<strong>Oharra:</strong> Aukera hau aktibatzeko, gune-administratzaileak <tt>allow_envelope_sender</tt> aukera gaitu behar du konfigurazio-fitxategian. Funtzionalitate hau erabili ahal izateko, zerbitzari-konfigurazio gehiago egin beharko dira seguru asko (eta zerbitzari guztietan ezin izango da), OJS dokumentazioan adierazten den bezala.]]></message>
@@ -239,8 +232,6 @@
 	<message key="manager.setup.journalLogo.altText">Aldizkariaren logoa</message>
 	<message key="manager.setup.journalPageFooter">Aldizkariko orri-oina</message>
 	<message key="manager.setup.journalPageFooterDescription">Hau da zure aldizkariko orri-oina. Aldatu nahi baduzu, idatzi orri-oinaren HTML kodea beheko testu-koadroan. Adibidez, beste nabigazio-barra bat, kontagailu bat, etab. Orri-oina orrialde guztietan agertuko da.</message>
-	<message key="manager.setup.journalPageHeader">Aldizkariko orri-burua</message>
-	<message key="manager.setup.journalPageHeaderDescription">Aldizkariaren tituluaren eta logoaren bertsio grafikoa (.gif, .jpg, edo .png fitxategi bat), hasierako orrian jarri dena baino txikiagoa normalean, karga daiteke aldizkariko orri-buru bezala ager dadin, bestela agertuko litzatekeen testu-bertsioaren ordez.</message>
 	<message key="manager.setup.journalPolicies">2. urratsa. Aldizkariaren politika</message>
 	<message key="manager.setup.journalSetup">Aldizkariaren konfigurazioa</message>
 	<message key="manager.setup.journalSetupUpdated">Zure aldizkariaren konfigurazioa eguneratu da.</message>

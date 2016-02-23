@@ -3,8 +3,8 @@
 /**
  * @file pages/search/SearchHandler.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SearchHandler
@@ -179,7 +179,7 @@ class SearchHandler extends Handler {
 		$this->_assignSearchFilters($request, $templateMgr, $searchFilters);
 		$templateMgr->assign('results', $results);
 		$templateMgr->assign('error', $error);
-		$templateMgr->display('search/search.tpl');
+		$templateMgr->display('frontend/pages/search.tpl');
 	}
 
 	/**
@@ -285,7 +285,7 @@ class SearchHandler extends Handler {
 			$country = $countryDao->getCountry($country);
 			$templateMgr->assign('country', $country);
 
-			$templateMgr->display('search/authorDetails.tpl');
+			$templateMgr->display('frontend/pages/searchAuthorDetails.tpl');
 		} else {
 			// Show the author index
 			$searchInitial = $request->getUserVar('searchInitial');
@@ -301,7 +301,7 @@ class SearchHandler extends Handler {
 			$templateMgr->assign('searchInitial', $request->getUserVar('searchInitial'));
 			$templateMgr->assign('alphaList', explode(' ', __('common.alphaList')));
 			$templateMgr->assign('authors', $authors);
-			$templateMgr->display('search/authorIndex.tpl');
+			$templateMgr->display('frontend/pages/searchAuthorIndex.tpl');
 		}
 	}
 
@@ -329,7 +329,7 @@ class SearchHandler extends Handler {
 
 		$templateMgr = TemplateManager::getManager($request);
 		$templateMgr->assign('categories', $cache);
-		$templateMgr->display('search/categories.tpl');
+		$templateMgr->display('frontend/pages/searchCategories.tpl');
 	}
 
 	/**
@@ -363,7 +363,7 @@ class SearchHandler extends Handler {
 		$templateMgr->assign('journals', $journals);
 		$templateMgr->assign('category', $category);
 		$templateMgr->assign('journalFilesPath', $request->getBaseUrl() . '/' . Config::getVar('files', 'public_files_dir') . '/journals/');
-		$templateMgr->display('search/category.tpl');
+		$templateMgr->display('frontend/pages/searchCategory.tpl');
 	}
 
 	/**

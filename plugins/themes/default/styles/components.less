@@ -1,0 +1,351 @@
+/**
+ * @file styles/components.less
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Reusable components
+ */
+
+// Button
+.cmp_button {
+	display: inline-block;
+	padding: 0 1em;
+	background: #eee;
+	border: 1px solid #aaa;
+	border-top-color: #bbb;
+	border-radius: @radius;
+	box-shadow: inset 0 -1em 1em rgba(0, 0, 0, 0.1);
+	font-size: @font-sml;
+	line-height: @triple - 2; // account for border
+	font-weight: @bold;
+	color: @primary;
+}
+
+// Wire button
+.cmp_button_wire {
+	display: inline-block;
+	padding: 0 1em;
+	background: #fff;
+	border: 1px solid @primary;
+	border-radius: @radius;
+	font-size: @font-sml;
+	line-height: @triple - 2; // account for border
+	color: @primary;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background: @primary;
+		color: #fff;
+	}
+}
+
+// Forms
+// These don't yet follow the component pattern on the frontend, but should
+// eventually once the login/registration templates are incorporated into the
+// frontend template structure.
+.pkp_form {
+
+	fieldset {
+		margin: 0 0 @double;
+		padding: 0;
+		border: none;
+	}
+
+	legend {
+		margin-bottom: @base;
+		font-size: @font-bump;
+		font-weight: @bold;
+		line-height: @double;
+	}
+
+	.fields {
+		&:extend(.pkp_unstyled_list);
+
+		> li {
+			position: relative;
+			padding-bottom: @triple; // Contain errors
+
+			// Nest so we don't grab .error class attached to li
+			.error {
+				position: absolute;
+				left: 0.5em; // Sit off the rounded edge of input fields
+				bottom: 11px; // Sit on the bottom line of the input field above
+				padding: 0 0.5em; // Keep it tight so it doesn't bleed into next field
+				background: @no;
+				border-bottom-left-radius: @radius;
+				border-bottom-right-radius: @radius;
+				font-size: @font-sml;
+				line-height: @double;
+				font-weight: @bold;
+				color: #fff;
+			}
+		}
+	}
+
+	label {
+		display: block;
+	}
+
+	.label {
+		display: block;
+		font-size: @font-sml;
+		font-weight: @normal;
+		font-style: italic;
+
+		.required {
+			color: @no;
+		}
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="url"],
+	input[type="phone"],
+	select,
+	textarea {
+		padding: 0 0.5em;
+		width: 100%;
+		height: @triple - 2; // account for border
+		background: #fff;
+		border: 1px solid #aaa;
+		border-radius: @radius;
+		font-size: @font-sml;
+		line-height: @triple - 2; // account for border
+	}
+
+	textarea {
+		width: 100%;
+		height: 8em;
+	}
+
+	.pkp_form_error {
+		margin-bottom: @base;
+		border-radius: @radius;
+		padding: 0 0.5em;
+		font-weight: @bold;
+		font-size: @font-sml;
+		background: @no;
+		color: #fff;
+	}
+
+	@media(min-width: @screen-phone) {
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		input[type="url"],
+		input[type="phone"],
+		select {
+			max-width: 20em;
+		}
+	}
+
+	// Tag-it component
+	// @todo This just duplicates some styles from pkp-lib. We can probably
+	//  find a better way to share styles after beta, or move this to somewhere
+	//  more appropriate in the theme.
+	.tagit {
+		&:extend(.pkp_unstyled_list);
+		&:extend(.pkp_form input[type="text"]);
+		.pkp_helpers_clear();
+
+		// overwrite text field styles
+		max-width: 100%;
+		height: auto;
+
+		> li {
+			display: inline-block;
+
+			&.tagit-choice {
+				margin-right: 0.5em;
+				padding-left: 0.5em;
+				background: @bg;
+				border-radius: @radius;
+				line-height: @double;
+			}
+		}
+
+		input[type="text"] {
+			display: inline-block;
+			border: none;
+			width: inherit;
+			line-height: 30px;
+			height: 30px;
+			vertical-align: top;
+			padding: 0 0.5em;
+		}
+	}
+
+	.tagit-close {
+		padding: 0 0.5em;
+		color: @no;
+	}
+}
+
+// Auto-complete selection fields for tagit component (not nested in .pkp_form)
+.ui-autocomplete {
+	&:extend(.pkp_unstyled_list);
+	width: 20em;
+	padding: 2px;
+	border-radius: @radius;
+	background: @bg-base;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -@half;
+		left: 1em;
+		width: 0;
+		height: 0;
+		color: @bg-base;
+		border-bottom: @half solid;
+		border-right: @half solid transparent;
+		border-left: @half solid transparent;
+		vertical-align: middle;
+	}
+
+	> li {
+		padding: @half;
+		font-size: @font-sml;
+		line-height: @line-sml;
+		color: #fff;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background: @bg;
+			color: @text;
+		}
+	}
+}
+
+// Access legend
+.cmp_access_legend {
+	margin: (@double * 2) 0;
+	padding: 0;
+	list-style: none;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 2em;
+		font-size: @font-sml;
+		line-height: @double;
+		color: @text-light;
+
+		&:before {
+			&:extend( .fa );
+			margin-right: 0.5em;
+			color: @text;
+		}
+	}
+
+	.restricted:before {
+		content: @fa-var-lock;
+		color: @offset;
+	}
+}
+
+// Pagination component
+// eg: 1-2 of 10 items
+.cmp_pagination {
+	margin-top: @double;
+	font-size: @font-sml;
+	line-height: @double;
+	color: @text-light;
+	text-align: right;
+}
+
+// Edit link to jump from frontend section to backend editing location
+// It usually appears within a heading element <h*>
+.cmp_edit_link {
+	display: inline-block;
+	margin-left: 1em;
+	font-size: @font-sml;
+	line-height: 1; // Try not to disrupt parent line height
+	vertical-align: middle;
+	text-decoration: none;
+
+	&:before {
+		&:extend(.fa);
+		content: @fa-var-pencil;
+	}
+}
+
+// Search result filter
+.cmp_search_filter {
+	margin-bottom: @base;
+	font-size: @font-sml;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	label {
+		font-style: italic;
+	}
+
+	.delete {
+		color: @no;
+	}
+}
+
+// Notification
+// @todo needs work and styles for error/warning/notice instances
+.cmp_notification {
+	display: block;
+	width: 100%;
+	padding: @double;
+	background: @bg;
+	text-align: center;
+}
+
+// Breadcrumbs
+.cmp_breadcrumbs {
+	display: inline-block;
+
+
+	ol {
+		&:extend(.pkp_unstyled_list);
+		margin-bottom: @triple;
+		padding: 5px 0;
+		line-height: @double;
+		font-size: @font-sml;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.separator {
+		color: @text-light;
+		padding: 0 0.5em;
+	}
+
+	.current {
+		color: @text-light;
+
+		h1 {
+			margin: 0;
+			font-size: @font-sml;
+			font-weight: @normal;
+		}
+	}
+}
+
+// Backlink used on error.tpl and message.tpl
+.cmp_back_link {
+	margin-top: @double;
+}

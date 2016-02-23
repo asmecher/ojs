@@ -1,25 +1,24 @@
 {**
  * plugins/pubIds/doi/templates/settingsForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * DOI plugin settings
  *
  *}
 
-<script src="{$doiSettingsHandlerJsUrl}"></script>
-
 <div id="description">{translate key="plugins.pubIds.doi.manager.settings.description"}</div>
 
+<script src="{$baseUrl}/plugins/pubIds/doi/js/DOISettingsFormHandler.js"></script>
 <script>
 	$(function() {ldelim}
 		// Attach the form handler.
 		$('#doiSettingsForm').pkpHandler('$.pkp.plugins.pubIds.doi.js.DOISettingsFormHandler');
 	{rdelim});
 </script>
-<form class="pkp_form" id="doiSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="plugin" category="pubIds" plugin=$pluginName verb="settings" save="true"}">
+<form class="pkp_form" id="doiSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="manage" category="pubIds" plugin=$pluginName verb="settings" save="true"}">
 	{include file="common/formErrors.tpl"}
 	{fbvFormArea id="doiObjectsFormArea" title="plugins.pubIds.doi.manager.settings.doiObjects"}
 		{fbvFormSection list="true" description="plugins.pubIds.doi.manager.settings.explainDois"}
@@ -44,13 +43,13 @@
 		{/fbvFormSection}
 	{/fbvFormArea}
 		<table class="data">
-	{fbvFormArea id="enableDoiSettingsFormArea" class="border" title="plugins.pubIds.doi.manager.settings.doiSettings"}
+	{fbvFormArea id="enableDoiSettingsFormArea" title="plugins.pubIds.doi.manager.settings.doiSettings"}
 		{fbvFormSection}
 			<p class="pkp_help">{translate key="plugins.pubIds.doi.manager.settings.doiPrefixPattern"}</p>
 			{fbvElement type="text" label="plugins.pubIds.doi.manager.settings.doiPrefix" required="true" id="doiPrefix" value=$doiPrefix maxlength="40" size=$fbvStyles.size.MEDIUM}
 		{/fbvFormSection}
 	{/fbvFormArea}
-	{fbvFormArea id="doiSuffixPatternFormArea" class="border" title="plugins.pubIds.doi.manager.settings.doiSuffix"}
+	{fbvFormArea id="doiSuffixPatternFormArea" title="plugins.pubIds.doi.manager.settings.doiSuffix"}
 		{fbvFormSection label="plugins.pubIds.doi.manager.settings.doiSuffixDescription" list="true"}
 			{if $doiSuffix eq "pattern"}
 				{assign var="checked" value=true}
@@ -88,7 +87,7 @@
 			{fbvElement type="radio" id="doiSuffixCustomIdentifier" name="doiSuffix" required="true" value="customId" checked=$checked label="plugins.pubIds.doi.manager.settings.doiSuffixCustomIdentifier"}
 		{/fbvFormSection}
 	{/fbvFormArea}
-	{fbvFormArea id="doiSuffixReassignFormArea" class="border" title="plugins.pubIds.doi.manager.settings.doiReassign"}
+	{fbvFormArea id="doiSuffixReassignFormArea" title="plugins.pubIds.doi.manager.settings.doiReassign"}
 		{fbvFormSection}
 			<span class="instruct">{translate key="plugins.pubIds.doi.manager.settings.doiReassign.description"}</span><br/>
 			{include file="linkAction/linkAction.tpl" action=$clearPubIdsLinkAction contextId="doiSettingsForm"}

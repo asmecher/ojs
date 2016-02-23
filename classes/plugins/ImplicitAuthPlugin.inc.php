@@ -3,8 +3,8 @@
 /**
  * @file classes/plugins/ImplicitAuthPlugin.inc.php
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ImplicitAuthPlugin
@@ -18,6 +18,9 @@
 import('lib.pkp.classes.plugins.Plugin');
 
 abstract class ImplicitAuthPlugin extends Plugin {
+	/**
+	 * Constructor
+	 */
 	function ImplicitAuthPlugin() {
 		parent::Plugin();
 	}
@@ -32,9 +35,7 @@ abstract class ImplicitAuthPlugin extends Plugin {
 	 * otherwise, the method should not return (i.e. the request should be
 	 * redirected to login or elsewhere).
 	 */
-	function implicitAuth($hookname, $args) {
-		die('ABSTRACT METHOD');
-	}
+	abstract function implicitAuth($hookname, $args);
 }
 
 ?>

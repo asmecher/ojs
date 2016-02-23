@@ -1,8 +1,8 @@
 {**
  * controllers/tab/settings/contentIndexing/form/contentIndexingForm.tpl
  *
- * Copyright (c) 2014-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Indexing management form.
@@ -22,7 +22,7 @@
 
 	<p>{translate key="manager.setup.forAuthorsToIndexTheirWorkDescription"}</p>
 
-	{fbvFormArea id="contentIndexingDiscipline" class="border"}
+	{fbvFormArea id="contentIndexingDiscipline"}
 		{fbvFormSection description="manager.setup.disciplineDescription" list=true}
 			{fbvElement type="checkbox" id="metaDiscipline" checked=$metaDiscipline label="manager.setup.discipline"}
 		{/fbvFormSection}
@@ -34,7 +34,7 @@
 		{/fbvFormSection}
 	{/fbvFormArea}
 
-	{fbvFormArea id="contentIndexingSubjectClass" class="border"}
+	{fbvFormArea id="contentIndexingSubjectClass"}
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="metaSubjectClass" checked=$metaSubjectClass label="manager.setup.subjectClassification"}
 		{/fbvFormSection}

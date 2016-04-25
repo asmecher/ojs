@@ -23,6 +23,7 @@
 	<p><a href="{url page="login" op="implicitAuthLogin"}">{translate key="user.register.implicitAuth"}</a></p>
 {else}
 	<form id="registerForm" method="post" action="{url op="registerUser"}">
+	{call_hook name="Templates::User::Register::Form"}
 
 	<p>{translate key="user.register.completeForm"}</p>
 

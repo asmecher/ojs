@@ -20,9 +20,12 @@ class StageParticipantNotifyForm extends PKPStageParticipantNotifyForm {
 
 	/**
 	 * Constructor.
+	 * @param $submissionId int Submission ID
+	 * @param $stageId int WORKFLOW_STAGE_ID_...
+	 * @param $template string Smarty template to use for form (optional)
 	 */
-	function StageParticipantNotifyForm($itemId, $itemType, $stageId, $template = null) {
-		parent::PKPStageParticipantNotifyForm($itemId, $itemType, $stageId, $template);
+	function StageParticipantNotifyForm($submissionId, $stageId, $template = null) {
+		parent::PKPStageParticipantNotifyForm($submissionId, $stageId, $template);
 	}
 
 	/**

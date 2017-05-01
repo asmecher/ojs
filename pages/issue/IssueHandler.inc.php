@@ -205,34 +205,6 @@ class IssueHandler extends Handler {
 				$subscribedUser = $issueAction->subscribedUser($journal, $issue->getId());
 
 				if (!$subscribedUser) {
-					// Check if payments are enabled,
-					import('classes.payment.ojs.OJSPaymentManager');
-					$paymentManager = new OJSPaymentManager($request);
-
-					if ($paymentManager->purchaseIssueEnabled() || $paymentManager->membershipEnabled() ) {
-						// If only pdf files are being restricted, then approve all non-pdf galleys
-						// and continue checking if it is a pdf galley
-						if ($paymentManager->onlyPdfEnabled() && !$galley->isPdfGalley()) return true;
-
-						if (!Validation::isLoggedIn()) {
-							Validation::redirectLogin("payment.loginRequired.forIssue");
-						}
-
-						// If the issue galley has been purchased, then allow reader access
-						$completedPaymentDao = DAORegistry::getDAO('OJSCompletedPaymentDAO');
-						$dateEndMembership = $user->getSetting('dateEndMembership', 0);
-						if ($completedPaymentDao->hasPaidPurchaseIssue($userId, $issue->getId()) || (!is_null($dateEndMembership) && $dateEndMembership > time())) {
-							return true;
-						} else {
-							// Otherwise queue an issue purchase payment and display payment form
-							$queuedPayment =& $paymentManager->createQueuedPayment($journal->getId(), PAYMENT_TYPE_PURCHASE_ISSUE, $userId, $issue->getId(), $journal->getSetting('purchaseIssueFee'));
-							$queuedPaymentId = $paymentManager->queuePayment($queuedPayment);
-
-							$paymentManager->displayPaymentForm($queuedPaymentId, $queuedPayment);
-							exit;
-						}
-					}
-
 					if (!Validation::isLoggedIn()) {
 						Validation::redirectLogin("reader.subscriptionRequiredLoginText");
 					}
@@ -322,15 +294,6 @@ class IssueHandler extends Handler {
 		$templateMgr->assign(array(
 			'hasAccess' => !$subscriptionRequired || $issue->getAccessStatus() == ISSUE_ACCESS_OPEN || $subscribedUser || $subscribedDomain
 		));
-
-		import('classes.payment.ojs.OJSPaymentManager');
-		$paymentManager = new OJSPaymentManager($request);
-		if ( $paymentManager->onlyPdfEnabled() ) {
-			$templateMgr->assign('restrictOnlyPdf', true);
-		}
-		if ( $paymentManager->purchaseArticleEnabled() ) {
-			$templateMgr->assign('purchaseArticleEnabled', true);
-		}
 	}
 }
 

@@ -138,11 +138,7 @@ class AbntCitationPlugin extends CitationPlugin {
 						$form->display();
 					}
 				} else {
-					if ($form->isLocaleResubmit()) {
-						$form->readInputData();
-					} else {
-						$form->initData();
-					}
+					$form->initData();
 					$form->display();
 				}
 				return true;

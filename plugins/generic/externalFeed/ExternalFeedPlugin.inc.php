@@ -290,11 +290,7 @@ class ExternalFeedPlugin extends GenericPlugin {
 					$journalSettings =& $journalSettingsDao->getSettings($journalId);
 
 					$externalFeedForm = new ExternalFeedForm($this, $externalFeedId, $journalId);
-					if ($externalFeedForm->isLocaleResubmit()) {
-						$externalFeedForm->readInputData();
-					} else {
-						$externalFeedForm->initData();
-					}
+					$externalFeedForm->initData();
 					$templateMgr->assign('journalSettings', $journalSettings);
 					$externalFeedForm->display();
 				} else {

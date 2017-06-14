@@ -17,12 +17,6 @@
  */
 (function($) {
 
-	/** @type {Object} */
-	$.pkp.controllers.grid.issues = $.pkp.controllers.grid.issues || {};
-
-	/** @type {Object} */
-	$.pkp.controllers.grid.issues.FutureIssueGridHandler =
-			$.pkp.controllers.grid.issues.FutureIssueGridHandler || {};
 
 
 	/**
@@ -38,7 +32,7 @@
 			function($grid, options) {
 		this.parent($grid, options);
 
-		this.bindGlobal('issueUnpublished', this.refreshGridHandler );
+		this.bindGlobal('issueUnpublished', this.refreshGridHandler);
 	};
 	$.pkp.classes.Helper.inherits(
 			$.pkp.controllers.grid.issues.FutureIssueGridHandler,

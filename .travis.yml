@@ -10,7 +10,7 @@ language: php
 php:
   - 5.6
   - 7.1
-group: deprecated-2017Q1
+# group: deprecated-2017Q1
 python:
   - 3.3
 addons:

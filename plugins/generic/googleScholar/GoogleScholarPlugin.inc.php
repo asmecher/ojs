@@ -70,10 +70,10 @@ class GoogleScholarPlugin extends GenericPlugin {
 
 		$templateMgr->addHeader('googleScholarTitle', '<meta name="citation_title" content="' . htmlspecialchars($article->getTitle($article->getLocale())) . '"/>');
 
-		if (is_a($article, 'PublishedArticle') && ($datePublished = $article->getDatePublished())) {
-			$templateMgr->addHeader('googleScholarDate', '<meta name="citation_date" content="' . strftime('%Y/%m/%d', strtotime($datePublished)) . '"/>');
-		} elseif ($issue && $issue->getYear()) {
+		if ($issue && $issue->getYear()) {
 			$templateMgr->addHeader('googleScholarDate', '<meta name="citation_date" content="' . htmlspecialchars($issue->getYear()) . '"/>');
+		} elseif (is_a($article, 'PublishedArticle') && ($datePublished = $article->getDatePublished())) {
+			$templateMgr->addHeader('googleScholarDate', '<meta name="citation_date" content="' . strftime('%Y/%m/%d', strtotime($datePublished)) . '"/>');
 		} elseif ($issue && ($datePublished = $issue->getDatePublished())) {
 			$templateMgr->addHeader('googleScholarDate', '<meta name="citation_date" content="' . strftime('%Y/%m/%d', strtotime($datePublished)) . '"/>');
 		}

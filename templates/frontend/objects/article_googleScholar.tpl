@@ -29,10 +29,10 @@
  * Google Scholar date: Use article publication date, falling back on issue
  * year and issue publication date in sequence. Bug #6480.
  *}
-{if is_a($article, 'PublishedArticle') && $article->getDatePublished()}
-	<meta name="citation_date" content="{$article->getDatePublished()|date_format:"%Y/%m/%d"}"/>
-{elseif $issue && $issue->getYear()}
+{if $issue && $issue->getYear()}
 	<meta name="citation_date" content="{$issue->getYear()|escape}"/>
+{elseif is_a($article, 'PublishedArticle') && $article->getDatePublished()}
+	<meta name="citation_date" content="{$article->getDatePublished()|date_format:"%Y/%m/%d"}"/>
 {elseif $issue && $issue->getDatePublished()}
 	<meta name="citation_date" content="{$issue->getDatePublished()|date_format:"%Y/%m/%d"}"/>
 {/if}

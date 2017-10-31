@@ -30,7 +30,12 @@
  * year and issue publication date in sequence. Bug #6480.
  *}
 {if is_a($article, 'PublishedArticle') && $article->getDatePublished()}
-	<meta name="citation_date" content="{$article->getDatePublished()|date_format:"%Y/%m/%d"}"/>
+	{assign var=datePublished value=$article->getDatePublished()}
+	{if $datePublished && (!$issue->getYear() || $issue->getYear() == strftime('%Y', strtotime($datePublished)))}
+		<meta name="citation_date" content="{$article->getDatePublished()|date_format:"%Y/%m/%d"}"/>
+	{else}
+		<meta name="citation_date" content="{$issue->getYear()|escape}"/>
+	{/if}
 {elseif $issue && $issue->getYear()}
 	<meta name="citation_date" content="{$issue->getYear()|escape}"/>
 {elseif $issue && $issue->getDatePublished()}

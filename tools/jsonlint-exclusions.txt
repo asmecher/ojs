@@ -1,0 +1,5 @@
+./lib/pkp/lib
+./plugins/paymethod/paypal/vendor
+./plugins/generic/citationStyleLanguage/lib
+./node_modules
+./lib/pkp/js/lib

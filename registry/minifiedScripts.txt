@@ -13,9 +13,7 @@
 #
 
 # External jQuery plug-ins to be minified
-lib/pkp/js/lib/jquery/plugins/jquery.form.js
 lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js
-lib/pkp/js/lib/jquery/plugins/jquery.sortElements.js
 lib/pkp/js/lib/jquery/plugins/jquery.cookie.js
 lib/pkp/js/lib/jquery/plugins/jquery.equalizer.js
 lib/pkp/js/lib/jquery/plugins/jquery.jlabel-1.3.min.js

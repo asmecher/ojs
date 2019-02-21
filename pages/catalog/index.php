@@ -17,6 +17,7 @@
  */
 
 switch ($op) {
+	case 'categories':
 	case 'category':
 	case 'fullSize':
 	case 'thumbnail':

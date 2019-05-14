@@ -159,7 +159,8 @@ class IssueQueryBuilder extends BaseQueryBuilder {
 					->leftJoin('issue_settings as is', 'i.issue_id', '=', 'is.issue_id')
 					->leftJoin('custom_issue_orders as o', 'o.issue_id', '=', 'i.issue_id')
 					->orderBy($this->orderColumn, $this->orderDirection)
-					->groupBy('i.issue_id');
+					->groupBy('i.issue_id')
+					->groupBy('o.seq');
 
 		// context
 		// Never permit a query without a context_id clause unless the '*' wildcard

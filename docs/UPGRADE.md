@@ -1,13 +1,6 @@
 # Upgrading an OJS Installation
 
-Note: Before upgrading your installation, perform a complete backup of your
-data files and database. If the upgrade process fails, you will need to recover
-from backup before continuing.
-
-If you are using PHP Safe Mode, please ensure that the max_execution_time
-directive in your php.ini configuration file is set to a high limit. If this
-or any other time limit (e.g. Apache's "Timeout" directive) is reached and
-the upgrade process is interrupted, manual intervention will be required.
+Something in another language.
 
 
 ## Upgrading from OJS 2.0.x, 2.1.x, 2.2.x, or 2.3.x

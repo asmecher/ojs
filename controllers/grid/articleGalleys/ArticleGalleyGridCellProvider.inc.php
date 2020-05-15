@@ -86,8 +86,11 @@ class ArticleGalleyGridCellProvider extends DataObjectGridCellProvider {
 					null,
 					$this->_submission->getId()
 				);
-				import('lib.pkp.controllers.api.file.linkAction.DownloadFileLinkAction');
-				return array(new DownloadFileLinkAction($request, $submissionFile, WORKFLOW_STAGE_ID_PRODUCTION, $element->getLabel()));
+				if ($submissionFile) {
+					import('lib.pkp.controllers.api.file.linkAction.DownloadFileLinkAction');
+					return array(new DownloadFileLinkAction($request, $submissionFile, WORKFLOW_STAGE_ID_PRODUCTION, $element->getLabel()));
+				}
+				break;
 		}
 		return parent::getCellActions($request, $row, $column, $position);
 	}

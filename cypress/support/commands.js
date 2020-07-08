@@ -18,6 +18,7 @@ Cypress.Commands.add('publish', (issueId, issueTitle) => {
 	cy.get('div[id^="assign-"] button:contains("Save")').click();
 	cy.get('div:contains("All publication requirements have been met. This will be published immediately in ' + issueTitle + '. Are you sure you want to publish this?")');
 	cy.get('div.pkpWorkflow__publishModal button:contains("Publish")').click();
+	cy.get('.pkpPublication__statusPublished');
 });
 
 Cypress.Commands.add('isInIssue', (submissionTitle, issueTitle) => {

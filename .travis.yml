@@ -4,7 +4,7 @@ env:
     - secure=FTT6C4vhk88L1RKHmUnbTdXdTyjkhoAhtXwYGAvkrrTngU1uJMZeoFeHLqVf/uxQuNssOrEJsQWGrka5OEd1FAAxUuqTmytxRMuz9A6Z4qp5DiMIDyCB9WF5AdY1cb3XQw5GiPc2BWrmBxxRIKporkaND0UBRmyeHDvppjn0uME=
     - APPLICATION=ojs
 
-dist: bionic
+dist: focal
 os: linux
 language: php
 python:
@@ -45,18 +45,21 @@ jobs:
       php: 7.4
     - env: TEST=pgsql SAVE_BUILD=true
       php: 8.0
+    - env: TEST=pgsql SAVE_BUILD=true
+      php: 8.1.0
     - env: TEST=mysql
       php: 7.4
     - env: TEST=mysql SAVE_BUILD=true
       php: 8.0
     - env: TEST=mysql SAVE_BUILD=true
-      php: 8.1
+      php: 8.1.0
     # Path info disabled DISABLED pending a fix of pkp/pkp-lib#4414
     # - PHPVERSION=7.4 TEST=mysql DISABLE_PATH_INFO=1
     #   php: 7.2
 
     - stage: validate
       name: "Validate and lint"
+      php: 8.0
       script:
       - |
         npm install

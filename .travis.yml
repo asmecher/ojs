@@ -49,6 +49,8 @@ jobs:
       php: 7.4
     - env: TEST=mysql SAVE_BUILD=true
       php: 8.0
+    - env: TEST=mysql SAVE_BUILD=true
+      php: 8.1
     # Path info disabled DISABLED pending a fix of pkp/pkp-lib#4414
     # - PHPVERSION=7.4 TEST=mysql DISABLE_PATH_INFO=1
     #   php: 7.2

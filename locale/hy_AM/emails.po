@@ -16,11 +16,6 @@ msgstr ""
 msgid "emails.editorAssign.subject"
 msgstr "Դուք նշանակվել եք որպես խմբագիր {$contextName} -ի ներկայացման համար"
 
-msgid "emails.submissionAckNotUser.description"
-msgstr ""
-"Այս էլ․ նամակը, երբ միացված է, ինքնաշխատ կերպով ուղարկվում է հեղինակներին, "
-"որոնք նշված են ներկայացման մեջ, ովքեր չեն ներկայացնում հեղինակին:"
-
 msgid "emails.submissionAckNotUser.body"
 msgstr ""
 "<p>Հարգելի {$recipientName},</p><p>Դուք նշվել եք որպես {$contextName} -ի "

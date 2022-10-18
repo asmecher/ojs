@@ -216,12 +216,6 @@ msgstr ""
 "este periódico para publicar o seu trabalho.</p><br "
 "/><p>Atenciosamente,</p>{$contextSignature}"
 
-msgid "emails.submissionAckNotUser.description"
-msgstr ""
-"Quando habilitada, esta mensagem é enviado automaticamente para os autores "
-"informados durante o processo de submissão, que não seja o autor que está "
-"submetendo o manuscrito."
-
 msgid "emails.editorAssign.subject"
 msgstr "Você foi designado como editor em uma submissão para {$contextName}"
 

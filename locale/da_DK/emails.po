@@ -860,12 +860,6 @@ msgstr ""
 "kontakte mig.</p><p>Tak for at overveje dette tidsskrift til at udgive dit "
 "arbejde i.</p><p>Med venlig hilsen</p>{$contextSignature}"
 
-#, fuzzy
-msgid "emails.submissionAckNotUser.description"
-msgstr ""
-"Når denne e-mail er aktiveret, sendes den automatisk til de øvrige "
-"forfattere, udover indsenderen, angivet under indsendelsesprocessen."
-
 msgid "emails.reviewReinstate.body"
 msgstr ""
 "<p>Kære {$recipientName}</p><p>Vi har for nyligt aflyst vores forespørgsel "

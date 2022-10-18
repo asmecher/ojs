@@ -692,12 +692,6 @@ msgstr ""
 "გმადლობთ,<br />\n"
 "{$signature}"
 
-msgid "emails.submissionAckNotUser.description"
-msgstr ""
-"ეს წერილი (თუ ეს შესაძლებლობა ჩართულია) ავტომატურად გაეგზავნება სხვა "
-"ავტორებს, რომლებიც არ არიან OJS-ის მომხმარებლები, მაგრამ მითითებული არიან "
-"მასალების გაგზავნის პროცეში."
-
 msgid "emails.lockssNewArchive.description"
 msgstr ""
 "ეს წერილი სთავაზობს მიმღებს მიიღოს მონაწილეობა LOCKSS ინიციატივაში და "

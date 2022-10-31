@@ -386,3 +386,20 @@ msgstr ""
 "Не можа да се създаде DOI за следното подаване на материали: "
 "{$pubObjectTitle}. Подадените материали трябва да бъдат присвоени към брой, "
 "преди да може да се генерира DOI."
+
+msgid "submission.submit.form.authorRequired"
+msgstr "Изисква се да е отбелязан поне един автор."
+
+msgid "submission.submit.form.titleRequired"
+msgstr "Моля, въведете заглавието на вашата статия."
+
+msgid "submission.submit.form.abstractRequired"
+msgstr "Моля, въведете резюмето на вашата статия."
+
+msgid "submission.submit.form.wordCountAlert"
+msgstr ""
+"Резюмето ви е твърде дълго. Моля, съкратете го под ограничението на думите, "
+"посочено за този раздел."
+
+msgid "submission.submit.form.contributorRoleRequired"
+msgstr "Моля, изберете ролята на изпращача/сътрудниците."

@@ -1,0 +1,35 @@
+{
+    "name": "pkp/ojs",
+    "description": "PKP Web Application Library: A scholarly application development toolkit underpinning OJS, OMP, and OPS.",
+    "license": "GPL-3.0",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/asmecher/pkp-lib.git"
+        }
+    ],
+    "require": {
+        "pkp/pkp-lib": "dev-trycomposerpackaging"
+    },
+	"autoload": {
+		"psr-4": {
+			"APP\\controllers\\": "controllers/",
+			"APP\\API\\": "api/",
+			"APP\\pages\\": "pages/",
+			"APP\\": "classes/",
+			"APP\\plugins\\": "plugins/",
+			"APP\\jobs\\": "jobs/"
+		}
+	},
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "lib/pkp": "pkp/pkp-lib"
+        }
+    }
+}

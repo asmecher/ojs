@@ -45,7 +45,12 @@ jobs:
           - php-version: 8.2
             database: pgsql
             test: 'test'
-
+          - php-version: 8.3
+            database: pgsql
+            test: 'test'
+          - php-version: 8.4
+            database: mysql
+            test: 'test'
 
     name: ojs
     steps:
